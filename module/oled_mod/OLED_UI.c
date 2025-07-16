@@ -450,8 +450,6 @@ void OLED_UI_Init(MenuPage* Page){
 	//初始化OLED显示屏
 	OLED_Init();
 
-	//启动定时器
-	HAL_TIM_Base_Start_IT(&htim14);
 	//Timer_Init();
 	//Key_Init();
 	Encoder_Init();
@@ -1509,9 +1507,6 @@ void MoveMenuElements(void){
 	// 绘制窗口
 	OLED_DrawWindow();
 
-
-	
-	
 }
 
 /**
@@ -1522,17 +1517,12 @@ void MoveMenuElements(void){
  */
 void OLED_UI_MainLoop(void){
 
-	
-
 	//清屏
 	OLED_Clear();
-
-	
 
 	//移动菜单元素
 	MoveMenuElements();
 
-	
 	//当互斥锁被置位时，运行当前菜单项的回调函数
 	RunCurrentCallBackFunction();
 	

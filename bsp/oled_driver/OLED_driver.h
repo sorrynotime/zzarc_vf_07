@@ -23,10 +23,13 @@
 //使用硬件SPI
 #ifdef OLED_UI_USE_HW_SPI
 #define OLED_UI_SPI_USE_DMA			//使用DMA
-#define OLED_UI_SPI_NSS_HARD_OUTPUT	//硬件CS（注释该项则使用软件控制OLED的CS pin）
+//#define OLED_UI_SPI_NSS_HARD_OUTPUT	//硬件CS（注释该项则使用软件控制OLED的CS pin）
 
 #define OLED_DC_Clr()   (HAL_GPIO_WritePin(OLED_DC_GPIO_Port, OLED_DC_Pin, 0))  // 复位 DC (将DC引脚拉低)
 #define OLED_DC_Set()   (HAL_GPIO_WritePin(OLED_DC_GPIO_Port, OLED_DC_Pin, 1))  // 置位 DC (将DC引脚拉高)
+
+#define OLED_CS_Clr()  (HAL_GPIO_WritePin(OLED_CS_GPIO_Port, OLED_CS_Pin, 0))  // 复位 DC (将DC引脚拉低)
+#define OLED_CS_Set()  (HAL_GPIO_WritePin(OLED_CS_GPIO_Port, OLED_CS_Pin, 1))  // 置位 DC (将DC引脚拉高)
 
 #define OLED_RES_Clr()  (HAL_GPIO_WritePin(OLED_RES_GPIO_Port, OLED_RES_Pin, 0))  // 复位 DC (将DC引脚拉低)
 #define OLED_RES_Set()  (HAL_GPIO_WritePin(OLED_RES_GPIO_Port, OLED_RES_Pin, 1))  // 置位 DC (将DC引脚拉高)

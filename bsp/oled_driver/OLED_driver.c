@@ -7,8 +7,6 @@
 #include "OLED_driver.h"
 #include "spi.h"
 
-//extern SPI_HandleTypeDef hspi2;
-
 uint8_t OLED_DisplayBuf[64/8][128]; //显存
 bool OLED_ColorMode = true;
 bool spi_busy = 0;
@@ -24,7 +22,7 @@ void OLED_Write_DATA(uint8_t data)
 	OLED_CS_Clr();    // 选中OLED
 #endif
 
-	HAL_SPI_Transmit(&hspi2, &data, 1, 1);
+	HAL_SPI_Transmit_DMA(&hspi2, &data, 1);
 
 #ifndef OLED_UI_SPI_NSS_HARD_OUTPUT
 	OLED_CS_Set();    // 取消选中OLED
@@ -42,7 +40,7 @@ void OLED_Write_CMD(uint8_t data)
 	OLED_CS_Clr();    // 选中OLED
 #endif
 
-	HAL_SPI_Transmit(&hspi2, &data, 1, 1);
+	HAL_SPI_Transmit_DMA(&hspi2, &data, 1);
 
 #ifndef OLED_UI_SPI_NSS_HARD_OUTPUT
 	OLED_CS_Set();    // 取消选中OLED
@@ -66,7 +64,7 @@ void OLED_WriteDataArr(uint8_t *Data, uint8_t Count)
 	OLED_CS_Clr();    // 选中OLED
 #endif
 
-	HAL_SPI_Transmit(&hspi2, Data, (uint8_t)Count, 100);
+	HAL_SPI_Transmit_DMA(&hspi2, Data, (uint8_t)Count);
 
 #ifndef OLED_UI_SPI_NSS_HARD_OUTPUT
 	OLED_CS_Set();    // 取消选中OLED
@@ -360,7 +358,7 @@ void OLED_Init(void)
 	OLED_Write_CMD(0xDA);//--set com pins hardware configuration
 	OLED_Write_CMD(0x12);
 	OLED_Write_CMD(0x81);//--set contrast control register
-	OLED_Write_CMD(0xBF);// Set SEG Output Current Brightness
+	OLED_Write_CMD(0xFF);// Set SEG Output Current Brightness
 	OLED_Write_CMD(0xD9);//--set pre-charge period
 	OLED_Write_CMD(0x25);// Set Pre-Charge as 15 Clocks & Discharge as 1 Clock
 	OLED_Write_CMD(0xDB);//--set vcomh
@@ -371,9 +369,9 @@ void OLED_Init(void)
 	OLED_Write_CMD(0xAF);
 #endif
 
-	OLED_Brightness(-1); //初始化亮度设置函数。设置为-1相当于设置为0
-	OLED_Clear();
-	OLED_Write_CMD(0xAF);//Display ON
+//	OLED_Brightness(-1); //初始化亮度设置函数。设置为-1相当于设置为0
+//	OLED_Clear();
+//	OLED_Write_CMD(0xAF);//Display ON
 	for(int i=0;i<1000;i++)
 	{
 		for(int j=0;j<1000;j++){

@@ -31,4 +31,12 @@ zzarc_vf_07/stm32f4xx_it.o: ..\Core\Src\stm32f4xx_it.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
-  ..\Core\Inc\stm32f4xx_it.h
+  ..\Core\Inc\stm32f4xx_it.h ..\..\module\oled_mod\OLED_UI.h \
+  ..\..\bsp\oled_driver\OLED_UI_Driver.h ..\..\module\oled_mod\OLED.h \
+  ..\..\bsp\oled_driver\OLED_Driver.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ..\..\resource\oled_res\OLED_Fonts.h

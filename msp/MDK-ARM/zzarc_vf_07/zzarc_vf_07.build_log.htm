@@ -17,22 +17,981 @@ Library Manager: ArmAr.exe V6.14
 Hex Converter:   FromElf.exe V6.14
 CPU DLL:         SARMCM3.DLL V5.31.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Target DLL:      Segger\JL2CM3.dll V2.99.38.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
 F:\MCUtmp\zzarc_vf_07\zzarc_vf_07\msp\MDK-ARM\zzarc_vf_07.uvprojx
-Project File Date:  07/15/2025
+Project File Date:  07/16/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
-Build target 'zzarc_vf_07'
+Rebuild target 'zzarc_vf_07'
+compiling spi.c...
+../../app/oled_app/OLED_UI_MenuData.c(19): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        .Text_String = "<C6><C1>Ļ<C1><C1><B6><C8><C6><C1>Ļ<C1><C1><B6><C8>",                                      //<B4><B0><BF>ڱ<EA><CC><E2>
+                        ^~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(60): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        .Text_String = "<CE><C4><D7><D6>text",                                      //<B4><B0><BF>ڱ<EA><CC><E2>
+                        ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(77): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        .Text_String = "<B8><A1><B5><E3><CA><FD><BE>ݲ<E2><CA><D4>",                                  //<B4><B0><BF>ڱ<EA><CC><E2>
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(102): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        .Text_String = "<D5><FB><CA><FD><CA><FD><BE>ݲ<E2><CA><D4>",                                  //<B4><B0><BF>ڱ<EA><CC><E2>
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(211): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<BC><C6><CB><E3><C6><F7> Calc <B3><A4><CE>ı<BE><B2><E2><CA><D4> LongText",.General_callback = NULL,.General_SubMenuPage = NULL,.Tiles_Icon = Image_calc},
+                               ^~~~~~~~~~~~~~~~~~~~~~~~      ~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(219): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<C1><C1><B6><C8>",.General_callback = BrightnessWindow,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(220): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<BA>ڰ<B5>ģʽ",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = &ColorMode},
+                               ^~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(221): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<CF><D4>ʾ֡<C2><CA>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = &OLED_UI_ShowFps},
+                               ^~~~~~~~ ~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(222): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<B4><CB><C9>豸",.General_callback = NULL,.General_SubMenuPage = &AboutThisDeviceMenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(223): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<B9><D8><D3><DA>OLED UI",.General_callback = NULL,.General_SubMenuPage = &AboutOLED_UIMenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(224): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<B8><D0>л<B9>ۿ<B4>,һ<BC><FC><C8><FD><C1><AC>! Thanks for watching, three clicks!",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~ ~~~~ ~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(225): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(239): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(246): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = " bilibili @<C9><CF>nm<CD><F8><BF><CE><C4><D8>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                          ^~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(250): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(256): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(257): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D7><D6><CC><E5><B8>߶<C8>8demo",.General_callback = NULL,.General_SubMenuPage = &Font8MenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(258): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D7><D6><CC><E5><B8>߶<C8>12demo",.General_callback = NULL,.General_SubMenuPage = &Font12MenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(259): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D7><D6><CC><E5><B8>߶<C8>16demo",.General_callback = NULL,.General_SubMenuPage = &Font16MenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(260): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D7><D6><CC><E5><B8>߶<C8>20demo",.General_callback = NULL,.General_SubMenuPage = &Font20MenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(261): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<B3><AC><B3><A4><CE>ı<BE>demo",.General_callback = NULL,.General_SubMenuPage = &LongMenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(262): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<BB>ص<AF><B6><AF><BB><AD>demo",.General_callback = NULL,.General_SubMenuPage = &SpringMenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~ ~~~~~~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(263): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<B3><AC><B3><A4><B2>˵<A5><C1>б<ED>demo",.General_callback = NULL,.General_SubMenuPage = &LongListMenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(264): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<B3><AC>С<C7><F8><D3><F2><B2>˵<A5>demo",.General_callback = NULL,.General_SubMenuPage = &SmallAreaMenuPage,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~ ~~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(265): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<BF>մ<B0><BF><DA>demo",.General_callback = EmptyWindow,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~ ~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(266): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<CE><C4><D7>ִ<B0><BF><DA>demo",.General_callback = ShowTextWindow,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(267): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<B8><A1><B5><E3><CA><FD><BD><F8><B6><C8><CC><F5><B4><B0><BF><DA>demo",.General_callback = ShowFloatDataWindow,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(268): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D5><FB><CA><FD><BD><F8><B6><C8><CC><F5><B4><B0><BF><DA>demo",.General_callback = ShowIntDataWindow,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(272): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(273): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(283): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(284): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(294): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(295): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(305): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(306): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(312): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(322): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(323): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<B7>ǳ<A3><B7>ǳ<A3><B7>ǳ<A3><B3><A4><D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~ ~~~~~~~~ ~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(331): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(332): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(338): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(348): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(362): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "[<B7><B5><BB><D8>]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                                ^~~~~~~~~~~~~~~~
+../../app/oled_app/OLED_UI_MenuData.c(363): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+../../app/oled_app/OLED_UI_MenuData.c(369): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+        {.General_item_text = "<D6><D0><CE><C4><CE>ı<BE>",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+                               ^~~~~~~~~~~~~~~~~~~~ ~~~~
+46 warnings generated.
+compiling OLED_UI_MenuData.c...
+compiling stm32f4xx_it.c...
+compiling main.c...
 compiling OLED_UI_Driver.c...
+assembling startup_stm32f407xx.s...
+compiling OLED.c...
+../../module/oled_mod/OLED_UI.c(927): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+                                        RadioBoxSymb = "<A1><F6>";
+                                                        ^~~~~~~~
+../../module/oled_mod/OLED_UI.c(929): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+                                        RadioBoxSymb = "<A1><F5>";
+                                                        ^~~~~~~~
+2 warnings generated.
+compiling OLED_UI.c...
+compiling dma.c...
+compiling gpio.c...
+compiling tim.c...
+compiling stm32f4xx_hal_msp.c...
+../../resource/oled_res/oled_fonts.c(411): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+    {{"<B3><A4>"},
+       ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(413): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(415): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(419): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><FE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(421): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C8><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(423): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CB><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(425): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CE><E5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(427): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><F9>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(429): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C6><DF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(431): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(433): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BE><C5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(437): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C4><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(439): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><C3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(441): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CA><C0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(443): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BD><E7>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(445): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B4><F3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(449): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><E0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(451): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><D9>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(455): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><F3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(457): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C0><EF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(459): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CD><E2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(461): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C0><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(463): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D7><D3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(467): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><A8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(469): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C8><CF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(473): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><FB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(475): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><E8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(477): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D6><C3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(479): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B2><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(481): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><A5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(483): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><EE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(485): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B7><B5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(487): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BB><D8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(489): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><CF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(491): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><C2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(493): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><B4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(495): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BC><FC>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(497): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B7><C7>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(499): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B3><A3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(501): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CE><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(503): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B1><BE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(505): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D6><D0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(507): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B9><FA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(509): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<A1><F6>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(511): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<A1><F5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(521): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B3><A4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(523): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(525): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(529): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><FE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(531): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C8><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(533): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CB><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(535): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CE><E5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(537): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><F9>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(539): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C6><DF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(541): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(543): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BE><C5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(547): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C4><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(549): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><C3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(551): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CA><C0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(553): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BD><E7>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(555): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B4><F3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(559): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><E0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(561): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><D9>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(565): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><F3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(567): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C0><EF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(569): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CD><E2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(571): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C0><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(573): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D7><D3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(577): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><A8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(579): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C8><CF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(583): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><FB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(585): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><E8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(587): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D6><C3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(589): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B2><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(591): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><A5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(593): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><EE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(595): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B7><B5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(597): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BB><D8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(599): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><CF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(601): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><C2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(603): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><B4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(605): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BC><FC>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(607): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B7><C7>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(609): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B3><A3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(611): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CE><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(613): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B1><BE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(615): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D6><D0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(617): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B9><FA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(619): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><C1>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(621): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><C8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(623): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><DA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(625): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><B5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(631): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B4><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(633): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B1><B8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(635): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B9><D8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(637): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D3><DA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(639): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B8><D0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(643): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B9><DB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(645): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BF><B4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(647): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><AC>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(649): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CD><F8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(651): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BF><CE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(653): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C4><D8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(657): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D0><C5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(661): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D2><E9>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(663): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C8><ED>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(665): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BC><FE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(667): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D7><D6>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(669): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CC><E5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(671): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B8><DF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(673): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B3><AC>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(675): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><AF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(677): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><AF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(679): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BB><AD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(681): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><D0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(683): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B1><ED>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(685): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C7><F8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(687): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D3><F2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(690): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BC><C6>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(692): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CB><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(694): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C6><F7>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(696): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B2><E2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(698): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CA><D4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(700): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+    {{"<A1><F6>"},
+       ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(702): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+    {{"<A1><F5>"},
+       ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(719): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+    {{"<C6><C1>"},
+       ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(723): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><C1>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(725): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><C8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(727): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B3><A4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(729): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(731): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(735): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><FE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(737): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C8><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(739): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CB><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(741): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CE><E5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(743): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><F9>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(745): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C6><DF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(747): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(749): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BE><C5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(753): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C4><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(755): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><C3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(757): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CA><C0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(759): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BD><E7>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(761): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B4><F3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(765): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><E0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(767): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><D9>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(771): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><F3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(773): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C0><EF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(775): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CD><E2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(777): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C0><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(779): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D7><D3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(783): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><A8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(785): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C8><CF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(789): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><FB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(791): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><E8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(793): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D6><C3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(795): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B2><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(797): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><A5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(799): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><EE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(801): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B7><B5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(803): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BB><D8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(805): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><CF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(807): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><C2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(809): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><B4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(811): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BC><FC>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(813): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B7><C7>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(815): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B3><A3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(817): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CE><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(819): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B1><BE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(821): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D6><D0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(823): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B9><FA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(825): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D7><D6>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(827): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CC><E5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(829): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B8><DF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(831): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B3><AC>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(833): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><AF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(835): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><AF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(837): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BB><AD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(839): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><D0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(841): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B1><ED>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(843): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C7><F8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(845): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D3><F2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(847): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><DA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(849): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><B5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(855): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B4><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(857): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B1><B8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(859): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B9><D8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(861): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D3><DA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(863): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B8><D0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(867): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B9><DB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(869): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BF><B4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(871): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><AC>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(873): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CD><F8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(875): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BF><CE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(877): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C4><D8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(879): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CE><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(881): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D7><D6>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(883): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B4><B0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(885): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BF><DA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(887): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B8><A1>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(889): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(891): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CA><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(893): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BD><F8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(895): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CC><F5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(897): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D5><FB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(899): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CA><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(901): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BF><D5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(903): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BE><DD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(905): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B2><E2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(907): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CA><D4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(909): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><D4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(915): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C2><CA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(917): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+    {{"<A1><F6>"},
+       ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(919): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+    {{"<A1><F5>"},
+       ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(930): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B3><A4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(933): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(936): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(942): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><FE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(945): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C8><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(948): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CB><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(951): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CE><E5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(954): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><F9>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(957): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C6><DF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(960): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(963): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BE><C5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(969): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C4><E3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(972): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><C3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(975): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CA><C0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(978): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BD><E7>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(981): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B4><F3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(987): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><E0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(990): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><D9>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(996): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BA><F3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(999): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C0><EF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1002): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CD><E2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1005): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D7><F3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1008): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D3><D2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1011): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C0><FD>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1014): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D7><D3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1020): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C8><CF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1026): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><FB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1029): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B2><CB>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1032): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B5><A5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1035): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B7><B5>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1038): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BB><D8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1041): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><CF>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1044): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CF><C2>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1047): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B0><B4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1050): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<BC><FC>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1053): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C9><E8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1056): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D6><C3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1059): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B7><C7>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1062): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B3><A3>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1065): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<CE><C4>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1068): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B1><BE>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1071): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<D6><D0>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1074): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B9><FA>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1077): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<C1><C1>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1079): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+{{"<B6><C8>"},
+   ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1083): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+    {{"<A1><F5>"},
+       ^~~~~~~~
+../../resource/oled_res/oled_fonts.c(1085): warning: illegal character encoding in string literal [-Winvalid-source-encoding]
+    {{"<A1><F6>"},
+       ^~~~~~~~
+261 warnings generated.
+compiling oled_fonts.c...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_spi.c...
 compiling OLED_driver.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal_flash.c...
+compiling stm32f4xx_hal_flash_ex.c...
+compiling stm32f4xx_hal_dma.c...
+compiling stm32f4xx_hal_flash_ramfunc.c...
+compiling stm32f4xx_hal_dma_ex.c...
+compiling stm32f4xx_hal_pwr.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+compiling stm32f4xx_hal.c...
+compiling stm32f4xx_hal_exti.c...
+compiling stm32f4xx_hal_cortex.c...
+compiling system_stm32f4xx.c...
+compiling stm32f4xx_hal_tim_ex.c...
+compiling stm32f4xx_hal_tim.c...
 linking...
-Program Size: Code=9016 RO-data=448 RW-data=12 ZI-data=12652  
+Program Size: Code=49360 RO-data=20160 RW-data=4248 ZI-data=14288  
 FromELF: creating hex file...
-"zzarc_vf_07\zzarc_vf_07.axf" - 0 Error(s), 0 Warning(s).
+"zzarc_vf_07\zzarc_vf_07.axf" - 0 Error(s), 309 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -56,7 +1015,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:07
 </pre>
 </body>
 </html>

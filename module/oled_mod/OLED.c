@@ -134,9 +134,9 @@ uint8_t OLED_IsInAngle(int16_t X, int16_t Y, int16_t StartAngle, int16_t EndAngl
 void OLED_Clear(void)
 {
 	int16_t i, j;
-	for (j = 0; j < OLED_HEIGHT/8; j ++)				//遍历8页
+	for (j = 0; j < OLED_HEIGHT/8; j ++)	//遍历8页
 	{
-		for (i = 0; i < OLED_WIDTH; i ++)			//遍历OLED_WIDTH列
+		for (i = 0; i < OLED_WIDTH; i ++)	//遍历OLED_WIDTH列
 		{
 			OLED_DisplayBuf[j][i] = 0x00;	//将显存数组数据全部清零
 		}
@@ -373,7 +373,7 @@ void OLED_ShowNum(int16_t X, int16_t Y, uint32_t Number, uint8_t Length, uint8_t
   *           范围：OLED_8X16		宽8像素，高16像素
   *                 OLED_6X8		宽6像素，高8像素
   * 				 OLED_7X12		宽7像素，高12像素
-  *                 OLED_10X20		宽10像素，高20像素
+  *                 OLED_F10x20		宽10像素，高20像素
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
