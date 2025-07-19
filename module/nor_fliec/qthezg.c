@@ -204,12 +204,12 @@ void FunSetData( struct DrivingMark2 * xC,signed short data  ) {
 
 tFlagClassStructure THEZG = { FunGetFlg,FunSetFlg,FunGetData,FunSetData};
 
-__weak tFlagClassMember SysTargetState[] = {
-    {0, 0, 0},	//0
-    {1, 0, 0},	//1
-    {2, 0, 0},	//2
-    {3, 0, 0},	//3
-};
+//__weak tFlagClassMember SysTargetState[] = {
+//    {0, 0, 0},	//0
+//    {1, 0, 0},	//1
+//    {2, 0, 0},	//2
+//    {3, 0, 0},	//3
+//};
 
 /*==================================================================================================
 Name:

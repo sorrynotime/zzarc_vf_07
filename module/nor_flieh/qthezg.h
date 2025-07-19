@@ -4,7 +4,6 @@
 //INTERMITTENT_SERVICE 实现 延时一个时间 执行代码
 //使用 tTimeCounterCC 创建成员时,初始化变量为 { 0, 0 }
 //调用 INTERMITTENT_SERVICE( tTimeCounterCC x , 系统自增变量 , 需要延时的时间){}
-
 typedef struct {
 	unsigned long long LastSysTickMs;
 	unsigned char RunState;
@@ -76,7 +75,7 @@ typedef struct DrivingMark{
 }tFlagClassStructure;
 
 extern tFlagClassStructure THEZG;
-extern tFlagClassMember SysTargetState[]; //有4个标志成员,可重定义
+//extern tFlagClassMember SysTargetState[]; //有4个标志成员,可重定义
 
 //tExpSim Simulation_Mem_G = {0,1,0.05,0.92, &sActualExpected}; 0.05 可以换为0.02 ,跟踪变慢
 //整数型数据变动惯性模拟函数

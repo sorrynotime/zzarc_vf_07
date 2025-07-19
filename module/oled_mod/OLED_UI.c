@@ -1520,6 +1520,9 @@ void OLED_UI_MainLoop(void){
 	//清屏
 	OLED_Clear();
 
+//	OLED_ShowNum(2, 2, 10086, 5, 8);
+	
+//	OLED_ShowString(20,20,"12ABC",OLED_8X16_HALF);
 	//移动菜单元素
 	MoveMenuElements();
 
@@ -1545,6 +1548,7 @@ void OLED_UI_MainLoop(void){
  * @return 无
  */
 void OLED_UI_InterruptHandler(void){
+	
 	// 获取当前屏幕刷新率
     GetFPS();
     

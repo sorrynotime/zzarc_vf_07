@@ -76,31 +76,31 @@ extern uint8_t OLED_DisplayBuf[OLED_HEIGHT/8][OLED_WIDTH];
 
 /***********有关光标类型的宏***********/
 #define REVERSE_RECTANGLE 				(0)			//矩形反色
-#define REVERSE_ROUNDRECTANGLE 		(1)			//圆角矩形反色
-#define HOLLOW_RECTANGLE 					(2)			//空心矩形
+#define REVERSE_ROUNDRECTANGLE 		    (1)			//圆角矩形反色
+#define HOLLOW_RECTANGLE 				(2)			//空心矩形
 #define HOLLOW_ROUNDRECTANGLE 			(3)			//空心圆角矩形
-#define REVERSE_BLOCK						(4)			//下划线
-#define NOT_SHOW							(5)			//不显示光标
+#define REVERSE_BLOCK					(4)			//下划线
+#define NOT_SHOW						(5)			//不显示光标
 
 /***********关于UI字体大小的宏***********/
-#define OLED_UI_FONT_8	   		 (8)
+#define OLED_UI_FONT_8	   		 	(8)
 #define OLED_UI_FONT_12			  	(12)
 #define OLED_UI_FONT_16		  		(16)
 #define OLED_UI_FONT_20		  		(20)
 
-#define CHINESE						(0)			//中文
-#define ASCII						(1)			//ASCII
+#define CHINESE						(0)				//中文
+#define ASCII						(1)				//ASCII
 /***********关于显示模式的宏***********/
-#define DARKMODE						true			//深色模式
-#define LIGHTMODE						false			//浅色模式
+#define DARKMODE					true			//深色模式
+#define LIGHTMODE					false			//浅色模式
 
 
 
 /***********关于互斥锁或者标志位的宏***********/
-#define FLAGEND			  	      (0)
-#define FLAGSTART		      (1)
-#define ENTER_FLAGSTART	   		      (1)
-#define BACK_FLAGSTART		      (2)
+#define FLAGEND			  	      	(0)
+#define FLAGSTART		      		(1)
+#define ENTER_FLAGSTART	   		    (1)
+#define BACK_FLAGSTART		      	(2)
 
 
 /************关于菜单结构体当中关于菜单区域的宏***********/
@@ -117,15 +117,15 @@ extern uint8_t OLED_DisplayBuf[OLED_HEIGHT/8][OLED_WIDTH];
 
 
 /*********************关于动画类型的宏********************** */
-#define UNLINEAR 			      (0)
-#define PID_CURVE     	 	      (1)
+#define UNLINEAR 			        (0)
+#define PID_CURVE     	 	        (1)
 
 /*********************关于窗口类型的宏********************** */
 #define WINDOW_RECTANGLE			(0)			//矩形窗口
 #define WINDOW_ROUNDRECTANGLE		(1)			//圆角矩形窗口
 
 /*********************关于窗口数据类型的宏* ***************/
-#define WINDOW_DATA_STYLE_NONE	    (-1)			//空
+#define WINDOW_DATA_STYLE_NONE	    (-1)		//空
 #define WINDOW_DATA_STYLE_FLOAT		(0)			//浮点型数据
 #define WINDOW_DATA_STYLE_INT		(1)			//整型数据
 
@@ -348,7 +348,7 @@ void SetCursorZero(void);
 void OLED_UI_CreateWindow(MenuWindow* window);
 void RunFadeOut(void);
 void MoveMenuElements(void);
-void OLED_UI_MainLoop(void);
+//void OLED_UI_MainLoop(void);
 void OLED_UI_InterruptHandler(void);     
 
 

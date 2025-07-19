@@ -1,5 +1,5 @@
-zzarc_vf_07/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
+zzarc_vf_07/system_bsp.o: ..\..\bsp\system_bsp.c ..\..\bsp\system_bsp.h \
+  ..\Core\Inc\main.h ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h \
@@ -31,8 +31,6 @@ zzarc_vf_07/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
-  ..\Core\Inc\dma.h ..\Core\Inc\main.h ..\Core\Inc\spi.h \
-  ..\Core\Inc\tim.h ..\Core\Inc\gpio.h ..\..\bsp\system_bsp.h \
   ..\..\module\nor_flieh\qthezg.h ..\..\module\oled_mod\OLED_UI.h \
   ..\..\bsp\oled_driver\OLED_UI_Driver.h ..\..\module\oled_mod\OLED.h \
   ..\..\bsp\oled_driver\OLED_Driver.h \

@@ -236,11 +236,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* Prevent unused argument(s) compilation warning */
 	UNUSED(htim);
 
-	// 判断是定时器3发生的中断
+	// 判断是定时器14发生的中断
 	if(htim->Instance == TIM14)
 	{
 		TIM14_Cnt1++;
-		OLED_UI_InterruptHandler();
+//		OLED_UI_InterruptHandler();
 	}
 
 }

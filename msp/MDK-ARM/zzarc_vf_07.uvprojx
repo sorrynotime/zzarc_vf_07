@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../../app/oled_app;../../bsp/oled_driver;../../module/oled_mod;../../resource/oled_res;../../module/nor_flieh</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../../app/oled_app;../../bsp/oled_driver;../../module/oled_mod;../../resource/oled_res;../../module/nor_flieh;..\..\bsp;..\..\module\nor_flieh</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -404,6 +404,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\module\oled_mod\OLED_UI.c</FilePath>
             </File>
+            <File>
+              <FileName>qthezg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\module\nor_fliec\qthezg.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -418,6 +423,11 @@
               <FileName>OLED_UI_Driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\bsp\oled_driver\OLED_UI_Driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>system_bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\system_bsp.c</FilePath>
             </File>
           </Files>
         </Group>

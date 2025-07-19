@@ -309,7 +309,7 @@ void OLED_ShowImage(int16_t X, int16_t Y, uint16_t Width, uint16_t Height, const
   * 参    数：FontSize 指定字体大小
   *           范围：OLED_8X16_HALF		宽8像素，高16像素
   *                 OLED_6X8_HALF		宽6像素，高8像素
-  *                  OLED_7X12_HALF		宽7像素，高12像素
+  *                 OLED_7X12_HALF		宽7像素，高12像素
   *                 OLED_10X20_HALF		宽10像素，高20像素
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
@@ -344,10 +344,10 @@ void OLED_ShowChar(int16_t X, int16_t Y, char Char, uint8_t FontSize)
   * 参    数：Number 指定要显示的数字，范围：负数~4294967295
   * 参    数：Length 指定数字的长度，范围：负数~10
   * 参    数：FontSize 指定字体大小
-  *           范围：OLED_8X16		宽8像素，高16像素
-  *                 OLED_6X8		宽6像素，高8像素
-  * 				 OLED_7X12		宽7像素，高12像素
-  *                 OLED_10X20		宽10像素，高20像素
+  *           范围：OLED_8X16_HALF		宽8像素，高16像素
+  *                 OLED_6X8_HALF		宽6像素，高8像素
+  * 				OLED_7X12_HALF		宽7像素，高12像素
+  *                 OLED_10X20_HALF		宽10像素，高20像素
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
@@ -370,10 +370,10 @@ void OLED_ShowNum(int16_t X, int16_t Y, uint32_t Number, uint8_t Length, uint8_t
   * 参    数：Number 指定要显示的数字，范围：-2147483648~2147483647
   * 参    数：Length 指定数字的长度，范围：负数~10
   * 参    数：FontSize 指定字体大小
-  *           范围：OLED_8X16		宽8像素，高16像素
-  *                 OLED_6X8		宽6像素，高8像素
-  * 				 OLED_7X12		宽7像素，高12像素
-  *                 OLED_F10x20		宽10像素，高20像素
+  *           范围：OLED_8X16_HALF		宽8像素，高16像素
+  *                 OLED_6X8_HALF		宽6像素，高8像素
+  * 				OLED_7X12_HALF		宽7像素，高12像素
+  *                 OLED_10X20_HALF		宽10像素，高20像素
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
@@ -409,10 +409,10 @@ void OLED_ShowSignedNum(int16_t X, int16_t Y, int32_t Number, uint8_t Length, ui
   * 参    数：Number 指定要显示的数字，范围：0x00000000~0xFFFFFFFF
   * 参    数：Length 指定数字的长度，范围：负数~8
   * 参    数：FontSize 指定字体大小
-  *           范围：OLED_8X16		宽8像素，高16像素
-  *                 OLED_6X8		宽6像素，高8像素
-  * 				 OLED_7X12		宽7像素，高12像素
-  *                 OLED_10X20		宽10像素，高20像素
+  *           范围：OLED_8X16_HALF		宽8像素，高16像素
+  *                 OLED_6X8_HALF		宽6像素，高8像素
+  * 				OLED_7X12_HALF		宽7像素，高12像素
+  *                 OLED_10X20_HALF		宽10像素，高20像素
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
@@ -448,10 +448,10 @@ void OLED_ShowHexNum(int16_t X, int16_t Y, uint32_t Number, uint8_t Length, uint
   * 参    数：Number 指定要显示的数字，范围：0x00000000~0xFFFFFFFF
   * 参    数：Length 指定数字的长度，范围：负数~16
   * 参    数：FontSize 指定字体大小
-  *           范围：OLED_8X16		宽8像素，高16像素
-  *                 OLED_6X8		宽6像素，高8像素
-  * 				 OLED_7X12		宽7像素，高12像素
-  *                 OLED_10X20		宽10像素，高20像素
+  *           范围：OLED_8X16_HALF		宽8像素，高16像素
+  *                 OLED_6X8_HALF		宽6像素，高8像素
+  * 				OLED_7X12_HALF		宽7像素，高12像素
+  *                 OLED_10X20_HALF		宽10像素，高20像素
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
@@ -475,10 +475,10 @@ void OLED_ShowBinNum(int16_t X, int16_t Y, uint32_t Number, uint8_t Length, uint
   * 参    数：IntLength 指定数字的整数位长度，范围：0~10
   * 参    数：FraLength 指定数字的小数位长度，范围：0~9，小数进行四舍五入显示
   * 参    数：FontSize 指定字体大小
-  *           范围：OLED_8X16		宽8像素，高16像素
-  *                 OLED_6X8		宽6像素，高8像素
-  * 				 OLED_7X12		宽7像素，高12像素
-  *                 OLED_10X20		宽10像素，高20像素
+  *           范围：OLED_8X16_HALF		宽8像素，高16像素
+  *                 OLED_6X8_HALF		宽6像素，高8像素
+  * 				OLED_7X12_HALF		宽7像素，高12像素
+  *                 OLED_10X20_HALF		宽10像素，高20像素
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
@@ -521,10 +521,10 @@ void OLED_ShowFloatNum(int16_t X, int16_t Y, double Number, uint8_t IntLength, u
   * 参    数：Y 指定数字左上角的纵坐标，范围：0~OLED_HEIGHT-1
   * 参    数：String 指定要显示的字符串，范围：ASCII码可见字符组成的字符串
   * 参    数：FontSize 指定字体大小
-  *           范围：OLED_8X16		宽8像素，高16像素
-  *                 OLED_6X8		宽6像素，高8像素
-  * 				 OLED_7X12		宽7像素，高12像素
-  *                 OLED_10X20		宽10像素，高20像素
+  *           范围：OLED_8X16_HALF		宽8像素，高16像素
+  *                 OLED_6X8_HALF		宽6像素，高8像素
+  * 				OLED_7X12_HALF		宽7像素，高12像素
+  *                 OLED_10X20_HALF		宽10像素，高20像素
   * 返 回 值：无
   * 说    明：调用此函数后，要想真正地呈现在屏幕上，还需调用更新函数
   */
@@ -631,10 +631,10 @@ void OLED_ShowChinese(int16_t X, int16_t Y, char *Chinese, uint8_t FontSize)
   * 参    数：X 指定格式化字符串左上角的横坐标，范围：0~OLED_WIDTH-1
   * 参    数：Y 指定格式化字符串左上角的纵坐标，范围：0~OLED_HEIGHT-1
   * 参    数：FontSize 指定字体大小
-  *           范围：OLED_8X16		宽8像素，高16像素
-  *                 OLED_6X8		宽6像素，高8像素
-  * 				OLED_7X12		宽7像素，高12像素
-  *                 OLED_10X20		宽10像素，高20像素
+  *           范围：OLED_8X16_HALF		宽8像素，高16像素
+  *                 OLED_6X8_HALF		宽6像素，高8像素
+  * 				OLED_7X12_HALF		宽7像素，高12像素
+  *                 OLED_10X20_HALF		宽10像素，高20像素
   * 参    数：format 指定要显示的格式化字符串，范围：ASCII码可见字符组成的字符串
   * 参    数：... 格式化字符串参数列表
   * 返 回 值：无

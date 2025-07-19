@@ -359,19 +359,19 @@ MenuItem LongListMenuItems[] = {
 };
 
 MenuItem SmallAreaMenuItems[] = {
-	{.General_item_text = "[返回]",.General_callback = OLED_UI_Back,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = "中文文本",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = "English Text",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = "1234567890",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = "[返回]",			.General_callback = OLED_UI_Back,	.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = "中文文本",		.General_callback = NULL,			.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = "English Text",	.General_callback = NULL,			.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = "1234567890",		.General_callback = NULL,			.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
 	{.General_item_text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
 	{.General_item_text = "abcdefghijklmnopqrstuvwxyz",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = ",.[]!@#$+-/^&*()",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = "中文文本",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = "English Text",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = "1234567890",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = "abcdefghijklmnopqrstuvwxyz",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
-	{.General_item_text = ",.[]!@#$+-/^&*()",.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = ",.[]!@#$+-/^&*()",	.General_callback = NULL,		.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = "中文文本",			.General_callback = NULL,		.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = "English Text",		.General_callback = NULL,		.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = "1234567890",			.General_callback = NULL,		.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",	.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = "abcdefghijklmnopqrstuvwxyz",	.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
+	{.General_item_text = ",.[]!@#$+-/^&*()",			.General_callback = NULL,.General_SubMenuPage = NULL,.List_BoolRadioBox = NULL},
 	{.General_item_text = NULL},/*最后一项的General_item_text置为NULL，表示该项为分割线*/
 };
 
@@ -379,9 +379,9 @@ MenuItem SmallAreaMenuItems[] = {
 
 MenuPage MainMenuPage = {
 	//通用属性，必填
-	.General_MenuType = MENU_TYPE_TILES,  		 //菜单类型为磁贴类型
-	.General_CursorStyle = NOT_SHOW,			 //光标类型
-	.General_FontSize = OLED_UI_FONT_16,			//字高
+	.General_MenuType = MENU_TYPE_TILES,  		//菜单类型为磁贴类型
+	.General_CursorStyle = NOT_SHOW,			//光标类型
+	.General_FontSize = OLED_UI_FONT_16,		//字高
 	.General_ParentMenuPage = NULL,				//由于这是根菜单，所以父菜单为NULL
 	.General_LineSpace = 5,						//磁贴间距 单位：像素（对于磁贴类型菜单，此值表示每个磁贴之间的间距，对于列表类型菜单，此值表示行间距）
 	.General_MoveStyle = UNLINEAR,				//移动方式

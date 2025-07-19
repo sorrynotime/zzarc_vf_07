@@ -25,6 +25,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "system_bsp.h"
+
 #include "OLED_UI.h"
 #include "OLED_UI_MenuData.h"
 /* USER CODE END Includes */
@@ -92,14 +94,16 @@ int main(void)
   MX_SPI2_Init();
   MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
-	OLED_UI_Init(&MainMenuPage);
+	system_bsp_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	system_bsp_test_loop();
+
   while (1)
   {
-	OLED_UI_MainLoop();
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
