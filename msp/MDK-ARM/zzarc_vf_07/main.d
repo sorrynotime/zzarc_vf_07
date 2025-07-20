@@ -31,14 +31,14 @@ zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+zzarc_vf_07\main.o: ../../bsp/key_bsp.h
+zzarc_vf_07\main.o: ../../module/nor_flieh/key_mod.h
 zzarc_vf_07\main.o: ../Core/Inc/dma.h
 zzarc_vf_07\main.o: ../Core/Inc/spi.h
 zzarc_vf_07\main.o: ../Core/Inc/tim.h
 zzarc_vf_07\main.o: ../Core/Inc/gpio.h
 zzarc_vf_07\main.o: ../../bsp/system_bsp.h
 zzarc_vf_07\main.o: ../../module/nor_flieh/qthezg.h
-zzarc_vf_07\main.o: ../../bsp/key_bsp.h
-zzarc_vf_07\main.o: ../../module/nor_flieh/key_mod.h
 zzarc_vf_07\main.o: ../../module/oled_mod/OLED_UI.h
 zzarc_vf_07\main.o: ../../bsp/oled_driver/OLED_UI_Driver.h
 zzarc_vf_07\main.o: ../../module/oled_mod/OLED.h

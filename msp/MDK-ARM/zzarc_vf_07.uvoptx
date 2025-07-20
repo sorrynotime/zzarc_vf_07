@@ -184,6 +184,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>ccccc</ItemText>
         </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>zzarc_vf07</ItemText>
+        </Ww>
       </WatchWindow1>
       <Tracepoint>
         <THDelay>0</THDelay>

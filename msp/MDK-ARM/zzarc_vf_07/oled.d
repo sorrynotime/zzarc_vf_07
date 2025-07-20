@@ -33,6 +33,8 @@ zzarc_vf_07\oled.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 zzarc_vf_07\oled.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 zzarc_vf_07\oled.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 zzarc_vf_07\oled.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+zzarc_vf_07\oled.o: ../../bsp/key_bsp.h
+zzarc_vf_07\oled.o: ../../module/nor_flieh/key_mod.h
 zzarc_vf_07\oled.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 zzarc_vf_07\oled.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 zzarc_vf_07\oled.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

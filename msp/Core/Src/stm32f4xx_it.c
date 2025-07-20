@@ -240,7 +240,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	if(htim->Instance == TIM14)
 	{
 		TIM14_Cnt1++;
-//		OLED_UI_InterruptHandler();
+		OLED_UI_InterruptHandler();
 	}
 
 }

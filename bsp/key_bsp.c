@@ -2,6 +2,8 @@
 #include "main.h"
 #include "gpio.h"
 
+#include "system_bsp.h"
+
 tUniversalButton vf07_key1;
 tUniversalButton vf07_key2;
 tUniversalButton vf07_key3;
@@ -27,7 +29,7 @@ void Key1Handler( eKeyState xKeyValue){
 	
 	switch( xKeyValue){
 		case eKeyO:{
-			aaaaa++;
+			zzarc_vf07.oled_back_key = 1;
 		}break;
 		case eKeyOO:{
 			aaaaa--;
@@ -45,7 +47,7 @@ void Key2Handler( eKeyState xKeyValue){
 	
 	switch( xKeyValue){
 		case eKeyO:{
-			bbbbb++;
+			zzarc_vf07.oled_enter_key = 1;
 		}break;
 		case eKeyOO:{
 			bbbbb--;
@@ -63,10 +65,10 @@ void Key3Handler( eKeyState xKeyValue){
 	
 	switch( xKeyValue){
 		case eKeyO:{
-			ccccc++;
+			zzarc_vf07.oled_up_key = 1;
 		}break;
 		case eKeyOO:{
-			ccccc--;
+//			zzarc_vf07.oled_down_key = 1;
 		}break;
 		case eKeyOX:{
 			

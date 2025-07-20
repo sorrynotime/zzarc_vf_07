@@ -34,3 +34,16 @@ zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 zzarc_vf_07\key_bsp.o: ../Core/Inc/gpio.h
+zzarc_vf_07\key_bsp.o: ..\..\bsp\system_bsp.h
+zzarc_vf_07\key_bsp.o: ../../module/nor_flieh/qthezg.h
+zzarc_vf_07\key_bsp.o: ../../module/oled_mod/OLED_UI.h
+zzarc_vf_07\key_bsp.o: ../../bsp/oled_driver/OLED_UI_Driver.h
+zzarc_vf_07\key_bsp.o: ../../module/oled_mod/OLED.h
+zzarc_vf_07\key_bsp.o: ../../bsp/oled_driver/OLED_Driver.h
+zzarc_vf_07\key_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+zzarc_vf_07\key_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+zzarc_vf_07\key_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+zzarc_vf_07\key_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+zzarc_vf_07\key_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+zzarc_vf_07\key_bsp.o: ../../resource/oled_res/OLED_Fonts.h
+zzarc_vf_07\key_bsp.o: ../../app/oled_app/OLED_UI_MenuData.h

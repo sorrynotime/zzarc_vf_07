@@ -32,9 +32,9 @@ zzarc_vf_07\system_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_
 zzarc_vf_07\system_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 zzarc_vf_07\system_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 zzarc_vf_07\system_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-zzarc_vf_07\system_bsp.o: ../../module/nor_flieh/qthezg.h
-zzarc_vf_07\system_bsp.o: ..\..\bsp\key_bsp.h
+zzarc_vf_07\system_bsp.o: ../../bsp/key_bsp.h
 zzarc_vf_07\system_bsp.o: ../../module/nor_flieh/key_mod.h
+zzarc_vf_07\system_bsp.o: ../../module/nor_flieh/qthezg.h
 zzarc_vf_07\system_bsp.o: ../../module/oled_mod/OLED_UI.h
 zzarc_vf_07\system_bsp.o: ../../bsp/oled_driver/OLED_UI_Driver.h
 zzarc_vf_07\system_bsp.o: ../../module/oled_mod/OLED.h

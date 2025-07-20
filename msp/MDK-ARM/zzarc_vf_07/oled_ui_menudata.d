@@ -2,6 +2,7 @@ zzarc_vf_07\oled_ui_menudata.o: ..\..\app\oled_app\OLED_UI_MenuData.c
 zzarc_vf_07\oled_ui_menudata.o: ..\..\app\oled_app\OLED_UI_MenuData.h
 zzarc_vf_07\oled_ui_menudata.o: ../../module/oled_mod/OLED_UI.h
 zzarc_vf_07\oled_ui_menudata.o: ../../bsp/oled_driver/OLED_UI_Driver.h
+zzarc_vf_07\oled_ui_menudata.o: ../Core/Inc/main.h
 zzarc_vf_07\oled_ui_menudata.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 zzarc_vf_07\oled_ui_menudata.o: ../Core/Inc/stm32f4xx_hal_conf.h
 zzarc_vf_07\oled_ui_menudata.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
@@ -33,9 +34,10 @@ zzarc_vf_07\oled_ui_menudata.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 zzarc_vf_07\oled_ui_menudata.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 zzarc_vf_07\oled_ui_menudata.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 zzarc_vf_07\oled_ui_menudata.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+zzarc_vf_07\oled_ui_menudata.o: ../../bsp/key_bsp.h
+zzarc_vf_07\oled_ui_menudata.o: ../../module/nor_flieh/key_mod.h
 zzarc_vf_07\oled_ui_menudata.o: ../../module/oled_mod/OLED.h
 zzarc_vf_07\oled_ui_menudata.o: ../../bsp/oled_driver/OLED_Driver.h
-zzarc_vf_07\oled_ui_menudata.o: ../Core/Inc/main.h
 zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

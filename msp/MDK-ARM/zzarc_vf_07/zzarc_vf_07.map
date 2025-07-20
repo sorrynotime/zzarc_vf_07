@@ -197,6 +197,7 @@ Section Cross References
     oled_ui.o(i.OLED_KeyAndEncoderRecord) refers to oled_ui.o(i.GetMenuItemNum) for GetMenuItemNum
     oled_ui.o(i.OLED_KeyAndEncoderRecord) refers to oled_ui_driver.o(i.Encoder_Get) for Encoder_Get
     oled_ui.o(i.OLED_KeyAndEncoderRecord) refers to oled_ui.o(.data) for OLED_UI_Key
+    oled_ui.o(i.OLED_KeyAndEncoderRecord) refers to system_bsp.o(.bss) for zzarc_vf07
     oled_ui.o(i.OLED_UI_Back) refers to oled_ui.o(i.BackEventMenuItem) for BackEventMenuItem
     oled_ui.o(i.OLED_UI_CreateWindow) refers to oled_ui.o(.data) for OLED_SustainCounter
     oled_ui.o(i.OLED_UI_CreateWindow) refers to oled_ui.o(.bss) for OLED_UI_ProbWidth
@@ -343,7 +344,6 @@ Section Cross References
     system_bsp.o(i.system_bsp_test_loop) refers to oled_ui.o(i.OLED_UI_MainLoop) for OLED_UI_MainLoop
     system_bsp.o(i.system_bsp_test_loop) refers to system_bsp.o(.bss) for systick_counter_8ms
     system_bsp.o(i.system_bsp_test_loop) refers to key_bsp.o(.bss) for vf07_key1
-    system_bsp.o(i.system_bsp_test_loop) refers to system_bsp.o(.data) for zzarc_vf07
     key_bsp.o(i.BspKeyInit) refers to stm32f4xx_hal.o(i.HAL_GetTick) for HAL_GetTick
     key_bsp.o(i.BspKeyInstantiation) refers to key_bsp.o(i.BspKeyInit) for BspKeyInit
     key_bsp.o(i.BspKeyInstantiation) refers to key_bsp.o(i.GetKey1Gpio) for GetKey1Gpio
@@ -353,9 +353,11 @@ Section Cross References
     key_bsp.o(i.GetKey1Gpio) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
     key_bsp.o(i.GetKey2Gpio) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
     key_bsp.o(i.GetKey3Gpio) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
+    key_bsp.o(i.Key1Handler) refers to system_bsp.o(.bss) for zzarc_vf07
     key_bsp.o(i.Key1Handler) refers to key_bsp.o(.data) for aaaaa
+    key_bsp.o(i.Key2Handler) refers to system_bsp.o(.bss) for zzarc_vf07
     key_bsp.o(i.Key2Handler) refers to key_bsp.o(.data) for bbbbb
-    key_bsp.o(i.Key3Handler) refers to key_bsp.o(.data) for ccccc
+    key_bsp.o(i.Key3Handler) refers to system_bsp.o(.bss) for zzarc_vf07
     startup_stm32f407xx.o(RESET) refers to startup_stm32f407xx.o(STACK) for __initial_sp
     startup_stm32f407xx.o(RESET) refers to startup_stm32f407xx.o(.text) for Reset_Handler
     startup_stm32f407xx.o(RESET) refers to stm32f4xx_it.o(i.NMI_Handler) for NMI_Handler
@@ -407,6 +409,7 @@ Section Cross References
     tim.o(i.MX_TIM14_Init) refers to tim.o(.bss) for htim14
     stm32f4xx_it.o(i.DMA1_Stream4_IRQHandler) refers to stm32f4xx_hal_dma.o(i.HAL_DMA_IRQHandler) for HAL_DMA_IRQHandler
     stm32f4xx_it.o(i.DMA1_Stream4_IRQHandler) refers to spi.o(.bss) for hdma_spi2_tx
+    stm32f4xx_it.o(i.HAL_TIM_PeriodElapsedCallback) refers to oled_ui.o(i.OLED_UI_InterruptHandler) for OLED_UI_InterruptHandler
     stm32f4xx_it.o(i.HAL_TIM_PeriodElapsedCallback) refers to stm32f4xx_it.o(.data) for TIM14_Cnt1
     stm32f4xx_it.o(i.SysTick_Handler) refers to stm32f4xx_hal.o(i.HAL_IncTick) for HAL_IncTick
     stm32f4xx_it.o(i.TIM8_TRG_COM_TIM14_IRQHandler) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_IRQHandler) for HAL_TIM_IRQHandler
@@ -1023,18 +1026,6 @@ Removing Unused input sections from the image.
     Removing oled_ui.o(.rev16_text), (4 bytes).
     Removing oled_ui.o(.revsh_text), (4 bytes).
     Removing oled_ui.o(.rrx_text), (6 bytes).
-    Removing oled_ui.o(i.EnterEventMenuItem), (124 bytes).
-    Removing oled_ui.o(i.GetCurrentMenuPageMaxSlotNum), (116 bytes).
-    Removing oled_ui.o(i.GetEnterFlag), (20 bytes).
-    Removing oled_ui.o(i.GetFPS), (48 bytes).
-    Removing oled_ui.o(i.GetFadeoutFlag), (20 bytes).
-    Removing oled_ui.o(i.MenuItemsMoveDown), (56 bytes).
-    Removing oled_ui.o(i.MenuItemsMoveLeft), (56 bytes).
-    Removing oled_ui.o(i.MenuItemsMoveRight), (56 bytes).
-    Removing oled_ui.o(i.MenuItemsMoveUp), (56 bytes).
-    Removing oled_ui.o(i.OLED_KeyAndEncoderRecord), (556 bytes).
-    Removing oled_ui.o(i.OLED_UI_InterruptHandler), (976 bytes).
-    Removing oled_ui.o(i.SetEnterFlag), (20 bytes).
     Removing qthezg.o(i.CosmicSuperInvincibleMagicFunction), (68 bytes).
     Removing qthezg.o(i.DataFirstOrderFilter), (108 bytes).
     Removing qthezg.o(i.Expected_Simulation), (154 bytes).
@@ -1058,7 +1049,6 @@ Removing Unused input sections from the image.
     Removing oled_ui_driver.o(.rrx_text), (6 bytes).
     Removing oled_ui_driver.o(i.Delay_ms), (12 bytes).
     Removing oled_ui_driver.o(i.Delay_s), (24 bytes).
-    Removing oled_ui_driver.o(i.Encoder_Get), (4 bytes).
     Removing oled_ui_driver.o(i.Encoder_Init), (2 bytes).
     Removing system_bsp.o(.rev16_text), (4 bytes).
     Removing system_bsp.o(.revsh_text), (4 bytes).
@@ -1492,7 +1482,7 @@ Removing Unused input sections from the image.
     Removing dfixui.o(.text), (50 bytes).
     Removing drnd.o(.text), (136 bytes).
 
-496 unused section(s) (total 55992 bytes) removed from the image.
+483 unused section(s) (total 53884 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1527,45 +1517,45 @@ Image Symbol Table
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c 0x00000000   Number         0  stm32f4xx_hal_tim.o ABSOLUTE
     ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c 0x00000000   Number         0  stm32f4xx_hal_tim_ex.o ABSOLUTE
     ../clib/../cmprslib/zerorunl2.c          0x00000000   Number         0  __dczerorl2.o ABSOLUTE
-    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/stdio/fputc.c           0x00000000   Number         0  fputc.o ABSOLUTE
     ../clib/microlib/stdio/semi.s            0x00000000   Number         0  semi.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/string/strcmp.c         0x00000000   Number         0  strcmp.o ABSOLUTE
-    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusesemip.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusesemip.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpcmp4.c               0x00000000   Number         0  dcmp4.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
-    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
@@ -1691,169 +1681,182 @@ Image Symbol Table
     i.EmptyWindow                            0x08001564   Section        0  oled_ui_menudata.o(i.EmptyWindow)
     i.Encoder_Disable                        0x08001574   Section        0  oled_ui_driver.o(i.Encoder_Disable)
     i.Encoder_Enable                         0x08001576   Section        0  oled_ui_driver.o(i.Encoder_Enable)
-    i.Error_Handler                          0x08001578   Section        0  main.o(i.Error_Handler)
-    i.FunGetData                             0x0800157e   Section        0  qthezg.o(i.FunGetData)
-    i.FunGetFlg                              0x08001586   Section        0  qthezg.o(i.FunGetFlg)
-    i.FunSetData                             0x0800158c   Section        0  qthezg.o(i.FunSetData)
-    i.FunSetFlg                              0x08001590   Section        0  qthezg.o(i.FunSetFlg)
-    i.GetKey1Gpio                            0x08001594   Section        0  key_bsp.o(i.GetKey1Gpio)
-    i.GetKey2Gpio                            0x080015a4   Section        0  key_bsp.o(i.GetKey2Gpio)
-    i.GetKey3Gpio                            0x080015b4   Section        0  key_bsp.o(i.GetKey3Gpio)
-    i.GetMenuItemNum                         0x080015c8   Section        0  oled_ui.o(i.GetMenuItemNum)
-    i.GetOLED_Font                           0x080015e0   Section        0  oled_ui.o(i.GetOLED_Font)
-    i.GetWindowDataStyle                     0x08001624   Section        0  oled_ui.o(i.GetWindowDataStyle)
-    i.HAL_DMA_IRQHandler                     0x08001648   Section        0  stm32f4xx_hal_dma.o(i.HAL_DMA_IRQHandler)
-    i.HAL_DMA_Init                           0x08001888   Section        0  stm32f4xx_hal_dma.o(i.HAL_DMA_Init)
-    i.HAL_GPIO_Init                          0x08001974   Section        0  stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init)
-    i.HAL_GPIO_ReadPin                       0x08001b68   Section        0  stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin)
-    i.HAL_GPIO_WritePin                      0x08001b78   Section        0  stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin)
-    i.HAL_GetTick                            0x08001b84   Section        0  stm32f4xx_hal.o(i.HAL_GetTick)
-    i.HAL_IncTick                            0x08001b90   Section        0  stm32f4xx_hal.o(i.HAL_IncTick)
-    i.HAL_Init                               0x08001ba8   Section        0  stm32f4xx_hal.o(i.HAL_Init)
-    i.HAL_InitTick                           0x08001be4   Section        0  stm32f4xx_hal.o(i.HAL_InitTick)
-    i.HAL_MspInit                            0x08001c30   Section        0  stm32f4xx_hal_msp.o(i.HAL_MspInit)
-    i.HAL_NVIC_EnableIRQ                     0x08001c78   Section        0  stm32f4xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ)
-    i.HAL_NVIC_SetPriority                   0x08001c98   Section        0  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriority)
-    i.HAL_NVIC_SetPriorityGrouping           0x08001d14   Section        0  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping)
-    i.HAL_RCC_ClockConfig                    0x08001d3c   Section        0  stm32f4xx_hal_rcc.o(i.HAL_RCC_ClockConfig)
-    i.HAL_RCC_GetSysClockFreq                0x08001ec0   Section        0  stm32f4xx_hal_rcc.o(i.HAL_RCC_GetSysClockFreq)
-    i.HAL_RCC_OscConfig                      0x08001f70   Section        0  stm32f4xx_hal_rcc.o(i.HAL_RCC_OscConfig)
-    i.HAL_SPI_Init                           0x08002410   Section        0  stm32f4xx_hal_spi.o(i.HAL_SPI_Init)
-    i.HAL_SPI_MspInit                        0x080024d8   Section        0  spi.o(i.HAL_SPI_MspInit)
-    i.HAL_SYSTICK_Config                     0x080025a8   Section        0  stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config)
-    i.HAL_TIMEx_BreakCallback                0x080025dc   Section        0  stm32f4xx_hal_tim_ex.o(i.HAL_TIMEx_BreakCallback)
-    i.HAL_TIMEx_CommutCallback               0x080025de   Section        0  stm32f4xx_hal_tim_ex.o(i.HAL_TIMEx_CommutCallback)
-    i.HAL_TIM_Base_Init                      0x080025e0   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_Base_Init)
-    i.HAL_TIM_Base_MspInit                   0x08002648   Section        0  tim.o(i.HAL_TIM_Base_MspInit)
-    i.HAL_TIM_Base_Start_IT                  0x08002690   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_Base_Start_IT)
-    i.HAL_TIM_IC_CaptureCallback             0x08002738   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_IC_CaptureCallback)
-    i.HAL_TIM_IRQHandler                     0x0800273a   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_IRQHandler)
-    i.HAL_TIM_OC_DelayElapsedCallback        0x080028d0   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_OC_DelayElapsedCallback)
-    i.HAL_TIM_PWM_PulseFinishedCallback      0x080028d2   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_PWM_PulseFinishedCallback)
-    i.HAL_TIM_PeriodElapsedCallback          0x080028d4   Section        0  stm32f4xx_it.o(i.HAL_TIM_PeriodElapsedCallback)
-    i.HAL_TIM_TriggerCallback                0x080028f0   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_TriggerCallback)
-    i.HardFault_Handler                      0x080028f2   Section        0  stm32f4xx_it.o(i.HardFault_Handler)
-    i.Key1Handler                            0x080028f8   Section        0  key_bsp.o(i.Key1Handler)
-    i.Key2Handler                            0x0800292c   Section        0  key_bsp.o(i.Key2Handler)
-    i.Key3Handler                            0x08002960   Section        0  key_bsp.o(i.Key3Handler)
-    i.KeyLoop                                0x08002994   Section        0  key_mod.o(i.KeyLoop)
-    i.KeyStateComparison                     0x08002aec   Section        0  key_mod.o(i.KeyStateComparison)
-    i.MX_DMA_Init                            0x08002b18   Section        0  dma.o(i.MX_DMA_Init)
-    i.MX_GPIO_Init                           0x08002b50   Section        0  gpio.o(i.MX_GPIO_Init)
-    i.MX_SPI2_Init                           0x08002c7c   Section        0  spi.o(i.MX_SPI2_Init)
-    i.MX_TIM14_Init                          0x08002cc0   Section        0  tim.o(i.MX_TIM14_Init)
-    i.MainAuxFunc                            0x08002cfc   Section        0  oled_ui_menudata.o(i.MainAuxFunc)
-    i.MemManage_Handler                      0x08002d80   Section        0  stm32f4xx_it.o(i.MemManage_Handler)
-    i.MoveMenuElements                       0x08002d84   Section        0  oled_ui.o(i.MoveMenuElements)
-    i.NMI_Handler                            0x08002e50   Section        0  stm32f4xx_it.o(i.NMI_Handler)
-    i.OLED_Brightness                        0x08002e54   Section        0  oled_driver.o(i.OLED_Brightness)
-    i.OLED_Clear                             0x08002e88   Section        0  oled.o(i.OLED_Clear)
-    i.OLED_ClearArea                         0x08002eb0   Section        0  oled.o(i.OLED_ClearArea)
-    i.OLED_DrawArc                           0x08002f88   Section        0  oled.o(i.OLED_DrawArc)
-    i.OLED_DrawLine                          0x08003200   Section        0  oled.o(i.OLED_DrawLine)
-    i.OLED_DrawPoint                         0x08003378   Section        0  oled.o(i.OLED_DrawPoint)
-    i.OLED_DrawRectangle                     0x080033cc   Section        0  oled.o(i.OLED_DrawRectangle)
-    i.OLED_DrawRoundedRectangle              0x08003520   Section        0  oled.o(i.OLED_DrawRoundedRectangle)
-    i.OLED_DrawWindow                        0x08003730   Section        0  oled_ui.o(i.OLED_DrawWindow)
-    i.OLED_Init                              0x08004060   Section        0  oled_driver.o(i.OLED_Init)
-    i.OLED_IsInAngle                         0x08004134   Section        0  oled.o(i.OLED_IsInAngle)
-    i.OLED_Printf                            0x080041d4   Section        0  oled.o(i.OLED_Printf)
-    i.OLED_PrintfMixArea                     0x08004206   Section        0  oled.o(i.OLED_PrintfMixArea)
-    i.OLED_ReverseArea                       0x0800424c   Section        0  oled.o(i.OLED_ReverseArea)
-    i.OLED_SetColorMode                      0x08004324   Section        0  oled_driver.o(i.OLED_SetColorMode)
-    i.OLED_SetCursor                         0x08004330   Section        0  oled_driver.o(i.OLED_SetCursor)
-    i.OLED_ShowChar                          0x08004354   Section        0  oled.o(i.OLED_ShowChar)
-    i.OLED_ShowCharArea                      0x080043f4   Section        0  oled.o(i.OLED_ShowCharArea)
-    i.OLED_ShowChineseArea                   0x080044bc   Section        0  oled.o(i.OLED_ShowChineseArea)
-    i.OLED_ShowImage                         0x080046d8   Section        0  oled.o(i.OLED_ShowImage)
-    i.OLED_ShowImageArea                     0x080048c8   Section        0  oled.o(i.OLED_ShowImageArea)
-    i.OLED_ShowMixStringArea                 0x08004a74   Section        0  oled.o(i.OLED_ShowMixStringArea)
-    i.OLED_ShowString                        0x08004af4   Section        0  oled.o(i.OLED_ShowString)
-    i.OLED_UI_Back                           0x08004b22   Section        0  oled_ui.o(i.OLED_UI_Back)
-    i.OLED_UI_CreateWindow                   0x08004b2c   Section        0  oled_ui.o(i.OLED_UI_CreateWindow)
-    i.OLED_UI_FadeOut_Masking                0x08004bc0   Section        0  oled_ui.o(i.OLED_UI_FadeOut_Masking)
-    i.OLED_UI_Init                           0x08004cc4   Section        0  oled_ui.o(i.OLED_UI_Init)
-    i.OLED_UI_MainLoop                       0x08004cdc   Section        0  oled_ui.o(i.OLED_UI_MainLoop)
-    i.OLED_UI_ShowFPS                        0x08004cf8   Section        0  oled_ui.o(i.OLED_UI_ShowFPS)
-    i.OLED_Update                            0x08004d30   Section        0  oled_driver.o(i.OLED_Update)
-    i.OLED_WriteDataArr                      0x08004d58   Section        0  oled_driver.o(i.OLED_WriteDataArr)
-    i.OLED_Write_CMD                         0x08004d88   Section        0  oled_driver.o(i.OLED_Write_CMD)
-    i.OLED_Write_DATA                        0x08004dd4   Section        0  oled_driver.o(i.OLED_Write_DATA)
-    i.PendSV_Handler                         0x08004e20   Section        0  stm32f4xx_it.o(i.PendSV_Handler)
-    i.PrintMenuElements                      0x08004e24   Section        0  oled_ui.o(i.PrintMenuElements)
-    i.ResetEnterFlag                         0x080056d0   Section        0  oled_ui.o(i.ResetEnterFlag)
-    i.ResetFadeOutFlag                       0x080056dc   Section        0  oled_ui.o(i.ResetFadeOutFlag)
-    i.ReverseCoordinate                      0x080056e8   Section        0  oled_ui.o(i.ReverseCoordinate)
-    i.RummyFunction                          0x08005834   Section        0  key_mod.o(i.RummyFunction)
-    i.RunCurrentCallBackFunction             0x08005854   Section        0  oled_ui.o(i.RunCurrentCallBackFunction)
-    i.RunFadeOut                             0x080058a4   Section        0  oled_ui.o(i.RunFadeOut)
-    i.SVC_Handler                            0x08005c08   Section        0  stm32f4xx_it.o(i.SVC_Handler)
-    i.SetCursorZero                          0x08005c0c   Section        0  oled_ui.o(i.SetCursorZero)
-    i.SetFadeOutFlag                         0x08005c58   Section        0  oled_ui.o(i.SetFadeOutFlag)
-    i.SetLineSplitZero                       0x08005c6c   Section        0  oled_ui.o(i.SetLineSplitZero)
-    i.SetTargetCursor                        0x08005ca0   Section        0  oled_ui.o(i.SetTargetCursor)
-    i.SetTargetMenuFrame                     0x08005f60   Section        0  oled_ui.o(i.SetTargetMenuFrame)
-    i.SetTargetProbWidth                     0x08005fa4   Section        0  oled_ui.o(i.SetTargetProbWidth)
-    i.SetTargetScrollBarHeight               0x08006094   Section        0  oled_ui.o(i.SetTargetScrollBarHeight)
-    i.SettingAuxFunc                         0x08006120   Section        0  oled_ui_menudata.o(i.SettingAuxFunc)
-    i.ShowFloatDataWindow                    0x08006294   Section        0  oled_ui_menudata.o(i.ShowFloatDataWindow)
-    i.ShowIntDataWindow                      0x080062a4   Section        0  oled_ui_menudata.o(i.ShowIntDataWindow)
-    i.ShowTextWindow                         0x080062b4   Section        0  oled_ui_menudata.o(i.ShowTextWindow)
-    i.SysTick_Handler                        0x080062c4   Section        0  stm32f4xx_it.o(i.SysTick_Handler)
-    i.SystemClock_Config                     0x080062cc   Section        0  main.o(i.SystemClock_Config)
-    i.SystemInit                             0x08006380   Section        0  system_stm32f4xx.o(i.SystemInit)
-    i.TIM8_TRG_COM_TIM14_IRQHandler          0x08006394   Section        0  stm32f4xx_it.o(i.TIM8_TRG_COM_TIM14_IRQHandler)
-    i.TIM_Base_SetConfig                     0x080063a4   Section        0  stm32f4xx_hal_tim.o(i.TIM_Base_SetConfig)
-    i.TimeCounter                            0x0800647c   Section        0  qthezg.o(i.TimeCounter)
-    i.UsageFault_Handler                     0x080064bc   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
-    i.__0vsnprintf                           0x080064c0   Section        0  printfa.o(i.__0vsnprintf)
-    i.__0vsprintf                            0x080064ec   Section        0  printfa.o(i.__0vsprintf)
-    i.__ARM_fpclassify                       0x08006510   Section        0  fpclassify.o(i.__ARM_fpclassify)
-    i.__NVIC_GetPriorityGrouping             0x08006540   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    __NVIC_GetPriorityGrouping               0x08006541   Thumb Code    10  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    i.__NVIC_SetPriority                     0x08006550   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x08006551   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__hardfp_atan                          0x08006578   Section        0  atan.o(i.__hardfp_atan)
-    i.__hardfp_atan2                         0x08006850   Section        0  atan2.o(i.__hardfp_atan2)
-    i.__hardfp_ceil                          0x08006a40   Section        0  ceil.o(i.__hardfp_ceil)
-    i.__hardfp_fabs                          0x08006b58   Section        0  fabs.o(i.__hardfp_fabs)
-    i.__hardfp_fmin                          0x08006b6c   Section        0  fmin.o(i.__hardfp_fmin)
-    i.__kernel_poly                          0x08006be0   Section        0  poly.o(i.__kernel_poly)
-    i.__mathlib_dbl_infnan                   0x08006cd8   Section        0  dunder.o(i.__mathlib_dbl_infnan)
-    i.__mathlib_dbl_infnan2                  0x08006cec   Section        0  dunder.o(i.__mathlib_dbl_infnan2)
-    i.__mathlib_dbl_underflow                0x08006d00   Section        0  dunder.o(i.__mathlib_dbl_underflow)
-    i.__scatterload_copy                     0x08006d20   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08006d2e   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08006d30   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._fp_digits                             0x08006d40   Section        0  printfa.o(i._fp_digits)
-    _fp_digits                               0x08006d41   Thumb Code   366  printfa.o(i._fp_digits)
-    i._printf_core                           0x08006ec4   Section        0  printfa.o(i._printf_core)
-    _printf_core                             0x08006ec5   Thumb Code  1744  printfa.o(i._printf_core)
-    i._printf_post_padding                   0x080075a0   Section        0  printfa.o(i._printf_post_padding)
-    _printf_post_padding                     0x080075a1   Thumb Code    36  printfa.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x080075c4   Section        0  printfa.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x080075c5   Thumb Code    46  printfa.o(i._printf_pre_padding)
-    i._snputc                                0x080075f2   Section        0  printfa.o(i._snputc)
-    _snputc                                  0x080075f3   Thumb Code    22  printfa.o(i._snputc)
-    i._sputc                                 0x08007608   Section        0  printfa.o(i._sputc)
-    _sputc                                   0x08007609   Thumb Code    10  printfa.o(i._sputc)
-    i.atan                                   0x08007612   Section        0  atan.o(i.atan)
-    i.fabs                                   0x08007622   Section        0  fabs.o(i.fabs)
-    i.main                                   0x0800763a   Section        0  main.o(i.main)
-    i.system_bsp_init                        0x08007660   Section        0  system_bsp.o(i.system_bsp_init)
-    i.system_bsp_test_loop                   0x08007674   Section        0  system_bsp.o(i.system_bsp_test_loop)
-    .constdata                               0x080076f8   Section       20  oled_ui.o(.constdata)
-    .constdata                               0x0800770c   Section    25000  oled_fonts.o(.constdata)
-    .constdata                               0x0800d8b4   Section        8  stm32f4xx_hal_dma.o(.constdata)
-    flagBitshiftOffset                       0x0800d8b4   Data           8  stm32f4xx_hal_dma.o(.constdata)
-    .constdata                               0x0800d8bc   Section       24  system_stm32f4xx.o(.constdata)
-    .constdata                               0x0800d8d8   Section      152  atan.o(.constdata)
-    atanhi                                   0x0800d8d8   Data          32  atan.o(.constdata)
-    atanlo                                   0x0800d8f8   Data          32  atan.o(.constdata)
-    aTodd                                    0x0800d918   Data          40  atan.o(.constdata)
-    aTeven                                   0x0800d940   Data          48  atan.o(.constdata)
-    .constdata                               0x0800d970   Section        8  qnan.o(.constdata)
-    .conststring                             0x0800d978   Section      946  oled_ui_menudata.o(.conststring)
+    i.Encoder_Get                            0x08001578   Section        0  oled_ui_driver.o(i.Encoder_Get)
+    i.EnterEventMenuItem                     0x0800157c   Section        0  oled_ui.o(i.EnterEventMenuItem)
+    i.Error_Handler                          0x080015f8   Section        0  main.o(i.Error_Handler)
+    i.FunGetData                             0x080015fe   Section        0  qthezg.o(i.FunGetData)
+    i.FunGetFlg                              0x08001606   Section        0  qthezg.o(i.FunGetFlg)
+    i.FunSetData                             0x0800160c   Section        0  qthezg.o(i.FunSetData)
+    i.FunSetFlg                              0x08001610   Section        0  qthezg.o(i.FunSetFlg)
+    i.GetCurrentMenuPageMaxSlotNum           0x08001614   Section        0  oled_ui.o(i.GetCurrentMenuPageMaxSlotNum)
+    i.GetEnterFlag                           0x08001688   Section        0  oled_ui.o(i.GetEnterFlag)
+    i.GetFPS                                 0x0800169c   Section        0  oled_ui.o(i.GetFPS)
+    i.GetFadeoutFlag                         0x080016cc   Section        0  oled_ui.o(i.GetFadeoutFlag)
+    i.GetKey1Gpio                            0x080016e0   Section        0  key_bsp.o(i.GetKey1Gpio)
+    i.GetKey2Gpio                            0x080016f0   Section        0  key_bsp.o(i.GetKey2Gpio)
+    i.GetKey3Gpio                            0x08001700   Section        0  key_bsp.o(i.GetKey3Gpio)
+    i.GetMenuItemNum                         0x08001714   Section        0  oled_ui.o(i.GetMenuItemNum)
+    i.GetOLED_Font                           0x0800172c   Section        0  oled_ui.o(i.GetOLED_Font)
+    i.GetWindowDataStyle                     0x08001770   Section        0  oled_ui.o(i.GetWindowDataStyle)
+    i.HAL_DMA_IRQHandler                     0x08001794   Section        0  stm32f4xx_hal_dma.o(i.HAL_DMA_IRQHandler)
+    i.HAL_DMA_Init                           0x080019d4   Section        0  stm32f4xx_hal_dma.o(i.HAL_DMA_Init)
+    i.HAL_GPIO_Init                          0x08001ac0   Section        0  stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init)
+    i.HAL_GPIO_ReadPin                       0x08001cb4   Section        0  stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin)
+    i.HAL_GPIO_WritePin                      0x08001cc4   Section        0  stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin)
+    i.HAL_GetTick                            0x08001cd0   Section        0  stm32f4xx_hal.o(i.HAL_GetTick)
+    i.HAL_IncTick                            0x08001cdc   Section        0  stm32f4xx_hal.o(i.HAL_IncTick)
+    i.HAL_Init                               0x08001cf4   Section        0  stm32f4xx_hal.o(i.HAL_Init)
+    i.HAL_InitTick                           0x08001d30   Section        0  stm32f4xx_hal.o(i.HAL_InitTick)
+    i.HAL_MspInit                            0x08001d7c   Section        0  stm32f4xx_hal_msp.o(i.HAL_MspInit)
+    i.HAL_NVIC_EnableIRQ                     0x08001dc4   Section        0  stm32f4xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ)
+    i.HAL_NVIC_SetPriority                   0x08001de4   Section        0  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriority)
+    i.HAL_NVIC_SetPriorityGrouping           0x08001e60   Section        0  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping)
+    i.HAL_RCC_ClockConfig                    0x08001e88   Section        0  stm32f4xx_hal_rcc.o(i.HAL_RCC_ClockConfig)
+    i.HAL_RCC_GetSysClockFreq                0x0800200c   Section        0  stm32f4xx_hal_rcc.o(i.HAL_RCC_GetSysClockFreq)
+    i.HAL_RCC_OscConfig                      0x080020bc   Section        0  stm32f4xx_hal_rcc.o(i.HAL_RCC_OscConfig)
+    i.HAL_SPI_Init                           0x0800255c   Section        0  stm32f4xx_hal_spi.o(i.HAL_SPI_Init)
+    i.HAL_SPI_MspInit                        0x08002624   Section        0  spi.o(i.HAL_SPI_MspInit)
+    i.HAL_SYSTICK_Config                     0x080026f4   Section        0  stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config)
+    i.HAL_TIMEx_BreakCallback                0x08002728   Section        0  stm32f4xx_hal_tim_ex.o(i.HAL_TIMEx_BreakCallback)
+    i.HAL_TIMEx_CommutCallback               0x0800272a   Section        0  stm32f4xx_hal_tim_ex.o(i.HAL_TIMEx_CommutCallback)
+    i.HAL_TIM_Base_Init                      0x0800272c   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_Base_Init)
+    i.HAL_TIM_Base_MspInit                   0x08002794   Section        0  tim.o(i.HAL_TIM_Base_MspInit)
+    i.HAL_TIM_Base_Start_IT                  0x080027dc   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_Base_Start_IT)
+    i.HAL_TIM_IC_CaptureCallback             0x08002884   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_IC_CaptureCallback)
+    i.HAL_TIM_IRQHandler                     0x08002886   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_IRQHandler)
+    i.HAL_TIM_OC_DelayElapsedCallback        0x08002a1c   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_OC_DelayElapsedCallback)
+    i.HAL_TIM_PWM_PulseFinishedCallback      0x08002a1e   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_PWM_PulseFinishedCallback)
+    i.HAL_TIM_PeriodElapsedCallback          0x08002a20   Section        0  stm32f4xx_it.o(i.HAL_TIM_PeriodElapsedCallback)
+    i.HAL_TIM_TriggerCallback                0x08002a44   Section        0  stm32f4xx_hal_tim.o(i.HAL_TIM_TriggerCallback)
+    i.HardFault_Handler                      0x08002a46   Section        0  stm32f4xx_it.o(i.HardFault_Handler)
+    i.Key1Handler                            0x08002a4c   Section        0  key_bsp.o(i.Key1Handler)
+    i.Key2Handler                            0x08002a80   Section        0  key_bsp.o(i.Key2Handler)
+    i.Key3Handler                            0x08002ab4   Section        0  key_bsp.o(i.Key3Handler)
+    i.KeyLoop                                0x08002ad8   Section        0  key_mod.o(i.KeyLoop)
+    i.KeyStateComparison                     0x08002c30   Section        0  key_mod.o(i.KeyStateComparison)
+    i.MX_DMA_Init                            0x08002c5c   Section        0  dma.o(i.MX_DMA_Init)
+    i.MX_GPIO_Init                           0x08002c94   Section        0  gpio.o(i.MX_GPIO_Init)
+    i.MX_SPI2_Init                           0x08002dc0   Section        0  spi.o(i.MX_SPI2_Init)
+    i.MX_TIM14_Init                          0x08002e04   Section        0  tim.o(i.MX_TIM14_Init)
+    i.MainAuxFunc                            0x08002e40   Section        0  oled_ui_menudata.o(i.MainAuxFunc)
+    i.MemManage_Handler                      0x08002ec4   Section        0  stm32f4xx_it.o(i.MemManage_Handler)
+    i.MenuItemsMoveDown                      0x08002ec8   Section        0  oled_ui.o(i.MenuItemsMoveDown)
+    i.MenuItemsMoveLeft                      0x08002f00   Section        0  oled_ui.o(i.MenuItemsMoveLeft)
+    i.MenuItemsMoveRight                     0x08002f38   Section        0  oled_ui.o(i.MenuItemsMoveRight)
+    i.MenuItemsMoveUp                        0x08002f70   Section        0  oled_ui.o(i.MenuItemsMoveUp)
+    i.MoveMenuElements                       0x08002fa8   Section        0  oled_ui.o(i.MoveMenuElements)
+    i.NMI_Handler                            0x08003074   Section        0  stm32f4xx_it.o(i.NMI_Handler)
+    i.OLED_Brightness                        0x08003078   Section        0  oled_driver.o(i.OLED_Brightness)
+    i.OLED_Clear                             0x080030ac   Section        0  oled.o(i.OLED_Clear)
+    i.OLED_ClearArea                         0x080030d4   Section        0  oled.o(i.OLED_ClearArea)
+    i.OLED_DrawArc                           0x080031ac   Section        0  oled.o(i.OLED_DrawArc)
+    i.OLED_DrawLine                          0x08003424   Section        0  oled.o(i.OLED_DrawLine)
+    i.OLED_DrawPoint                         0x0800359c   Section        0  oled.o(i.OLED_DrawPoint)
+    i.OLED_DrawRectangle                     0x080035f0   Section        0  oled.o(i.OLED_DrawRectangle)
+    i.OLED_DrawRoundedRectangle              0x08003744   Section        0  oled.o(i.OLED_DrawRoundedRectangle)
+    i.OLED_DrawWindow                        0x08003954   Section        0  oled_ui.o(i.OLED_DrawWindow)
+    i.OLED_Init                              0x08004284   Section        0  oled_driver.o(i.OLED_Init)
+    i.OLED_IsInAngle                         0x08004358   Section        0  oled.o(i.OLED_IsInAngle)
+    i.OLED_KeyAndEncoderRecord               0x080043f8   Section        0  oled_ui.o(i.OLED_KeyAndEncoderRecord)
+    i.OLED_Printf                            0x0800463c   Section        0  oled.o(i.OLED_Printf)
+    i.OLED_PrintfMixArea                     0x0800466e   Section        0  oled.o(i.OLED_PrintfMixArea)
+    i.OLED_ReverseArea                       0x080046b4   Section        0  oled.o(i.OLED_ReverseArea)
+    i.OLED_SetColorMode                      0x0800478c   Section        0  oled_driver.o(i.OLED_SetColorMode)
+    i.OLED_SetCursor                         0x08004798   Section        0  oled_driver.o(i.OLED_SetCursor)
+    i.OLED_ShowChar                          0x080047bc   Section        0  oled.o(i.OLED_ShowChar)
+    i.OLED_ShowCharArea                      0x0800485c   Section        0  oled.o(i.OLED_ShowCharArea)
+    i.OLED_ShowChineseArea                   0x08004924   Section        0  oled.o(i.OLED_ShowChineseArea)
+    i.OLED_ShowImage                         0x08004b40   Section        0  oled.o(i.OLED_ShowImage)
+    i.OLED_ShowImageArea                     0x08004d30   Section        0  oled.o(i.OLED_ShowImageArea)
+    i.OLED_ShowMixStringArea                 0x08004edc   Section        0  oled.o(i.OLED_ShowMixStringArea)
+    i.OLED_ShowString                        0x08004f5c   Section        0  oled.o(i.OLED_ShowString)
+    i.OLED_UI_Back                           0x08004f8a   Section        0  oled_ui.o(i.OLED_UI_Back)
+    i.OLED_UI_CreateWindow                   0x08004f94   Section        0  oled_ui.o(i.OLED_UI_CreateWindow)
+    i.OLED_UI_FadeOut_Masking                0x08005028   Section        0  oled_ui.o(i.OLED_UI_FadeOut_Masking)
+    i.OLED_UI_Init                           0x0800512c   Section        0  oled_ui.o(i.OLED_UI_Init)
+    i.OLED_UI_InterruptHandler               0x08005144   Section        0  oled_ui.o(i.OLED_UI_InterruptHandler)
+    i.OLED_UI_MainLoop                       0x08005514   Section        0  oled_ui.o(i.OLED_UI_MainLoop)
+    i.OLED_UI_ShowFPS                        0x08005530   Section        0  oled_ui.o(i.OLED_UI_ShowFPS)
+    i.OLED_Update                            0x08005568   Section        0  oled_driver.o(i.OLED_Update)
+    i.OLED_WriteDataArr                      0x08005590   Section        0  oled_driver.o(i.OLED_WriteDataArr)
+    i.OLED_Write_CMD                         0x080055c0   Section        0  oled_driver.o(i.OLED_Write_CMD)
+    i.OLED_Write_DATA                        0x0800560c   Section        0  oled_driver.o(i.OLED_Write_DATA)
+    i.PendSV_Handler                         0x08005658   Section        0  stm32f4xx_it.o(i.PendSV_Handler)
+    i.PrintMenuElements                      0x0800565c   Section        0  oled_ui.o(i.PrintMenuElements)
+    i.ResetEnterFlag                         0x08005f08   Section        0  oled_ui.o(i.ResetEnterFlag)
+    i.ResetFadeOutFlag                       0x08005f14   Section        0  oled_ui.o(i.ResetFadeOutFlag)
+    i.ReverseCoordinate                      0x08005f20   Section        0  oled_ui.o(i.ReverseCoordinate)
+    i.RummyFunction                          0x0800606c   Section        0  key_mod.o(i.RummyFunction)
+    i.RunCurrentCallBackFunction             0x0800608c   Section        0  oled_ui.o(i.RunCurrentCallBackFunction)
+    i.RunFadeOut                             0x080060dc   Section        0  oled_ui.o(i.RunFadeOut)
+    i.SVC_Handler                            0x08006440   Section        0  stm32f4xx_it.o(i.SVC_Handler)
+    i.SetCursorZero                          0x08006444   Section        0  oled_ui.o(i.SetCursorZero)
+    i.SetEnterFlag                           0x08006490   Section        0  oled_ui.o(i.SetEnterFlag)
+    i.SetFadeOutFlag                         0x080064a4   Section        0  oled_ui.o(i.SetFadeOutFlag)
+    i.SetLineSplitZero                       0x080064b8   Section        0  oled_ui.o(i.SetLineSplitZero)
+    i.SetTargetCursor                        0x080064ec   Section        0  oled_ui.o(i.SetTargetCursor)
+    i.SetTargetMenuFrame                     0x080067ac   Section        0  oled_ui.o(i.SetTargetMenuFrame)
+    i.SetTargetProbWidth                     0x080067f0   Section        0  oled_ui.o(i.SetTargetProbWidth)
+    i.SetTargetScrollBarHeight               0x080068e0   Section        0  oled_ui.o(i.SetTargetScrollBarHeight)
+    i.SettingAuxFunc                         0x0800696c   Section        0  oled_ui_menudata.o(i.SettingAuxFunc)
+    i.ShowFloatDataWindow                    0x08006ae0   Section        0  oled_ui_menudata.o(i.ShowFloatDataWindow)
+    i.ShowIntDataWindow                      0x08006af0   Section        0  oled_ui_menudata.o(i.ShowIntDataWindow)
+    i.ShowTextWindow                         0x08006b00   Section        0  oled_ui_menudata.o(i.ShowTextWindow)
+    i.SysTick_Handler                        0x08006b10   Section        0  stm32f4xx_it.o(i.SysTick_Handler)
+    i.SystemClock_Config                     0x08006b18   Section        0  main.o(i.SystemClock_Config)
+    i.SystemInit                             0x08006bcc   Section        0  system_stm32f4xx.o(i.SystemInit)
+    i.TIM8_TRG_COM_TIM14_IRQHandler          0x08006be0   Section        0  stm32f4xx_it.o(i.TIM8_TRG_COM_TIM14_IRQHandler)
+    i.TIM_Base_SetConfig                     0x08006bf0   Section        0  stm32f4xx_hal_tim.o(i.TIM_Base_SetConfig)
+    i.TimeCounter                            0x08006cc8   Section        0  qthezg.o(i.TimeCounter)
+    i.UsageFault_Handler                     0x08006d08   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
+    i.__0vsnprintf                           0x08006d0c   Section        0  printfa.o(i.__0vsnprintf)
+    i.__0vsprintf                            0x08006d38   Section        0  printfa.o(i.__0vsprintf)
+    i.__ARM_fpclassify                       0x08006d5c   Section        0  fpclassify.o(i.__ARM_fpclassify)
+    i.__NVIC_GetPriorityGrouping             0x08006d8c   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    __NVIC_GetPriorityGrouping               0x08006d8d   Thumb Code    10  stm32f4xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    i.__NVIC_SetPriority                     0x08006d9c   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x08006d9d   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__hardfp_atan                          0x08006dc8   Section        0  atan.o(i.__hardfp_atan)
+    i.__hardfp_atan2                         0x080070a0   Section        0  atan2.o(i.__hardfp_atan2)
+    i.__hardfp_ceil                          0x08007290   Section        0  ceil.o(i.__hardfp_ceil)
+    i.__hardfp_fabs                          0x080073a8   Section        0  fabs.o(i.__hardfp_fabs)
+    i.__hardfp_fmin                          0x080073bc   Section        0  fmin.o(i.__hardfp_fmin)
+    i.__kernel_poly                          0x08007430   Section        0  poly.o(i.__kernel_poly)
+    i.__mathlib_dbl_infnan                   0x08007528   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_infnan2                  0x0800753c   Section        0  dunder.o(i.__mathlib_dbl_infnan2)
+    i.__mathlib_dbl_underflow                0x08007550   Section        0  dunder.o(i.__mathlib_dbl_underflow)
+    i.__scatterload_copy                     0x08007570   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0800757e   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08007580   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._fp_digits                             0x08007590   Section        0  printfa.o(i._fp_digits)
+    _fp_digits                               0x08007591   Thumb Code   366  printfa.o(i._fp_digits)
+    i._printf_core                           0x08007714   Section        0  printfa.o(i._printf_core)
+    _printf_core                             0x08007715   Thumb Code  1744  printfa.o(i._printf_core)
+    i._printf_post_padding                   0x08007df0   Section        0  printfa.o(i._printf_post_padding)
+    _printf_post_padding                     0x08007df1   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x08007e14   Section        0  printfa.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x08007e15   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i._snputc                                0x08007e42   Section        0  printfa.o(i._snputc)
+    _snputc                                  0x08007e43   Thumb Code    22  printfa.o(i._snputc)
+    i._sputc                                 0x08007e58   Section        0  printfa.o(i._sputc)
+    _sputc                                   0x08007e59   Thumb Code    10  printfa.o(i._sputc)
+    i.atan                                   0x08007e62   Section        0  atan.o(i.atan)
+    i.fabs                                   0x08007e72   Section        0  fabs.o(i.fabs)
+    i.main                                   0x08007e8a   Section        0  main.o(i.main)
+    i.system_bsp_init                        0x08007eb0   Section        0  system_bsp.o(i.system_bsp_init)
+    i.system_bsp_test_loop                   0x08007ec4   Section        0  system_bsp.o(i.system_bsp_test_loop)
+    .constdata                               0x08007f48   Section       20  oled_ui.o(.constdata)
+    .constdata                               0x08007f5c   Section    25000  oled_fonts.o(.constdata)
+    .constdata                               0x0800e104   Section        8  stm32f4xx_hal_dma.o(.constdata)
+    flagBitshiftOffset                       0x0800e104   Data           8  stm32f4xx_hal_dma.o(.constdata)
+    .constdata                               0x0800e10c   Section       24  system_stm32f4xx.o(.constdata)
+    .constdata                               0x0800e128   Section      152  atan.o(.constdata)
+    atanhi                                   0x0800e128   Data          32  atan.o(.constdata)
+    atanlo                                   0x0800e148   Data          32  atan.o(.constdata)
+    aTodd                                    0x0800e168   Data          40  atan.o(.constdata)
+    aTeven                                   0x0800e190   Data          48  atan.o(.constdata)
+    .constdata                               0x0800e1c0   Section        8  qnan.o(.constdata)
+    .conststring                             0x0800e1c8   Section      946  oled_ui_menudata.o(.conststring)
     .data                                    0x20000000   Section     4224  oled_ui_menudata.o(.data)
     .data                                    0x20001080   Section       60  oled_ui.o(.data)
     IfUpTapAndHold                           0x200010a2   Data           1  oled_ui.o(.data)
@@ -1873,19 +1876,18 @@ Image Symbol Table
     .data                                    0x200010cd   Section       29  key_mod.o(.data)
     .data                                    0x200010ea   Section        4  oled_driver.o(.data)
     Last_Brightness                          0x200010ec   Data           2  oled_driver.o(.data)
-    .data                                    0x200010f0   Section        8  system_bsp.o(.data)
-    .data                                    0x200010f8   Section       12  key_bsp.o(.data)
-    .data                                    0x20001104   Section        2  stm32f4xx_it.o(.data)
-    .data                                    0x20001108   Section        9  stm32f4xx_hal.o(.data)
-    .data                                    0x20001114   Section        4  system_stm32f4xx.o(.data)
-    .bss                                     0x20001118   Section      144  oled_ui_menudata.o(.bss)
-    .bss                                     0x200011a8   Section      408  oled_ui.o(.bss)
-    .bss                                     0x20001340   Section     1024  oled_driver.o(.bss)
-    .bss                                     0x20001740   Section       32  system_bsp.o(.bss)
-    .bss                                     0x20001760   Section      120  key_bsp.o(.bss)
-    .bss                                     0x200017d8   Section      184  spi.o(.bss)
-    .bss                                     0x20001890   Section       72  tim.o(.bss)
-    STACK                                    0x200018d8   Section     4096  startup_stm32f407xx.o(STACK)
+    .data                                    0x200010f0   Section       12  key_bsp.o(.data)
+    .data                                    0x200010fc   Section        2  stm32f4xx_it.o(.data)
+    .data                                    0x20001100   Section        9  stm32f4xx_hal.o(.data)
+    .data                                    0x2000110c   Section        4  system_stm32f4xx.o(.data)
+    .bss                                     0x20001110   Section      144  oled_ui_menudata.o(.bss)
+    .bss                                     0x200011a0   Section      408  oled_ui.o(.bss)
+    .bss                                     0x20001338   Section     1024  oled_driver.o(.bss)
+    .bss                                     0x20001738   Section       44  system_bsp.o(.bss)
+    .bss                                     0x20001764   Section      120  key_bsp.o(.bss)
+    .bss                                     0x200017dc   Section      184  spi.o(.bss)
+    .bss                                     0x20001894   Section       72  tim.o(.bss)
+    STACK                                    0x200018e0   Section     4096  startup_stm32f407xx.o(STACK)
 
     Global Symbols
 
@@ -2053,185 +2055,198 @@ Image Symbol Table
     EmptyWindow                              0x08001565   Thumb Code    10  oled_ui_menudata.o(i.EmptyWindow)
     Encoder_Disable                          0x08001575   Thumb Code     2  oled_ui_driver.o(i.Encoder_Disable)
     Encoder_Enable                           0x08001577   Thumb Code     2  oled_ui_driver.o(i.Encoder_Enable)
-    Error_Handler                            0x08001579   Thumb Code     6  main.o(i.Error_Handler)
-    FunGetData                               0x0800157f   Thumb Code     8  qthezg.o(i.FunGetData)
-    FunGetFlg                                0x08001587   Thumb Code     6  qthezg.o(i.FunGetFlg)
-    FunSetData                               0x0800158d   Thumb Code     4  qthezg.o(i.FunSetData)
-    FunSetFlg                                0x08001591   Thumb Code     4  qthezg.o(i.FunSetFlg)
-    GetKey1Gpio                              0x08001595   Thumb Code    12  key_bsp.o(i.GetKey1Gpio)
-    GetKey2Gpio                              0x080015a5   Thumb Code    12  key_bsp.o(i.GetKey2Gpio)
-    GetKey3Gpio                              0x080015b5   Thumb Code    14  key_bsp.o(i.GetKey3Gpio)
-    GetMenuItemNum                           0x080015c9   Thumb Code    24  oled_ui.o(i.GetMenuItemNum)
-    GetOLED_Font                             0x080015e1   Thumb Code    66  oled_ui.o(i.GetOLED_Font)
-    GetWindowDataStyle                       0x08001625   Thumb Code    32  oled_ui.o(i.GetWindowDataStyle)
-    HAL_DMA_IRQHandler                       0x08001649   Thumb Code   570  stm32f4xx_hal_dma.o(i.HAL_DMA_IRQHandler)
-    HAL_DMA_Init                             0x08001889   Thumb Code   232  stm32f4xx_hal_dma.o(i.HAL_DMA_Init)
-    HAL_GPIO_Init                            0x08001975   Thumb Code   454  stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init)
-    HAL_GPIO_ReadPin                         0x08001b69   Thumb Code    16  stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin)
-    HAL_GPIO_WritePin                        0x08001b79   Thumb Code    12  stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin)
-    HAL_GetTick                              0x08001b85   Thumb Code     6  stm32f4xx_hal.o(i.HAL_GetTick)
-    HAL_IncTick                              0x08001b91   Thumb Code    16  stm32f4xx_hal.o(i.HAL_IncTick)
-    HAL_Init                                 0x08001ba9   Thumb Code    54  stm32f4xx_hal.o(i.HAL_Init)
-    HAL_InitTick                             0x08001be5   Thumb Code    64  stm32f4xx_hal.o(i.HAL_InitTick)
-    HAL_MspInit                              0x08001c31   Thumb Code    68  stm32f4xx_hal_msp.o(i.HAL_MspInit)
-    HAL_NVIC_EnableIRQ                       0x08001c79   Thumb Code    32  stm32f4xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ)
-    HAL_NVIC_SetPriority                     0x08001c99   Thumb Code   124  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriority)
-    HAL_NVIC_SetPriorityGrouping             0x08001d15   Thumb Code    32  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping)
-    HAL_RCC_ClockConfig                      0x08001d3d   Thumb Code   368  stm32f4xx_hal_rcc.o(i.HAL_RCC_ClockConfig)
-    HAL_RCC_GetSysClockFreq                  0x08001ec1   Thumb Code   162  stm32f4xx_hal_rcc.o(i.HAL_RCC_GetSysClockFreq)
-    HAL_RCC_OscConfig                        0x08001f71   Thumb Code  1176  stm32f4xx_hal_rcc.o(i.HAL_RCC_OscConfig)
-    HAL_SPI_Init                             0x08002411   Thumb Code   200  stm32f4xx_hal_spi.o(i.HAL_SPI_Init)
-    HAL_SPI_MspInit                          0x080024d9   Thumb Code   188  spi.o(i.HAL_SPI_MspInit)
-    HAL_SYSTICK_Config                       0x080025a9   Thumb Code    52  stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config)
-    HAL_TIMEx_BreakCallback                  0x080025dd   Thumb Code     2  stm32f4xx_hal_tim_ex.o(i.HAL_TIMEx_BreakCallback)
-    HAL_TIMEx_CommutCallback                 0x080025df   Thumb Code     2  stm32f4xx_hal_tim_ex.o(i.HAL_TIMEx_CommutCallback)
-    HAL_TIM_Base_Init                        0x080025e1   Thumb Code   102  stm32f4xx_hal_tim.o(i.HAL_TIM_Base_Init)
-    HAL_TIM_Base_MspInit                     0x08002649   Thumb Code    62  tim.o(i.HAL_TIM_Base_MspInit)
-    HAL_TIM_Base_Start_IT                    0x08002691   Thumb Code   138  stm32f4xx_hal_tim.o(i.HAL_TIM_Base_Start_IT)
-    HAL_TIM_IC_CaptureCallback               0x08002739   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_IC_CaptureCallback)
-    HAL_TIM_IRQHandler                       0x0800273b   Thumb Code   406  stm32f4xx_hal_tim.o(i.HAL_TIM_IRQHandler)
-    HAL_TIM_OC_DelayElapsedCallback          0x080028d1   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_OC_DelayElapsedCallback)
-    HAL_TIM_PWM_PulseFinishedCallback        0x080028d3   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_PWM_PulseFinishedCallback)
-    HAL_TIM_PeriodElapsedCallback            0x080028d5   Thumb Code    20  stm32f4xx_it.o(i.HAL_TIM_PeriodElapsedCallback)
-    HAL_TIM_TriggerCallback                  0x080028f1   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_TriggerCallback)
-    HardFault_Handler                        0x080028f3   Thumb Code     4  stm32f4xx_it.o(i.HardFault_Handler)
-    Key1Handler                              0x080028f9   Thumb Code    46  key_bsp.o(i.Key1Handler)
-    Key2Handler                              0x0800292d   Thumb Code    46  key_bsp.o(i.Key2Handler)
-    Key3Handler                              0x08002961   Thumb Code    46  key_bsp.o(i.Key3Handler)
-    KeyLoop                                  0x08002995   Thumb Code   336  key_mod.o(i.KeyLoop)
-    KeyStateComparison                       0x08002aed   Thumb Code    44  key_mod.o(i.KeyStateComparison)
-    MX_DMA_Init                              0x08002b19   Thumb Code    52  dma.o(i.MX_DMA_Init)
-    MX_GPIO_Init                             0x08002b51   Thumb Code   284  gpio.o(i.MX_GPIO_Init)
-    MX_SPI2_Init                             0x08002c7d   Thumb Code    60  spi.o(i.MX_SPI2_Init)
-    MX_TIM14_Init                            0x08002cc1   Thumb Code    50  tim.o(i.MX_TIM14_Init)
-    MainAuxFunc                              0x08002cfd   Thumb Code   104  oled_ui_menudata.o(i.MainAuxFunc)
-    MemManage_Handler                        0x08002d81   Thumb Code     4  stm32f4xx_it.o(i.MemManage_Handler)
-    MoveMenuElements                         0x08002d85   Thumb Code   164  oled_ui.o(i.MoveMenuElements)
-    NMI_Handler                              0x08002e51   Thumb Code     4  stm32f4xx_it.o(i.NMI_Handler)
-    OLED_Brightness                          0x08002e55   Thumb Code    48  oled_driver.o(i.OLED_Brightness)
-    OLED_Clear                               0x08002e89   Thumb Code    36  oled.o(i.OLED_Clear)
-    OLED_ClearArea                           0x08002eb1   Thumb Code   210  oled.o(i.OLED_ClearArea)
-    OLED_DrawArc                             0x08002f89   Thumb Code   632  oled.o(i.OLED_DrawArc)
-    OLED_DrawLine                            0x08003201   Thumb Code   374  oled.o(i.OLED_DrawLine)
-    OLED_DrawPoint                           0x08003379   Thumb Code    80  oled.o(i.OLED_DrawPoint)
-    OLED_DrawRectangle                       0x080033cd   Thumb Code   336  oled.o(i.OLED_DrawRectangle)
-    OLED_DrawRoundedRectangle                0x08003521   Thumb Code   526  oled.o(i.OLED_DrawRoundedRectangle)
-    OLED_DrawWindow                          0x08003731   Thumb Code  2342  oled_ui.o(i.OLED_DrawWindow)
-    OLED_Init                                0x08004061   Thumb Code   208  oled_driver.o(i.OLED_Init)
-    OLED_IsInAngle                           0x08004135   Thumb Code   144  oled.o(i.OLED_IsInAngle)
-    OLED_Printf                              0x080041d5   Thumb Code    50  oled.o(i.OLED_Printf)
-    OLED_PrintfMixArea                       0x08004207   Thumb Code    70  oled.o(i.OLED_PrintfMixArea)
-    OLED_ReverseArea                         0x0800424d   Thumb Code   210  oled.o(i.OLED_ReverseArea)
-    OLED_SetColorMode                        0x08004325   Thumb Code     6  oled_driver.o(i.OLED_SetColorMode)
-    OLED_SetCursor                           0x08004331   Thumb Code    34  oled_driver.o(i.OLED_SetCursor)
-    OLED_ShowChar                            0x08004355   Thumb Code   142  oled.o(i.OLED_ShowChar)
-    OLED_ShowCharArea                        0x080043f5   Thumb Code   182  oled.o(i.OLED_ShowCharArea)
-    OLED_ShowChineseArea                     0x080044bd   Thumb Code   518  oled.o(i.OLED_ShowChineseArea)
-    OLED_ShowImage                           0x080046d9   Thumb Code   490  oled.o(i.OLED_ShowImage)
-    OLED_ShowImageArea                       0x080048c9   Thumb Code   422  oled.o(i.OLED_ShowImageArea)
-    OLED_ShowMixStringArea                   0x08004a75   Thumb Code   128  oled.o(i.OLED_ShowMixStringArea)
-    OLED_ShowString                          0x08004af5   Thumb Code    46  oled.o(i.OLED_ShowString)
-    OLED_UI_Back                             0x08004b23   Thumb Code     8  oled_ui.o(i.OLED_UI_Back)
-    OLED_UI_CreateWindow                     0x08004b2d   Thumb Code   126  oled_ui.o(i.OLED_UI_CreateWindow)
-    OLED_UI_FadeOut_Masking                  0x08004bc1   Thumb Code   252  oled_ui.o(i.OLED_UI_FadeOut_Masking)
-    OLED_UI_Init                             0x08004cc5   Thumb Code    18  oled_ui.o(i.OLED_UI_Init)
-    OLED_UI_MainLoop                         0x08004cdd   Thumb Code    28  oled_ui.o(i.OLED_UI_MainLoop)
-    OLED_UI_ShowFPS                          0x08004cf9   Thumb Code    42  oled_ui.o(i.OLED_UI_ShowFPS)
-    OLED_Update                              0x08004d31   Thumb Code    36  oled_driver.o(i.OLED_Update)
-    OLED_WriteDataArr                        0x08004d59   Thumb Code    44  oled_driver.o(i.OLED_WriteDataArr)
-    OLED_Write_CMD                           0x08004d89   Thumb Code    72  oled_driver.o(i.OLED_Write_CMD)
-    OLED_Write_DATA                          0x08004dd5   Thumb Code    70  oled_driver.o(i.OLED_Write_DATA)
-    PendSV_Handler                           0x08004e21   Thumb Code     2  stm32f4xx_it.o(i.PendSV_Handler)
-    PrintMenuElements                        0x08004e25   Thumb Code  2218  oled_ui.o(i.PrintMenuElements)
-    ResetEnterFlag                           0x080056d1   Thumb Code     8  oled_ui.o(i.ResetEnterFlag)
-    ResetFadeOutFlag                         0x080056dd   Thumb Code     8  oled_ui.o(i.ResetFadeOutFlag)
-    ReverseCoordinate                        0x080056e9   Thumb Code   328  oled_ui.o(i.ReverseCoordinate)
-    RummyFunction                            0x08005835   Thumb Code    32  key_mod.o(i.RummyFunction)
-    RunCurrentCallBackFunction               0x08005855   Thumb Code    72  oled_ui.o(i.RunCurrentCallBackFunction)
-    RunFadeOut                               0x080058a5   Thumb Code   824  oled_ui.o(i.RunFadeOut)
-    SVC_Handler                              0x08005c09   Thumb Code     2  stm32f4xx_it.o(i.SVC_Handler)
-    SetCursorZero                            0x08005c0d   Thumb Code    68  oled_ui.o(i.SetCursorZero)
-    SetFadeOutFlag                           0x08005c59   Thumb Code    14  oled_ui.o(i.SetFadeOutFlag)
-    SetLineSplitZero                         0x08005c6d   Thumb Code    44  oled_ui.o(i.SetLineSplitZero)
-    SetTargetCursor                          0x08005ca1   Thumb Code   688  oled_ui.o(i.SetTargetCursor)
-    SetTargetMenuFrame                       0x08005f61   Thumb Code    58  oled_ui.o(i.SetTargetMenuFrame)
-    SetTargetProbWidth                       0x08005fa5   Thumb Code   226  oled_ui.o(i.SetTargetProbWidth)
-    SetTargetScrollBarHeight                 0x08006095   Thumb Code   130  oled_ui.o(i.SetTargetScrollBarHeight)
-    SettingAuxFunc                           0x08006121   Thumb Code   322  oled_ui_menudata.o(i.SettingAuxFunc)
-    ShowFloatDataWindow                      0x08006295   Thumb Code    10  oled_ui_menudata.o(i.ShowFloatDataWindow)
-    ShowIntDataWindow                        0x080062a5   Thumb Code    10  oled_ui_menudata.o(i.ShowIntDataWindow)
-    ShowTextWindow                           0x080062b5   Thumb Code    10  oled_ui_menudata.o(i.ShowTextWindow)
-    SysTick_Handler                          0x080062c5   Thumb Code     8  stm32f4xx_it.o(i.SysTick_Handler)
-    SystemClock_Config                       0x080062cd   Thumb Code   170  main.o(i.SystemClock_Config)
-    SystemInit                               0x08006381   Thumb Code    14  system_stm32f4xx.o(i.SystemInit)
-    TIM8_TRG_COM_TIM14_IRQHandler            0x08006395   Thumb Code    10  stm32f4xx_it.o(i.TIM8_TRG_COM_TIM14_IRQHandler)
-    TIM_Base_SetConfig                       0x080063a5   Thumb Code   170  stm32f4xx_hal_tim.o(i.TIM_Base_SetConfig)
-    TimeCounter                              0x0800647d   Thumb Code    58  qthezg.o(i.TimeCounter)
-    UsageFault_Handler                       0x080064bd   Thumb Code     4  stm32f4xx_it.o(i.UsageFault_Handler)
-    __0vsnprintf                             0x080064c1   Thumb Code    40  printfa.o(i.__0vsnprintf)
-    __1vsnprintf                             0x080064c1   Thumb Code     0  printfa.o(i.__0vsnprintf)
-    __2vsnprintf                             0x080064c1   Thumb Code     0  printfa.o(i.__0vsnprintf)
-    __c89vsnprintf                           0x080064c1   Thumb Code     0  printfa.o(i.__0vsnprintf)
-    vsnprintf                                0x080064c1   Thumb Code     0  printfa.o(i.__0vsnprintf)
-    __0vsprintf                              0x080064ed   Thumb Code    30  printfa.o(i.__0vsprintf)
-    __1vsprintf                              0x080064ed   Thumb Code     0  printfa.o(i.__0vsprintf)
-    __2vsprintf                              0x080064ed   Thumb Code     0  printfa.o(i.__0vsprintf)
-    __c89vsprintf                            0x080064ed   Thumb Code     0  printfa.o(i.__0vsprintf)
-    vsprintf                                 0x080064ed   Thumb Code     0  printfa.o(i.__0vsprintf)
-    __ARM_fpclassify                         0x08006511   Thumb Code    48  fpclassify.o(i.__ARM_fpclassify)
-    __hardfp_atan                            0x08006579   Thumb Code   622  atan.o(i.__hardfp_atan)
-    __hardfp_atan2                           0x08006851   Thumb Code   432  atan2.o(i.__hardfp_atan2)
-    __hardfp_ceil                            0x08006a41   Thumb Code   252  ceil.o(i.__hardfp_ceil)
-    __hardfp_fabs                            0x08006b59   Thumb Code    20  fabs.o(i.__hardfp_fabs)
-    __hardfp_fmin                            0x08006b6d   Thumb Code   116  fmin.o(i.__hardfp_fmin)
-    __kernel_poly                            0x08006be1   Thumb Code   248  poly.o(i.__kernel_poly)
-    __mathlib_dbl_infnan                     0x08006cd9   Thumb Code    20  dunder.o(i.__mathlib_dbl_infnan)
-    __mathlib_dbl_infnan2                    0x08006ced   Thumb Code    20  dunder.o(i.__mathlib_dbl_infnan2)
-    __mathlib_dbl_underflow                  0x08006d01   Thumb Code    24  dunder.o(i.__mathlib_dbl_underflow)
-    __scatterload_copy                       0x08006d21   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08006d2f   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08006d31   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    atan                                     0x08007613   Thumb Code    16  atan.o(i.atan)
-    fabs                                     0x08007623   Thumb Code    24  fabs.o(i.fabs)
-    main                                     0x0800763b   Thumb Code    36  main.o(i.main)
-    system_bsp_init                          0x08007661   Thumb Code    14  system_bsp.o(i.system_bsp_init)
-    system_bsp_test_loop                     0x08007675   Thumb Code   106  system_bsp.o(i.system_bsp_test_loop)
-    OLED_F10x20                              0x0800770c   Data        2850  oled_fonts.o(.constdata)
-    OLED_F8x16                               0x0800822e   Data        1520  oled_fonts.o(.constdata)
-    OLED_F7x12                               0x0800881e   Data        1330  oled_fonts.o(.constdata)
-    OLED_F6x8                                0x08008d50   Data         570  oled_fonts.o(.constdata)
-    OLED_CF20x20                             0x08008f8a   Data        3276  oled_fonts.o(.constdata)
-    OLED_CF16x16                             0x08009c56   Data        3220  oled_fonts.o(.constdata)
-    OLED_CF12x12                             0x0800a8ea   Data        2754  oled_fonts.o(.constdata)
-    OLED_CF8x8                               0x0800b3ac   Data         594  oled_fonts.o(.constdata)
-    Arrow                                    0x0800b5fe   Data           6  oled_fonts.o(.constdata)
-    UnKnown                                  0x0800b604   Data         656  oled_fonts.o(.constdata)
-    Image_setings                            0x0800b894   Data         128  oled_fonts.o(.constdata)
-    Image_window                             0x0800b914   Data         128  oled_fonts.o(.constdata)
-    Image_wechat                             0x0800b994   Data         128  oled_fonts.o(.constdata)
-    Image_qq                                 0x0800ba14   Data         128  oled_fonts.o(.constdata)
-    Image_alipay                             0x0800ba94   Data         128  oled_fonts.o(.constdata)
-    Image_more                               0x0800bb14   Data         128  oled_fonts.o(.constdata)
-    Image_calc                               0x0800bb94   Data         128  oled_fonts.o(.constdata)
-    Image_night                              0x0800bc14   Data         128  oled_fonts.o(.constdata)
-    Image_sleep                              0x0800bc94   Data         128  oled_fonts.o(.constdata)
-    Image_calc_64                            0x0800bd14   Data         512  oled_fonts.o(.constdata)
-    Image_more_64                            0x0800bf14   Data         512  oled_fonts.o(.constdata)
-    Image_night_64                           0x0800c114   Data         512  oled_fonts.o(.constdata)
-    Image_wechat_64                          0x0800c314   Data         512  oled_fonts.o(.constdata)
-    Image_alipay_64                          0x0800c514   Data         512  oled_fonts.o(.constdata)
-    Image_settings_64                        0x0800c714   Data         512  oled_fonts.o(.constdata)
-    Image_alipay_QR_Code                     0x0800c914   Data        1984  oled_fonts.o(.constdata)
-    OLED_UI_LOGO                             0x0800d0d4   Data        1024  oled_fonts.o(.constdata)
-    OLED_UI_LOGOTEXT                         0x0800d4d4   Data         400  oled_fonts.o(.constdata)
-    OLED_UI_LOGOGithub                       0x0800d664   Data         128  oled_fonts.o(.constdata)
-    OLED_UI_LOGOTEXT64                       0x0800d6e4   Data         208  oled_fonts.o(.constdata)
-    OLED_UI_SettingsLogo                     0x0800d7b4   Data         256  oled_fonts.o(.constdata)
-    AHBPrescTable                            0x0800d8bc   Data          16  system_stm32f4xx.o(.constdata)
-    APBPrescTable                            0x0800d8cc   Data           8  system_stm32f4xx.o(.constdata)
-    __mathlib_zero                           0x0800d970   Data           8  qnan.o(.constdata)
-    Region$$Table$$Base                      0x0800dd2c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800dd4c   Number         0  anon$$obj.o(Region$$Table)
+    Encoder_Get                              0x08001579   Thumb Code     4  oled_ui_driver.o(i.Encoder_Get)
+    EnterEventMenuItem                       0x0800157d   Thumb Code   118  oled_ui.o(i.EnterEventMenuItem)
+    Error_Handler                            0x080015f9   Thumb Code     6  main.o(i.Error_Handler)
+    FunGetData                               0x080015ff   Thumb Code     8  qthezg.o(i.FunGetData)
+    FunGetFlg                                0x08001607   Thumb Code     6  qthezg.o(i.FunGetFlg)
+    FunSetData                               0x0800160d   Thumb Code     4  qthezg.o(i.FunSetData)
+    FunSetFlg                                0x08001611   Thumb Code     4  qthezg.o(i.FunSetFlg)
+    GetCurrentMenuPageMaxSlotNum             0x08001615   Thumb Code   106  oled_ui.o(i.GetCurrentMenuPageMaxSlotNum)
+    GetEnterFlag                             0x08001689   Thumb Code    14  oled_ui.o(i.GetEnterFlag)
+    GetFPS                                   0x0800169d   Thumb Code    42  oled_ui.o(i.GetFPS)
+    GetFadeoutFlag                           0x080016cd   Thumb Code    14  oled_ui.o(i.GetFadeoutFlag)
+    GetKey1Gpio                              0x080016e1   Thumb Code    12  key_bsp.o(i.GetKey1Gpio)
+    GetKey2Gpio                              0x080016f1   Thumb Code    12  key_bsp.o(i.GetKey2Gpio)
+    GetKey3Gpio                              0x08001701   Thumb Code    14  key_bsp.o(i.GetKey3Gpio)
+    GetMenuItemNum                           0x08001715   Thumb Code    24  oled_ui.o(i.GetMenuItemNum)
+    GetOLED_Font                             0x0800172d   Thumb Code    66  oled_ui.o(i.GetOLED_Font)
+    GetWindowDataStyle                       0x08001771   Thumb Code    32  oled_ui.o(i.GetWindowDataStyle)
+    HAL_DMA_IRQHandler                       0x08001795   Thumb Code   570  stm32f4xx_hal_dma.o(i.HAL_DMA_IRQHandler)
+    HAL_DMA_Init                             0x080019d5   Thumb Code   232  stm32f4xx_hal_dma.o(i.HAL_DMA_Init)
+    HAL_GPIO_Init                            0x08001ac1   Thumb Code   454  stm32f4xx_hal_gpio.o(i.HAL_GPIO_Init)
+    HAL_GPIO_ReadPin                         0x08001cb5   Thumb Code    16  stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin)
+    HAL_GPIO_WritePin                        0x08001cc5   Thumb Code    12  stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin)
+    HAL_GetTick                              0x08001cd1   Thumb Code     6  stm32f4xx_hal.o(i.HAL_GetTick)
+    HAL_IncTick                              0x08001cdd   Thumb Code    16  stm32f4xx_hal.o(i.HAL_IncTick)
+    HAL_Init                                 0x08001cf5   Thumb Code    54  stm32f4xx_hal.o(i.HAL_Init)
+    HAL_InitTick                             0x08001d31   Thumb Code    64  stm32f4xx_hal.o(i.HAL_InitTick)
+    HAL_MspInit                              0x08001d7d   Thumb Code    68  stm32f4xx_hal_msp.o(i.HAL_MspInit)
+    HAL_NVIC_EnableIRQ                       0x08001dc5   Thumb Code    32  stm32f4xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ)
+    HAL_NVIC_SetPriority                     0x08001de5   Thumb Code   124  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriority)
+    HAL_NVIC_SetPriorityGrouping             0x08001e61   Thumb Code    32  stm32f4xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping)
+    HAL_RCC_ClockConfig                      0x08001e89   Thumb Code   368  stm32f4xx_hal_rcc.o(i.HAL_RCC_ClockConfig)
+    HAL_RCC_GetSysClockFreq                  0x0800200d   Thumb Code   162  stm32f4xx_hal_rcc.o(i.HAL_RCC_GetSysClockFreq)
+    HAL_RCC_OscConfig                        0x080020bd   Thumb Code  1176  stm32f4xx_hal_rcc.o(i.HAL_RCC_OscConfig)
+    HAL_SPI_Init                             0x0800255d   Thumb Code   200  stm32f4xx_hal_spi.o(i.HAL_SPI_Init)
+    HAL_SPI_MspInit                          0x08002625   Thumb Code   188  spi.o(i.HAL_SPI_MspInit)
+    HAL_SYSTICK_Config                       0x080026f5   Thumb Code    52  stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config)
+    HAL_TIMEx_BreakCallback                  0x08002729   Thumb Code     2  stm32f4xx_hal_tim_ex.o(i.HAL_TIMEx_BreakCallback)
+    HAL_TIMEx_CommutCallback                 0x0800272b   Thumb Code     2  stm32f4xx_hal_tim_ex.o(i.HAL_TIMEx_CommutCallback)
+    HAL_TIM_Base_Init                        0x0800272d   Thumb Code   102  stm32f4xx_hal_tim.o(i.HAL_TIM_Base_Init)
+    HAL_TIM_Base_MspInit                     0x08002795   Thumb Code    62  tim.o(i.HAL_TIM_Base_MspInit)
+    HAL_TIM_Base_Start_IT                    0x080027dd   Thumb Code   138  stm32f4xx_hal_tim.o(i.HAL_TIM_Base_Start_IT)
+    HAL_TIM_IC_CaptureCallback               0x08002885   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_IC_CaptureCallback)
+    HAL_TIM_IRQHandler                       0x08002887   Thumb Code   406  stm32f4xx_hal_tim.o(i.HAL_TIM_IRQHandler)
+    HAL_TIM_OC_DelayElapsedCallback          0x08002a1d   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_OC_DelayElapsedCallback)
+    HAL_TIM_PWM_PulseFinishedCallback        0x08002a1f   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_PWM_PulseFinishedCallback)
+    HAL_TIM_PeriodElapsedCallback            0x08002a21   Thumb Code    28  stm32f4xx_it.o(i.HAL_TIM_PeriodElapsedCallback)
+    HAL_TIM_TriggerCallback                  0x08002a45   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_TriggerCallback)
+    HardFault_Handler                        0x08002a47   Thumb Code     4  stm32f4xx_it.o(i.HardFault_Handler)
+    Key1Handler                              0x08002a4d   Thumb Code    42  key_bsp.o(i.Key1Handler)
+    Key2Handler                              0x08002a81   Thumb Code    42  key_bsp.o(i.Key2Handler)
+    Key3Handler                              0x08002ab5   Thumb Code    32  key_bsp.o(i.Key3Handler)
+    KeyLoop                                  0x08002ad9   Thumb Code   336  key_mod.o(i.KeyLoop)
+    KeyStateComparison                       0x08002c31   Thumb Code    44  key_mod.o(i.KeyStateComparison)
+    MX_DMA_Init                              0x08002c5d   Thumb Code    52  dma.o(i.MX_DMA_Init)
+    MX_GPIO_Init                             0x08002c95   Thumb Code   284  gpio.o(i.MX_GPIO_Init)
+    MX_SPI2_Init                             0x08002dc1   Thumb Code    60  spi.o(i.MX_SPI2_Init)
+    MX_TIM14_Init                            0x08002e05   Thumb Code    50  tim.o(i.MX_TIM14_Init)
+    MainAuxFunc                              0x08002e41   Thumb Code   104  oled_ui_menudata.o(i.MainAuxFunc)
+    MemManage_Handler                        0x08002ec5   Thumb Code     4  stm32f4xx_it.o(i.MemManage_Handler)
+    MenuItemsMoveDown                        0x08002ec9   Thumb Code    42  oled_ui.o(i.MenuItemsMoveDown)
+    MenuItemsMoveLeft                        0x08002f01   Thumb Code    42  oled_ui.o(i.MenuItemsMoveLeft)
+    MenuItemsMoveRight                       0x08002f39   Thumb Code    42  oled_ui.o(i.MenuItemsMoveRight)
+    MenuItemsMoveUp                          0x08002f71   Thumb Code    42  oled_ui.o(i.MenuItemsMoveUp)
+    MoveMenuElements                         0x08002fa9   Thumb Code   164  oled_ui.o(i.MoveMenuElements)
+    NMI_Handler                              0x08003075   Thumb Code     4  stm32f4xx_it.o(i.NMI_Handler)
+    OLED_Brightness                          0x08003079   Thumb Code    48  oled_driver.o(i.OLED_Brightness)
+    OLED_Clear                               0x080030ad   Thumb Code    36  oled.o(i.OLED_Clear)
+    OLED_ClearArea                           0x080030d5   Thumb Code   210  oled.o(i.OLED_ClearArea)
+    OLED_DrawArc                             0x080031ad   Thumb Code   632  oled.o(i.OLED_DrawArc)
+    OLED_DrawLine                            0x08003425   Thumb Code   374  oled.o(i.OLED_DrawLine)
+    OLED_DrawPoint                           0x0800359d   Thumb Code    80  oled.o(i.OLED_DrawPoint)
+    OLED_DrawRectangle                       0x080035f1   Thumb Code   336  oled.o(i.OLED_DrawRectangle)
+    OLED_DrawRoundedRectangle                0x08003745   Thumb Code   526  oled.o(i.OLED_DrawRoundedRectangle)
+    OLED_DrawWindow                          0x08003955   Thumb Code  2342  oled_ui.o(i.OLED_DrawWindow)
+    OLED_Init                                0x08004285   Thumb Code   208  oled_driver.o(i.OLED_Init)
+    OLED_IsInAngle                           0x08004359   Thumb Code   144  oled.o(i.OLED_IsInAngle)
+    OLED_KeyAndEncoderRecord                 0x080043f9   Thumb Code   528  oled_ui.o(i.OLED_KeyAndEncoderRecord)
+    OLED_Printf                              0x0800463d   Thumb Code    50  oled.o(i.OLED_Printf)
+    OLED_PrintfMixArea                       0x0800466f   Thumb Code    70  oled.o(i.OLED_PrintfMixArea)
+    OLED_ReverseArea                         0x080046b5   Thumb Code   210  oled.o(i.OLED_ReverseArea)
+    OLED_SetColorMode                        0x0800478d   Thumb Code     6  oled_driver.o(i.OLED_SetColorMode)
+    OLED_SetCursor                           0x08004799   Thumb Code    34  oled_driver.o(i.OLED_SetCursor)
+    OLED_ShowChar                            0x080047bd   Thumb Code   142  oled.o(i.OLED_ShowChar)
+    OLED_ShowCharArea                        0x0800485d   Thumb Code   182  oled.o(i.OLED_ShowCharArea)
+    OLED_ShowChineseArea                     0x08004925   Thumb Code   518  oled.o(i.OLED_ShowChineseArea)
+    OLED_ShowImage                           0x08004b41   Thumb Code   490  oled.o(i.OLED_ShowImage)
+    OLED_ShowImageArea                       0x08004d31   Thumb Code   422  oled.o(i.OLED_ShowImageArea)
+    OLED_ShowMixStringArea                   0x08004edd   Thumb Code   128  oled.o(i.OLED_ShowMixStringArea)
+    OLED_ShowString                          0x08004f5d   Thumb Code    46  oled.o(i.OLED_ShowString)
+    OLED_UI_Back                             0x08004f8b   Thumb Code     8  oled_ui.o(i.OLED_UI_Back)
+    OLED_UI_CreateWindow                     0x08004f95   Thumb Code   126  oled_ui.o(i.OLED_UI_CreateWindow)
+    OLED_UI_FadeOut_Masking                  0x08005029   Thumb Code   252  oled_ui.o(i.OLED_UI_FadeOut_Masking)
+    OLED_UI_Init                             0x0800512d   Thumb Code    18  oled_ui.o(i.OLED_UI_Init)
+    OLED_UI_InterruptHandler                 0x08005145   Thumb Code   950  oled_ui.o(i.OLED_UI_InterruptHandler)
+    OLED_UI_MainLoop                         0x08005515   Thumb Code    28  oled_ui.o(i.OLED_UI_MainLoop)
+    OLED_UI_ShowFPS                          0x08005531   Thumb Code    42  oled_ui.o(i.OLED_UI_ShowFPS)
+    OLED_Update                              0x08005569   Thumb Code    36  oled_driver.o(i.OLED_Update)
+    OLED_WriteDataArr                        0x08005591   Thumb Code    44  oled_driver.o(i.OLED_WriteDataArr)
+    OLED_Write_CMD                           0x080055c1   Thumb Code    72  oled_driver.o(i.OLED_Write_CMD)
+    OLED_Write_DATA                          0x0800560d   Thumb Code    70  oled_driver.o(i.OLED_Write_DATA)
+    PendSV_Handler                           0x08005659   Thumb Code     2  stm32f4xx_it.o(i.PendSV_Handler)
+    PrintMenuElements                        0x0800565d   Thumb Code  2218  oled_ui.o(i.PrintMenuElements)
+    ResetEnterFlag                           0x08005f09   Thumb Code     8  oled_ui.o(i.ResetEnterFlag)
+    ResetFadeOutFlag                         0x08005f15   Thumb Code     8  oled_ui.o(i.ResetFadeOutFlag)
+    ReverseCoordinate                        0x08005f21   Thumb Code   328  oled_ui.o(i.ReverseCoordinate)
+    RummyFunction                            0x0800606d   Thumb Code    32  key_mod.o(i.RummyFunction)
+    RunCurrentCallBackFunction               0x0800608d   Thumb Code    72  oled_ui.o(i.RunCurrentCallBackFunction)
+    RunFadeOut                               0x080060dd   Thumb Code   824  oled_ui.o(i.RunFadeOut)
+    SVC_Handler                              0x08006441   Thumb Code     2  stm32f4xx_it.o(i.SVC_Handler)
+    SetCursorZero                            0x08006445   Thumb Code    68  oled_ui.o(i.SetCursorZero)
+    SetEnterFlag                             0x08006491   Thumb Code    14  oled_ui.o(i.SetEnterFlag)
+    SetFadeOutFlag                           0x080064a5   Thumb Code    14  oled_ui.o(i.SetFadeOutFlag)
+    SetLineSplitZero                         0x080064b9   Thumb Code    44  oled_ui.o(i.SetLineSplitZero)
+    SetTargetCursor                          0x080064ed   Thumb Code   688  oled_ui.o(i.SetTargetCursor)
+    SetTargetMenuFrame                       0x080067ad   Thumb Code    58  oled_ui.o(i.SetTargetMenuFrame)
+    SetTargetProbWidth                       0x080067f1   Thumb Code   226  oled_ui.o(i.SetTargetProbWidth)
+    SetTargetScrollBarHeight                 0x080068e1   Thumb Code   130  oled_ui.o(i.SetTargetScrollBarHeight)
+    SettingAuxFunc                           0x0800696d   Thumb Code   322  oled_ui_menudata.o(i.SettingAuxFunc)
+    ShowFloatDataWindow                      0x08006ae1   Thumb Code    10  oled_ui_menudata.o(i.ShowFloatDataWindow)
+    ShowIntDataWindow                        0x08006af1   Thumb Code    10  oled_ui_menudata.o(i.ShowIntDataWindow)
+    ShowTextWindow                           0x08006b01   Thumb Code    10  oled_ui_menudata.o(i.ShowTextWindow)
+    SysTick_Handler                          0x08006b11   Thumb Code     8  stm32f4xx_it.o(i.SysTick_Handler)
+    SystemClock_Config                       0x08006b19   Thumb Code   170  main.o(i.SystemClock_Config)
+    SystemInit                               0x08006bcd   Thumb Code    14  system_stm32f4xx.o(i.SystemInit)
+    TIM8_TRG_COM_TIM14_IRQHandler            0x08006be1   Thumb Code    10  stm32f4xx_it.o(i.TIM8_TRG_COM_TIM14_IRQHandler)
+    TIM_Base_SetConfig                       0x08006bf1   Thumb Code   170  stm32f4xx_hal_tim.o(i.TIM_Base_SetConfig)
+    TimeCounter                              0x08006cc9   Thumb Code    58  qthezg.o(i.TimeCounter)
+    UsageFault_Handler                       0x08006d09   Thumb Code     4  stm32f4xx_it.o(i.UsageFault_Handler)
+    __0vsnprintf                             0x08006d0d   Thumb Code    40  printfa.o(i.__0vsnprintf)
+    __1vsnprintf                             0x08006d0d   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    __2vsnprintf                             0x08006d0d   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    __c89vsnprintf                           0x08006d0d   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    vsnprintf                                0x08006d0d   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    __0vsprintf                              0x08006d39   Thumb Code    30  printfa.o(i.__0vsprintf)
+    __1vsprintf                              0x08006d39   Thumb Code     0  printfa.o(i.__0vsprintf)
+    __2vsprintf                              0x08006d39   Thumb Code     0  printfa.o(i.__0vsprintf)
+    __c89vsprintf                            0x08006d39   Thumb Code     0  printfa.o(i.__0vsprintf)
+    vsprintf                                 0x08006d39   Thumb Code     0  printfa.o(i.__0vsprintf)
+    __ARM_fpclassify                         0x08006d5d   Thumb Code    48  fpclassify.o(i.__ARM_fpclassify)
+    __hardfp_atan                            0x08006dc9   Thumb Code   622  atan.o(i.__hardfp_atan)
+    __hardfp_atan2                           0x080070a1   Thumb Code   432  atan2.o(i.__hardfp_atan2)
+    __hardfp_ceil                            0x08007291   Thumb Code   252  ceil.o(i.__hardfp_ceil)
+    __hardfp_fabs                            0x080073a9   Thumb Code    20  fabs.o(i.__hardfp_fabs)
+    __hardfp_fmin                            0x080073bd   Thumb Code   116  fmin.o(i.__hardfp_fmin)
+    __kernel_poly                            0x08007431   Thumb Code   248  poly.o(i.__kernel_poly)
+    __mathlib_dbl_infnan                     0x08007529   Thumb Code    20  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_infnan2                    0x0800753d   Thumb Code    20  dunder.o(i.__mathlib_dbl_infnan2)
+    __mathlib_dbl_underflow                  0x08007551   Thumb Code    24  dunder.o(i.__mathlib_dbl_underflow)
+    __scatterload_copy                       0x08007571   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0800757f   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08007581   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    atan                                     0x08007e63   Thumb Code    16  atan.o(i.atan)
+    fabs                                     0x08007e73   Thumb Code    24  fabs.o(i.fabs)
+    main                                     0x08007e8b   Thumb Code    36  main.o(i.main)
+    system_bsp_init                          0x08007eb1   Thumb Code    14  system_bsp.o(i.system_bsp_init)
+    system_bsp_test_loop                     0x08007ec5   Thumb Code   106  system_bsp.o(i.system_bsp_test_loop)
+    OLED_F10x20                              0x08007f5c   Data        2850  oled_fonts.o(.constdata)
+    OLED_F8x16                               0x08008a7e   Data        1520  oled_fonts.o(.constdata)
+    OLED_F7x12                               0x0800906e   Data        1330  oled_fonts.o(.constdata)
+    OLED_F6x8                                0x080095a0   Data         570  oled_fonts.o(.constdata)
+    OLED_CF20x20                             0x080097da   Data        3276  oled_fonts.o(.constdata)
+    OLED_CF16x16                             0x0800a4a6   Data        3220  oled_fonts.o(.constdata)
+    OLED_CF12x12                             0x0800b13a   Data        2754  oled_fonts.o(.constdata)
+    OLED_CF8x8                               0x0800bbfc   Data         594  oled_fonts.o(.constdata)
+    Arrow                                    0x0800be4e   Data           6  oled_fonts.o(.constdata)
+    UnKnown                                  0x0800be54   Data         656  oled_fonts.o(.constdata)
+    Image_setings                            0x0800c0e4   Data         128  oled_fonts.o(.constdata)
+    Image_window                             0x0800c164   Data         128  oled_fonts.o(.constdata)
+    Image_wechat                             0x0800c1e4   Data         128  oled_fonts.o(.constdata)
+    Image_qq                                 0x0800c264   Data         128  oled_fonts.o(.constdata)
+    Image_alipay                             0x0800c2e4   Data         128  oled_fonts.o(.constdata)
+    Image_more                               0x0800c364   Data         128  oled_fonts.o(.constdata)
+    Image_calc                               0x0800c3e4   Data         128  oled_fonts.o(.constdata)
+    Image_night                              0x0800c464   Data         128  oled_fonts.o(.constdata)
+    Image_sleep                              0x0800c4e4   Data         128  oled_fonts.o(.constdata)
+    Image_calc_64                            0x0800c564   Data         512  oled_fonts.o(.constdata)
+    Image_more_64                            0x0800c764   Data         512  oled_fonts.o(.constdata)
+    Image_night_64                           0x0800c964   Data         512  oled_fonts.o(.constdata)
+    Image_wechat_64                          0x0800cb64   Data         512  oled_fonts.o(.constdata)
+    Image_alipay_64                          0x0800cd64   Data         512  oled_fonts.o(.constdata)
+    Image_settings_64                        0x0800cf64   Data         512  oled_fonts.o(.constdata)
+    Image_alipay_QR_Code                     0x0800d164   Data        1984  oled_fonts.o(.constdata)
+    OLED_UI_LOGO                             0x0800d924   Data        1024  oled_fonts.o(.constdata)
+    OLED_UI_LOGOTEXT                         0x0800dd24   Data         400  oled_fonts.o(.constdata)
+    OLED_UI_LOGOGithub                       0x0800deb4   Data         128  oled_fonts.o(.constdata)
+    OLED_UI_LOGOTEXT64                       0x0800df34   Data         208  oled_fonts.o(.constdata)
+    OLED_UI_SettingsLogo                     0x0800e004   Data         256  oled_fonts.o(.constdata)
+    AHBPrescTable                            0x0800e10c   Data          16  system_stm32f4xx.o(.constdata)
+    APBPrescTable                            0x0800e11c   Data           8  system_stm32f4xx.o(.constdata)
+    __mathlib_zero                           0x0800e1c0   Data           8  qnan.o(.constdata)
+    Region$$Table$$Base                      0x0800e57c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800e59c   Number         0  anon$$obj.o(Region$$Table)
     testfloatnum                             0x20000000   Data           4  oled_ui_menudata.o(.data)
     testintnum                               0x20000004   Data           2  oled_ui_menudata.o(.data)
     SetBrightnessWindow                      0x20000008   Data          56  oled_ui_menudata.o(.data)
@@ -2281,35 +2296,35 @@ Image Symbol Table
     KeyStateTableLength                      0x200010e9   Data           1  key_mod.o(.data)
     OLED_ColorMode                           0x200010ea   Data           1  oled_driver.o(.data)
     spi_busy                                 0x200010eb   Data           1  oled_driver.o(.data)
-    zzarc_vf07                               0x200010f0   Data           8  system_bsp.o(.data)
-    aaaaa                                    0x200010f8   Data           4  key_bsp.o(.data)
-    bbbbb                                    0x200010fc   Data           4  key_bsp.o(.data)
-    ccccc                                    0x20001100   Data           4  key_bsp.o(.data)
-    TIM14_Cnt1                               0x20001104   Data           2  stm32f4xx_it.o(.data)
-    uwTick                                   0x20001108   Data           4  stm32f4xx_hal.o(.data)
-    uwTickPrio                               0x2000110c   Data           4  stm32f4xx_hal.o(.data)
-    uwTickFreq                               0x20001110   Data           1  stm32f4xx_hal.o(.data)
-    SystemCoreClock                          0x20001114   Data           4  system_stm32f4xx.o(.data)
-    LogoMove                                 0x20001118   Data          48  oled_ui_menudata.o(.bss)
-    LogoTextMove                             0x20001148   Data          48  oled_ui_menudata.o(.bss)
-    WelcomeTextMove                          0x20001178   Data          48  oled_ui_menudata.o(.bss)
-    OLED_UI_Cursor                           0x200011a8   Data          96  oled_ui.o(.bss)
-    OLED_UI_MenuFrame                        0x20001208   Data          96  oled_ui.o(.bss)
-    OLED_UI_Window                           0x20001268   Data          96  oled_ui.o(.bss)
-    OLED_UI_ScrollBarHeight                  0x200012c8   Data          24  oled_ui.o(.bss)
-    OLED_UI_ProbWidth                        0x200012e0   Data          24  oled_ui.o(.bss)
-    OLED_UI_PageStartPoint                   0x200012f8   Data          48  oled_ui.o(.bss)
-    OLED_UI_LineStep                         0x20001328   Data          24  oled_ui.o(.bss)
-    OLED_DisplayBuf                          0x20001340   Data        1024  oled_driver.o(.bss)
-    systick_counter_8ms                      0x20001740   Data          16  system_bsp.o(.bss)
-    systick_counter_20ms                     0x20001750   Data          16  system_bsp.o(.bss)
-    vf07_key1                                0x20001760   Data          40  key_bsp.o(.bss)
-    vf07_key2                                0x20001788   Data          40  key_bsp.o(.bss)
-    vf07_key3                                0x200017b0   Data          40  key_bsp.o(.bss)
-    hspi2                                    0x200017d8   Data          88  spi.o(.bss)
-    hdma_spi2_tx                             0x20001830   Data          96  spi.o(.bss)
-    htim14                                   0x20001890   Data          72  tim.o(.bss)
-    __initial_sp                             0x200028d8   Data           0  startup_stm32f407xx.o(STACK)
+    aaaaa                                    0x200010f0   Data           4  key_bsp.o(.data)
+    bbbbb                                    0x200010f4   Data           4  key_bsp.o(.data)
+    ccccc                                    0x200010f8   Data           4  key_bsp.o(.data)
+    TIM14_Cnt1                               0x200010fc   Data           2  stm32f4xx_it.o(.data)
+    uwTick                                   0x20001100   Data           4  stm32f4xx_hal.o(.data)
+    uwTickPrio                               0x20001104   Data           4  stm32f4xx_hal.o(.data)
+    uwTickFreq                               0x20001108   Data           1  stm32f4xx_hal.o(.data)
+    SystemCoreClock                          0x2000110c   Data           4  system_stm32f4xx.o(.data)
+    LogoMove                                 0x20001110   Data          48  oled_ui_menudata.o(.bss)
+    LogoTextMove                             0x20001140   Data          48  oled_ui_menudata.o(.bss)
+    WelcomeTextMove                          0x20001170   Data          48  oled_ui_menudata.o(.bss)
+    OLED_UI_Cursor                           0x200011a0   Data          96  oled_ui.o(.bss)
+    OLED_UI_MenuFrame                        0x20001200   Data          96  oled_ui.o(.bss)
+    OLED_UI_Window                           0x20001260   Data          96  oled_ui.o(.bss)
+    OLED_UI_ScrollBarHeight                  0x200012c0   Data          24  oled_ui.o(.bss)
+    OLED_UI_ProbWidth                        0x200012d8   Data          24  oled_ui.o(.bss)
+    OLED_UI_PageStartPoint                   0x200012f0   Data          48  oled_ui.o(.bss)
+    OLED_UI_LineStep                         0x20001320   Data          24  oled_ui.o(.bss)
+    OLED_DisplayBuf                          0x20001338   Data        1024  oled_driver.o(.bss)
+    systick_counter_8ms                      0x20001738   Data          16  system_bsp.o(.bss)
+    systick_counter_20ms                     0x20001748   Data          16  system_bsp.o(.bss)
+    zzarc_vf07                               0x20001758   Data          12  system_bsp.o(.bss)
+    vf07_key1                                0x20001764   Data          40  key_bsp.o(.bss)
+    vf07_key2                                0x2000178c   Data          40  key_bsp.o(.bss)
+    vf07_key3                                0x200017b4   Data          40  key_bsp.o(.bss)
+    hspi2                                    0x200017dc   Data          88  spi.o(.bss)
+    hdma_spi2_tx                             0x20001834   Data          96  spi.o(.bss)
+    htim14                                   0x20001894   Data          72  tim.o(.bss)
+    __initial_sp                             0x200028e0   Data           0  startup_stm32f407xx.o(STACK)
 
 
 
@@ -2319,267 +2334,281 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000ee64, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x0000e048])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000f6ac, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x0000e898])
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000dd4c, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000e59c, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x08000000   0x08000000   0x00000188   Data   RO         1202    RESET               startup_stm32f407xx.o
-    0x08000188   0x08000188   0x00000000   Code   RO         4063  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000188   0x08000188   0x00000004   Code   RO         4157    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x0800018c   0x0800018c   0x00000004   Code   RO         4160    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000190   0x08000190   0x00000000   Code   RO         4162    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000190   0x08000190   0x00000000   Code   RO         4164    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000190   0x08000190   0x00000008   Code   RO         4165    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000198   0x08000198   0x00000000   Code   RO         4167    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000198   0x08000198   0x00000000   Code   RO         4169    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000198   0x08000198   0x00000004   Code   RO         4158    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x0800019c   0x0800019c   0x00000024   Code   RO         1203    .text               startup_stm32f407xx.o
-    0x080001c0   0x080001c0   0x00000062   Code   RO         4066    .text               mc_w.l(uldiv.o)
-    0x08000222   0x08000222   0x00000024   Code   RO         4068    .text               mc_w.l(memcpya.o)
-    0x08000246   0x08000246   0x00000024   Code   RO         4070    .text               mc_w.l(memseta.o)
-    0x0800026a   0x0800026a   0x0000001c   Code   RO         4072    .text               mc_w.l(strcmp.o)
-    0x08000286   0x08000286   0x0000014e   Code   RO         4104    .text               mf_w.l(dadd.o)
-    0x080003d4   0x080003d4   0x000000e4   Code   RO         4106    .text               mf_w.l(dmul.o)
-    0x080004b8   0x080004b8   0x000000de   Code   RO         4108    .text               mf_w.l(ddiv.o)
-    0x08000596   0x08000596   0x00000022   Code   RO         4112    .text               mf_w.l(dflti.o)
-    0x080005b8   0x080005b8   0x0000003e   Code   RO         4116    .text               mf_w.l(dfixi.o)
-    0x080005f6   0x080005f6   0x00000026   Code   RO         4120    .text               mf_w.l(f2d.o)
-    0x0800061c   0x0800061c   0x00000030   Code   RO         4122    .text               mf_w.l(cdcmple.o)
-    0x0800064c   0x0800064c   0x00000030   Code   RO         4124    .text               mf_w.l(cdrcmple.o)
-    0x0800067c   0x0800067c   0x00000038   Code   RO         4126    .text               mf_w.l(d2f.o)
-    0x080006b4   0x080006b4   0x0000002c   Code   RO         4174    .text               mc_w.l(uidiv.o)
-    0x080006e0   0x080006e0   0x0000001e   Code   RO         4176    .text               mc_w.l(llshl.o)
-    0x080006fe   0x080006fe   0x00000020   Code   RO         4178    .text               mc_w.l(llushr.o)
-    0x0800071e   0x0800071e   0x00000024   Code   RO         4180    .text               mc_w.l(llsshr.o)
-    0x08000742   0x08000742   0x00000000   Code   RO         4189    .text               mc_w.l(iusefp.o)
-    0x08000742   0x08000742   0x0000006e   Code   RO         4190    .text               mf_w.l(fepilogue.o)
-    0x080007b0   0x080007b0   0x000000ba   Code   RO         4192    .text               mf_w.l(depilogue.o)
-    0x0800086a   0x0800086a   0x00000030   Code   RO         4196    .text               mf_w.l(dfixul.o)
-    0x0800089a   0x0800089a   0x00000060   Code   RO         4198    .text               mf_w.l(dcmp4.o)
+    0x08000000   0x08000000   0x00000188   Data   RO         1209    RESET               startup_stm32f407xx.o
+    0x08000188   0x08000188   0x00000000   Code   RO         4066  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000188   0x08000188   0x00000004   Code   RO         4160    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0800018c   0x0800018c   0x00000004   Code   RO         4163    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000190   0x08000190   0x00000000   Code   RO         4165    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000190   0x08000190   0x00000000   Code   RO         4167    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000190   0x08000190   0x00000008   Code   RO         4168    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000198   0x08000198   0x00000000   Code   RO         4170    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000198   0x08000198   0x00000000   Code   RO         4172    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000198   0x08000198   0x00000004   Code   RO         4161    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x0800019c   0x0800019c   0x00000024   Code   RO         1210    .text               startup_stm32f407xx.o
+    0x080001c0   0x080001c0   0x00000062   Code   RO         4069    .text               mc_w.l(uldiv.o)
+    0x08000222   0x08000222   0x00000024   Code   RO         4071    .text               mc_w.l(memcpya.o)
+    0x08000246   0x08000246   0x00000024   Code   RO         4073    .text               mc_w.l(memseta.o)
+    0x0800026a   0x0800026a   0x0000001c   Code   RO         4075    .text               mc_w.l(strcmp.o)
+    0x08000286   0x08000286   0x0000014e   Code   RO         4107    .text               mf_w.l(dadd.o)
+    0x080003d4   0x080003d4   0x000000e4   Code   RO         4109    .text               mf_w.l(dmul.o)
+    0x080004b8   0x080004b8   0x000000de   Code   RO         4111    .text               mf_w.l(ddiv.o)
+    0x08000596   0x08000596   0x00000022   Code   RO         4115    .text               mf_w.l(dflti.o)
+    0x080005b8   0x080005b8   0x0000003e   Code   RO         4119    .text               mf_w.l(dfixi.o)
+    0x080005f6   0x080005f6   0x00000026   Code   RO         4123    .text               mf_w.l(f2d.o)
+    0x0800061c   0x0800061c   0x00000030   Code   RO         4125    .text               mf_w.l(cdcmple.o)
+    0x0800064c   0x0800064c   0x00000030   Code   RO         4127    .text               mf_w.l(cdrcmple.o)
+    0x0800067c   0x0800067c   0x00000038   Code   RO         4129    .text               mf_w.l(d2f.o)
+    0x080006b4   0x080006b4   0x0000002c   Code   RO         4177    .text               mc_w.l(uidiv.o)
+    0x080006e0   0x080006e0   0x0000001e   Code   RO         4179    .text               mc_w.l(llshl.o)
+    0x080006fe   0x080006fe   0x00000020   Code   RO         4181    .text               mc_w.l(llushr.o)
+    0x0800071e   0x0800071e   0x00000024   Code   RO         4183    .text               mc_w.l(llsshr.o)
+    0x08000742   0x08000742   0x00000000   Code   RO         4192    .text               mc_w.l(iusefp.o)
+    0x08000742   0x08000742   0x0000006e   Code   RO         4193    .text               mf_w.l(fepilogue.o)
+    0x080007b0   0x080007b0   0x000000ba   Code   RO         4195    .text               mf_w.l(depilogue.o)
+    0x0800086a   0x0800086a   0x00000030   Code   RO         4199    .text               mf_w.l(dfixul.o)
+    0x0800089a   0x0800089a   0x00000060   Code   RO         4201    .text               mf_w.l(dcmp4.o)
     0x080008fa   0x080008fa   0x00000002   PAD
-    0x080008fc   0x080008fc   0x00000024   Code   RO         4204    .text               mc_w.l(init.o)
-    0x08000920   0x08000920   0x00000056   Code   RO         4216    .text               mc_w.l(__dczerorl2.o)
+    0x080008fc   0x080008fc   0x00000024   Code   RO         4207    .text               mc_w.l(init.o)
+    0x08000920   0x08000920   0x00000056   Code   RO         4219    .text               mc_w.l(__dczerorl2.o)
     0x08000976   0x08000976   0x00000002   PAD
     0x08000978   0x08000978   0x00000118   Code   RO            4    i.AboutOLED_UIAuxFunc  oled_ui_menudata.o
     0x08000a90   0x08000a90   0x00000118   Code   RO            5    i.AboutThisDeviceAuxFunc  oled_ui_menudata.o
-    0x08000ba8   0x08000ba8   0x00000018   Code   RO          469    i.BackEventMenuItem  oled_ui.o
+    0x08000ba8   0x08000ba8   0x00000018   Code   RO          480    i.BackEventMenuItem  oled_ui.o
     0x08000bc0   0x08000bc0   0x00000010   Code   RO            6    i.BrightnessWindow  oled_ui_menudata.o
-    0x08000bd0   0x08000bd0   0x0000002c   Code   RO         1115    i.BspKeyInit        key_bsp.o
-    0x08000bfc   0x08000bfc   0x00000034   Code   RO         1116    i.BspKeyInstantiation  key_bsp.o
-    0x08000c30   0x08000c30   0x00000004   Code   RO         1388    i.BusFault_Handler  stm32f4xx_it.o
-    0x08000c34   0x08000c34   0x0000004a   Code   RO          470    i.CalcStringWidth   oled_ui.o
-    0x08000c7e   0x08000c7e   0x00000076   Code   RO          471    i.ChangeArea        oled_ui.o
-    0x08000cf4   0x08000cf4   0x0000001c   Code   RO          472    i.ChangeDistance    oled_ui.o
-    0x08000d10   0x08000d10   0x000002dc   Code   RO          473    i.ChangeFloatNum    oled_ui.o
-    0x08000fec   0x08000fec   0x0000003e   Code   RO          474    i.ChangePoint       oled_ui.o
+    0x08000bd0   0x08000bd0   0x0000002c   Code   RO         1122    i.BspKeyInit        key_bsp.o
+    0x08000bfc   0x08000bfc   0x00000034   Code   RO         1123    i.BspKeyInstantiation  key_bsp.o
+    0x08000c30   0x08000c30   0x00000004   Code   RO         1391    i.BusFault_Handler  stm32f4xx_it.o
+    0x08000c34   0x08000c34   0x0000004a   Code   RO          481    i.CalcStringWidth   oled_ui.o
+    0x08000c7e   0x08000c7e   0x00000076   Code   RO          482    i.ChangeArea        oled_ui.o
+    0x08000cf4   0x08000cf4   0x0000001c   Code   RO          483    i.ChangeDistance    oled_ui.o
+    0x08000d10   0x08000d10   0x000002dc   Code   RO          484    i.ChangeFloatNum    oled_ui.o
+    0x08000fec   0x08000fec   0x0000003e   Code   RO          485    i.ChangePoint       oled_ui.o
     0x0800102a   0x0800102a   0x00000002   PAD
-    0x0800102c   0x0800102c   0x00000134   Code   RO          475    i.CurrentMenuPageBackUp  oled_ui.o
-    0x08001160   0x08001160   0x000001a4   Code   RO          476    i.CurrentMenuPageInit  oled_ui.o
-    0x08001304   0x08001304   0x00000010   Code   RO         1389    i.DMA1_Stream4_IRQHandler  stm32f4xx_it.o
-    0x08001314   0x08001314   0x00000034   Code   RO         2335    i.DMA_CalcBaseAndBitshift  stm32f4xx_hal_dma.o
-    0x08001348   0x08001348   0x000000aa   Code   RO         2336    i.DMA_CheckFifoParam  stm32f4xx_hal_dma.o
-    0x080013f2   0x080013f2   0x00000002   Code   RO         1390    i.DebugMon_Handler  stm32f4xx_it.o
-    0x080013f4   0x080013f4   0x00000170   Code   RO          477    i.DrawLinePermix    oled_ui.o
+    0x0800102c   0x0800102c   0x00000134   Code   RO          486    i.CurrentMenuPageBackUp  oled_ui.o
+    0x08001160   0x08001160   0x000001a4   Code   RO          487    i.CurrentMenuPageInit  oled_ui.o
+    0x08001304   0x08001304   0x00000010   Code   RO         1392    i.DMA1_Stream4_IRQHandler  stm32f4xx_it.o
+    0x08001314   0x08001314   0x00000034   Code   RO         2338    i.DMA_CalcBaseAndBitshift  stm32f4xx_hal_dma.o
+    0x08001348   0x08001348   0x000000aa   Code   RO         2339    i.DMA_CheckFifoParam  stm32f4xx_hal_dma.o
+    0x080013f2   0x080013f2   0x00000002   Code   RO         1393    i.DebugMon_Handler  stm32f4xx_it.o
+    0x080013f4   0x080013f4   0x00000170   Code   RO          488    i.DrawLinePermix    oled_ui.o
     0x08001564   0x08001564   0x00000010   Code   RO            7    i.EmptyWindow       oled_ui_menudata.o
-    0x08001574   0x08001574   0x00000002   Code   RO         1011    i.Encoder_Disable   oled_ui_driver.o
-    0x08001576   0x08001576   0x00000002   Code   RO         1012    i.Encoder_Enable    oled_ui_driver.o
-    0x08001578   0x08001578   0x00000006   Code   RO         1210    i.Error_Handler     main.o
-    0x0800157e   0x0800157e   0x00000008   Code   RO          770    i.FunGetData        qthezg.o
-    0x08001586   0x08001586   0x00000006   Code   RO          771    i.FunGetFlg         qthezg.o
-    0x0800158c   0x0800158c   0x00000004   Code   RO          772    i.FunSetData        qthezg.o
-    0x08001590   0x08001590   0x00000004   Code   RO          773    i.FunSetFlg         qthezg.o
-    0x08001594   0x08001594   0x00000010   Code   RO         1117    i.GetKey1Gpio       key_bsp.o
-    0x080015a4   0x080015a4   0x00000010   Code   RO         1118    i.GetKey2Gpio       key_bsp.o
-    0x080015b4   0x080015b4   0x00000014   Code   RO         1119    i.GetKey3Gpio       key_bsp.o
-    0x080015c8   0x080015c8   0x00000018   Code   RO          483    i.GetMenuItemNum    oled_ui.o
-    0x080015e0   0x080015e0   0x00000042   Code   RO          484    i.GetOLED_Font      oled_ui.o
-    0x08001622   0x08001622   0x00000002   PAD
-    0x08001624   0x08001624   0x00000024   Code   RO          485    i.GetWindowDataStyle  oled_ui.o
-    0x08001648   0x08001648   0x00000240   Code   RO         2343    i.HAL_DMA_IRQHandler  stm32f4xx_hal_dma.o
-    0x08001888   0x08001888   0x000000ec   Code   RO         2344    i.HAL_DMA_Init      stm32f4xx_hal_dma.o
-    0x08001974   0x08001974   0x000001f4   Code   RO         2231    i.HAL_GPIO_Init     stm32f4xx_hal_gpio.o
-    0x08001b68   0x08001b68   0x00000010   Code   RO         2233    i.HAL_GPIO_ReadPin  stm32f4xx_hal_gpio.o
-    0x08001b78   0x08001b78   0x0000000c   Code   RO         2235    i.HAL_GPIO_WritePin  stm32f4xx_hal_gpio.o
-    0x08001b84   0x08001b84   0x0000000c   Code   RO         2768    i.HAL_GetTick       stm32f4xx_hal.o
-    0x08001b90   0x08001b90   0x00000018   Code   RO         2774    i.HAL_IncTick       stm32f4xx_hal.o
-    0x08001ba8   0x08001ba8   0x0000003c   Code   RO         2775    i.HAL_Init          stm32f4xx_hal.o
-    0x08001be4   0x08001be4   0x0000004c   Code   RO         2776    i.HAL_InitTick      stm32f4xx_hal.o
-    0x08001c30   0x08001c30   0x00000048   Code   RO         1485    i.HAL_MspInit       stm32f4xx_hal_msp.o
-    0x08001c78   0x08001c78   0x00000020   Code   RO         2620    i.HAL_NVIC_EnableIRQ  stm32f4xx_hal_cortex.o
-    0x08001c98   0x08001c98   0x0000007c   Code   RO         2626    i.HAL_NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x08001d14   0x08001d14   0x00000028   Code   RO         2627    i.HAL_NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x08001d3c   0x08001d3c   0x00000184   Code   RO         1832    i.HAL_RCC_ClockConfig  stm32f4xx_hal_rcc.o
-    0x08001ec0   0x08001ec0   0x000000b0   Code   RO         1841    i.HAL_RCC_GetSysClockFreq  stm32f4xx_hal_rcc.o
-    0x08001f70   0x08001f70   0x000004a0   Code   RO         1844    i.HAL_RCC_OscConfig  stm32f4xx_hal_rcc.o
-    0x08002410   0x08002410   0x000000c8   Code   RO         1520    i.HAL_SPI_Init      stm32f4xx_hal_spi.o
-    0x080024d8   0x080024d8   0x000000d0   Code   RO         1305    i.HAL_SPI_MspInit   spi.o
-    0x080025a8   0x080025a8   0x00000034   Code   RO         2631    i.HAL_SYSTICK_Config  stm32f4xx_hal_cortex.o
-    0x080025dc   0x080025dc   0x00000002   Code   RO         3730    i.HAL_TIMEx_BreakCallback  stm32f4xx_hal_tim_ex.o
-    0x080025de   0x080025de   0x00000002   Code   RO         3731    i.HAL_TIMEx_CommutCallback  stm32f4xx_hal_tim_ex.o
-    0x080025e0   0x080025e0   0x00000066   Code   RO         3015    i.HAL_TIM_Base_Init  stm32f4xx_hal_tim.o
-    0x08002646   0x08002646   0x00000002   PAD
-    0x08002648   0x08002648   0x00000048   Code   RO         1347    i.HAL_TIM_Base_MspInit  tim.o
-    0x08002690   0x08002690   0x000000a8   Code   RO         3020    i.HAL_TIM_Base_Start_IT  stm32f4xx_hal_tim.o
-    0x08002738   0x08002738   0x00000002   Code   RO         3049    i.HAL_TIM_IC_CaptureCallback  stm32f4xx_hal_tim.o
-    0x0800273a   0x0800273a   0x00000196   Code   RO         3063    i.HAL_TIM_IRQHandler  stm32f4xx_hal_tim.o
-    0x080028d0   0x080028d0   0x00000002   Code   RO         3066    i.HAL_TIM_OC_DelayElapsedCallback  stm32f4xx_hal_tim.o
-    0x080028d2   0x080028d2   0x00000002   Code   RO         3093    i.HAL_TIM_PWM_PulseFinishedCallback  stm32f4xx_hal_tim.o
-    0x080028d4   0x080028d4   0x0000001c   Code   RO         1391    i.HAL_TIM_PeriodElapsedCallback  stm32f4xx_it.o
-    0x080028f0   0x080028f0   0x00000002   Code   RO         3106    i.HAL_TIM_TriggerCallback  stm32f4xx_hal_tim.o
-    0x080028f2   0x080028f2   0x00000004   Code   RO         1392    i.HardFault_Handler  stm32f4xx_it.o
-    0x080028f6   0x080028f6   0x00000002   PAD
-    0x080028f8   0x080028f8   0x00000034   Code   RO         1120    i.Key1Handler       key_bsp.o
-    0x0800292c   0x0800292c   0x00000034   Code   RO         1121    i.Key2Handler       key_bsp.o
-    0x08002960   0x08002960   0x00000034   Code   RO         1122    i.Key3Handler       key_bsp.o
-    0x08002994   0x08002994   0x00000158   Code   RO          869    i.KeyLoop           key_mod.o
-    0x08002aec   0x08002aec   0x0000002c   Code   RO          870    i.KeyStateComparison  key_mod.o
-    0x08002b18   0x08002b18   0x00000038   Code   RO         1280    i.MX_DMA_Init       dma.o
-    0x08002b50   0x08002b50   0x0000012c   Code   RO         1256    i.MX_GPIO_Init      gpio.o
-    0x08002c7c   0x08002c7c   0x00000044   Code   RO         1306    i.MX_SPI2_Init      spi.o
-    0x08002cc0   0x08002cc0   0x0000003c   Code   RO         1348    i.MX_TIM14_Init     tim.o
-    0x08002cfc   0x08002cfc   0x00000084   Code   RO            8    i.MainAuxFunc       oled_ui_menudata.o
-    0x08002d80   0x08002d80   0x00000004   Code   RO         1393    i.MemManage_Handler  stm32f4xx_it.o
-    0x08002d84   0x08002d84   0x000000cc   Code   RO          490    i.MoveMenuElements  oled_ui.o
-    0x08002e50   0x08002e50   0x00000004   Code   RO         1394    i.NMI_Handler       stm32f4xx_it.o
-    0x08002e54   0x08002e54   0x00000034   Code   RO          902    i.OLED_Brightness   oled_driver.o
-    0x08002e88   0x08002e88   0x00000028   Code   RO          218    i.OLED_Clear        oled.o
-    0x08002eb0   0x08002eb0   0x000000d8   Code   RO          219    i.OLED_ClearArea    oled.o
-    0x08002f88   0x08002f88   0x00000278   Code   RO          220    i.OLED_DrawArc      oled.o
-    0x08003200   0x08003200   0x00000176   Code   RO          223    i.OLED_DrawLine     oled.o
-    0x08003376   0x08003376   0x00000002   PAD
-    0x08003378   0x08003378   0x00000054   Code   RO          224    i.OLED_DrawPoint    oled.o
-    0x080033cc   0x080033cc   0x00000154   Code   RO          225    i.OLED_DrawRectangle  oled.o
-    0x08003520   0x08003520   0x0000020e   Code   RO          226    i.OLED_DrawRoundedRectangle  oled.o
-    0x0800372e   0x0800372e   0x00000002   PAD
-    0x08003730   0x08003730   0x00000930   Code   RO          491    i.OLED_DrawWindow   oled_ui.o
-    0x08004060   0x08004060   0x000000d4   Code   RO          907    i.OLED_Init         oled_driver.o
-    0x08004134   0x08004134   0x000000a0   Code   RO          229    i.OLED_IsInAngle    oled.o
-    0x080041d4   0x080041d4   0x00000032   Code   RO          231    i.OLED_Printf       oled.o
-    0x08004206   0x08004206   0x00000046   Code   RO          234    i.OLED_PrintfMixArea  oled.o
-    0x0800424c   0x0800424c   0x000000d8   Code   RO          236    i.OLED_ReverseArea  oled.o
-    0x08004324   0x08004324   0x0000000c   Code   RO          908    i.OLED_SetColorMode  oled_driver.o
-    0x08004330   0x08004330   0x00000022   Code   RO          909    i.OLED_SetCursor    oled_driver.o
-    0x08004352   0x08004352   0x00000002   PAD
-    0x08004354   0x08004354   0x000000a0   Code   RO          238    i.OLED_ShowChar     oled.o
-    0x080043f4   0x080043f4   0x000000c8   Code   RO          239    i.OLED_ShowCharArea  oled.o
-    0x080044bc   0x080044bc   0x0000021c   Code   RO          241    i.OLED_ShowChineseArea  oled.o
-    0x080046d8   0x080046d8   0x000001f0   Code   RO          244    i.OLED_ShowImage    oled.o
-    0x080048c8   0x080048c8   0x000001ac   Code   RO          245    i.OLED_ShowImageArea  oled.o
-    0x08004a74   0x08004a74   0x00000080   Code   RO          247    i.OLED_ShowMixStringArea  oled.o
-    0x08004af4   0x08004af4   0x0000002e   Code   RO          250    i.OLED_ShowString   oled.o
-    0x08004b22   0x08004b22   0x00000008   Code   RO          493    i.OLED_UI_Back      oled_ui.o
-    0x08004b2a   0x08004b2a   0x00000002   PAD
-    0x08004b2c   0x08004b2c   0x00000094   Code   RO          494    i.OLED_UI_CreateWindow  oled_ui.o
-    0x08004bc0   0x08004bc0   0x00000104   Code   RO          495    i.OLED_UI_FadeOut_Masking  oled_ui.o
-    0x08004cc4   0x08004cc4   0x00000018   Code   RO          496    i.OLED_UI_Init      oled_ui.o
-    0x08004cdc   0x08004cdc   0x0000001c   Code   RO          498    i.OLED_UI_MainLoop  oled_ui.o
-    0x08004cf8   0x08004cf8   0x00000038   Code   RO          499    i.OLED_UI_ShowFPS   oled_ui.o
-    0x08004d30   0x08004d30   0x00000028   Code   RO          910    i.OLED_Update       oled_driver.o
-    0x08004d58   0x08004d58   0x00000030   Code   RO          912    i.OLED_WriteDataArr  oled_driver.o
-    0x08004d88   0x08004d88   0x0000004c   Code   RO          913    i.OLED_Write_CMD    oled_driver.o
-    0x08004dd4   0x08004dd4   0x0000004c   Code   RO          914    i.OLED_Write_DATA   oled_driver.o
-    0x08004e20   0x08004e20   0x00000002   Code   RO         1395    i.PendSV_Handler    stm32f4xx_it.o
-    0x08004e22   0x08004e22   0x00000002   PAD
-    0x08004e24   0x08004e24   0x000008aa   Code   RO          500    i.PrintMenuElements  oled_ui.o
-    0x080056ce   0x080056ce   0x00000002   PAD
-    0x080056d0   0x080056d0   0x0000000c   Code   RO          501    i.ResetEnterFlag    oled_ui.o
-    0x080056dc   0x080056dc   0x0000000c   Code   RO          502    i.ResetFadeOutFlag  oled_ui.o
-    0x080056e8   0x080056e8   0x0000014c   Code   RO          503    i.ReverseCoordinate  oled_ui.o
-    0x08005834   0x08005834   0x00000020   Code   RO          871    i.RummyFunction     key_mod.o
-    0x08005854   0x08005854   0x00000050   Code   RO          504    i.RunCurrentCallBackFunction  oled_ui.o
-    0x080058a4   0x080058a4   0x00000364   Code   RO          505    i.RunFadeOut        oled_ui.o
-    0x08005c08   0x08005c08   0x00000002   Code   RO         1396    i.SVC_Handler       stm32f4xx_it.o
-    0x08005c0a   0x08005c0a   0x00000002   PAD
-    0x08005c0c   0x08005c0c   0x0000004c   Code   RO          506    i.SetCursorZero     oled_ui.o
-    0x08005c58   0x08005c58   0x00000014   Code   RO          508    i.SetFadeOutFlag    oled_ui.o
-    0x08005c6c   0x08005c6c   0x00000034   Code   RO          509    i.SetLineSplitZero  oled_ui.o
-    0x08005ca0   0x08005ca0   0x000002c0   Code   RO          510    i.SetTargetCursor   oled_ui.o
-    0x08005f60   0x08005f60   0x00000044   Code   RO          511    i.SetTargetMenuFrame  oled_ui.o
-    0x08005fa4   0x08005fa4   0x000000f0   Code   RO          512    i.SetTargetProbWidth  oled_ui.o
-    0x08006094   0x08006094   0x0000008c   Code   RO          513    i.SetTargetScrollBarHeight  oled_ui.o
-    0x08006120   0x08006120   0x00000174   Code   RO            9    i.SettingAuxFunc    oled_ui_menudata.o
-    0x08006294   0x08006294   0x00000010   Code   RO           10    i.ShowFloatDataWindow  oled_ui_menudata.o
-    0x080062a4   0x080062a4   0x00000010   Code   RO           11    i.ShowIntDataWindow  oled_ui_menudata.o
-    0x080062b4   0x080062b4   0x00000010   Code   RO           12    i.ShowTextWindow    oled_ui_menudata.o
-    0x080062c4   0x080062c4   0x00000008   Code   RO         1397    i.SysTick_Handler   stm32f4xx_it.o
-    0x080062cc   0x080062cc   0x000000b4   Code   RO         1211    i.SystemClock_Config  main.o
-    0x08006380   0x08006380   0x00000014   Code   RO         3998    i.SystemInit        system_stm32f4xx.o
-    0x08006394   0x08006394   0x00000010   Code   RO         1398    i.TIM8_TRG_COM_TIM14_IRQHandler  stm32f4xx_it.o
-    0x080063a4   0x080063a4   0x000000d8   Code   RO         3108    i.TIM_Base_SetConfig  stm32f4xx_hal_tim.o
-    0x0800647c   0x0800647c   0x00000040   Code   RO          774    i.TimeCounter       qthezg.o
-    0x080064bc   0x080064bc   0x00000004   Code   RO         1399    i.UsageFault_Handler  stm32f4xx_it.o
-    0x080064c0   0x080064c0   0x0000002c   Code   RO         4082    i.__0vsnprintf      mc_w.l(printfa.o)
-    0x080064ec   0x080064ec   0x00000024   Code   RO         4083    i.__0vsprintf       mc_w.l(printfa.o)
-    0x08006510   0x08006510   0x00000030   Code   RO         4200    i.__ARM_fpclassify  m_wm.l(fpclassify.o)
-    0x08006540   0x08006540   0x00000010   Code   RO         2633    i.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x08006550   0x08006550   0x00000028   Code   RO         2634    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x08006578   0x08006578   0x000002d8   Code   RO         4128    i.__hardfp_atan     m_wm.l(atan.o)
-    0x08006850   0x08006850   0x000001f0   Code   RO         4031    i.__hardfp_atan2    m_wm.l(atan2.o)
-    0x08006a40   0x08006a40   0x00000118   Code   RO         4043    i.__hardfp_ceil     m_wm.l(ceil.o)
-    0x08006b58   0x08006b58   0x00000014   Code   RO         4049    i.__hardfp_fabs     m_wm.l(fabs.o)
-    0x08006b6c   0x08006b6c   0x00000074   Code   RO         4059    i.__hardfp_fmin     m_wm.l(fmin.o)
-    0x08006be0   0x08006be0   0x000000f8   Code   RO         4202    i.__kernel_poly     m_wm.l(poly.o)
-    0x08006cd8   0x08006cd8   0x00000014   Code   RO         4143    i.__mathlib_dbl_infnan  m_wm.l(dunder.o)
-    0x08006cec   0x08006cec   0x00000014   Code   RO         4144    i.__mathlib_dbl_infnan2  m_wm.l(dunder.o)
-    0x08006d00   0x08006d00   0x00000020   Code   RO         4148    i.__mathlib_dbl_underflow  m_wm.l(dunder.o)
-    0x08006d20   0x08006d20   0x0000000e   Code   RO         4210    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08006d2e   0x08006d2e   0x00000002   Code   RO         4211    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08006d30   0x08006d30   0x0000000e   Code   RO         4212    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08006d3e   0x08006d3e   0x00000002   PAD
-    0x08006d40   0x08006d40   0x00000184   Code   RO         4084    i._fp_digits        mc_w.l(printfa.o)
-    0x08006ec4   0x08006ec4   0x000006dc   Code   RO         4085    i._printf_core      mc_w.l(printfa.o)
-    0x080075a0   0x080075a0   0x00000024   Code   RO         4086    i._printf_post_padding  mc_w.l(printfa.o)
-    0x080075c4   0x080075c4   0x0000002e   Code   RO         4087    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x080075f2   0x080075f2   0x00000016   Code   RO         4088    i._snputc           mc_w.l(printfa.o)
-    0x08007608   0x08007608   0x0000000a   Code   RO         4089    i._sputc            mc_w.l(printfa.o)
-    0x08007612   0x08007612   0x00000010   Code   RO         4130    i.atan              m_wm.l(atan.o)
-    0x08007622   0x08007622   0x00000018   Code   RO         4051    i.fabs              m_wm.l(fabs.o)
-    0x0800763a   0x0800763a   0x00000024   Code   RO         1212    i.main              main.o
-    0x0800765e   0x0800765e   0x00000002   PAD
-    0x08007660   0x08007660   0x00000014   Code   RO         1066    i.system_bsp_init   system_bsp.o
-    0x08007674   0x08007674   0x00000084   Code   RO         1067    i.system_bsp_test_loop  system_bsp.o
-    0x080076f8   0x080076f8   0x00000014   Data   RO          515    .constdata          oled_ui.o
-    0x0800770c   0x0800770c   0x000061a8   Data   RO         1188    .constdata          oled_fonts.o
-    0x0800d8b4   0x0800d8b4   0x00000008   Data   RO         2350    .constdata          stm32f4xx_hal_dma.o
-    0x0800d8bc   0x0800d8bc   0x00000018   Data   RO         3999    .constdata          system_stm32f4xx.o
-    0x0800d8d4   0x0800d8d4   0x00000004   PAD
-    0x0800d8d8   0x0800d8d8   0x00000098   Data   RO         4131    .constdata          m_wm.l(atan.o)
-    0x0800d970   0x0800d970   0x00000008   Data   RO         4156    .constdata          m_wm.l(qnan.o)
-    0x0800d978   0x0800d978   0x000003b2   Data   RO           14    .conststring        oled_ui_menudata.o
-    0x0800dd2a   0x0800dd2a   0x00000002   PAD
-    0x0800dd2c   0x0800dd2c   0x00000020   Data   RO         4208    Region$$Table       anon$$obj.o
+    0x08001574   0x08001574   0x00000002   Code   RO         1019    i.Encoder_Disable   oled_ui_driver.o
+    0x08001576   0x08001576   0x00000002   Code   RO         1020    i.Encoder_Enable    oled_ui_driver.o
+    0x08001578   0x08001578   0x00000004   Code   RO         1021    i.Encoder_Get       oled_ui_driver.o
+    0x0800157c   0x0800157c   0x0000007c   Code   RO          489    i.EnterEventMenuItem  oled_ui.o
+    0x080015f8   0x080015f8   0x00000006   Code   RO         1217    i.Error_Handler     main.o
+    0x080015fe   0x080015fe   0x00000008   Code   RO          781    i.FunGetData        qthezg.o
+    0x08001606   0x08001606   0x00000006   Code   RO          782    i.FunGetFlg         qthezg.o
+    0x0800160c   0x0800160c   0x00000004   Code   RO          783    i.FunSetData        qthezg.o
+    0x08001610   0x08001610   0x00000004   Code   RO          784    i.FunSetFlg         qthezg.o
+    0x08001614   0x08001614   0x00000074   Code   RO          490    i.GetCurrentMenuPageMaxSlotNum  oled_ui.o
+    0x08001688   0x08001688   0x00000014   Code   RO          491    i.GetEnterFlag      oled_ui.o
+    0x0800169c   0x0800169c   0x00000030   Code   RO          492    i.GetFPS            oled_ui.o
+    0x080016cc   0x080016cc   0x00000014   Code   RO          493    i.GetFadeoutFlag    oled_ui.o
+    0x080016e0   0x080016e0   0x00000010   Code   RO         1124    i.GetKey1Gpio       key_bsp.o
+    0x080016f0   0x080016f0   0x00000010   Code   RO         1125    i.GetKey2Gpio       key_bsp.o
+    0x08001700   0x08001700   0x00000014   Code   RO         1126    i.GetKey3Gpio       key_bsp.o
+    0x08001714   0x08001714   0x00000018   Code   RO          494    i.GetMenuItemNum    oled_ui.o
+    0x0800172c   0x0800172c   0x00000042   Code   RO          495    i.GetOLED_Font      oled_ui.o
+    0x0800176e   0x0800176e   0x00000002   PAD
+    0x08001770   0x08001770   0x00000024   Code   RO          496    i.GetWindowDataStyle  oled_ui.o
+    0x08001794   0x08001794   0x00000240   Code   RO         2346    i.HAL_DMA_IRQHandler  stm32f4xx_hal_dma.o
+    0x080019d4   0x080019d4   0x000000ec   Code   RO         2347    i.HAL_DMA_Init      stm32f4xx_hal_dma.o
+    0x08001ac0   0x08001ac0   0x000001f4   Code   RO         2234    i.HAL_GPIO_Init     stm32f4xx_hal_gpio.o
+    0x08001cb4   0x08001cb4   0x00000010   Code   RO         2236    i.HAL_GPIO_ReadPin  stm32f4xx_hal_gpio.o
+    0x08001cc4   0x08001cc4   0x0000000c   Code   RO         2238    i.HAL_GPIO_WritePin  stm32f4xx_hal_gpio.o
+    0x08001cd0   0x08001cd0   0x0000000c   Code   RO         2771    i.HAL_GetTick       stm32f4xx_hal.o
+    0x08001cdc   0x08001cdc   0x00000018   Code   RO         2777    i.HAL_IncTick       stm32f4xx_hal.o
+    0x08001cf4   0x08001cf4   0x0000003c   Code   RO         2778    i.HAL_Init          stm32f4xx_hal.o
+    0x08001d30   0x08001d30   0x0000004c   Code   RO         2779    i.HAL_InitTick      stm32f4xx_hal.o
+    0x08001d7c   0x08001d7c   0x00000048   Code   RO         1488    i.HAL_MspInit       stm32f4xx_hal_msp.o
+    0x08001dc4   0x08001dc4   0x00000020   Code   RO         2623    i.HAL_NVIC_EnableIRQ  stm32f4xx_hal_cortex.o
+    0x08001de4   0x08001de4   0x0000007c   Code   RO         2629    i.HAL_NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x08001e60   0x08001e60   0x00000028   Code   RO         2630    i.HAL_NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
+    0x08001e88   0x08001e88   0x00000184   Code   RO         1835    i.HAL_RCC_ClockConfig  stm32f4xx_hal_rcc.o
+    0x0800200c   0x0800200c   0x000000b0   Code   RO         1844    i.HAL_RCC_GetSysClockFreq  stm32f4xx_hal_rcc.o
+    0x080020bc   0x080020bc   0x000004a0   Code   RO         1847    i.HAL_RCC_OscConfig  stm32f4xx_hal_rcc.o
+    0x0800255c   0x0800255c   0x000000c8   Code   RO         1523    i.HAL_SPI_Init      stm32f4xx_hal_spi.o
+    0x08002624   0x08002624   0x000000d0   Code   RO         1308    i.HAL_SPI_MspInit   spi.o
+    0x080026f4   0x080026f4   0x00000034   Code   RO         2634    i.HAL_SYSTICK_Config  stm32f4xx_hal_cortex.o
+    0x08002728   0x08002728   0x00000002   Code   RO         3733    i.HAL_TIMEx_BreakCallback  stm32f4xx_hal_tim_ex.o
+    0x0800272a   0x0800272a   0x00000002   Code   RO         3734    i.HAL_TIMEx_CommutCallback  stm32f4xx_hal_tim_ex.o
+    0x0800272c   0x0800272c   0x00000066   Code   RO         3018    i.HAL_TIM_Base_Init  stm32f4xx_hal_tim.o
+    0x08002792   0x08002792   0x00000002   PAD
+    0x08002794   0x08002794   0x00000048   Code   RO         1350    i.HAL_TIM_Base_MspInit  tim.o
+    0x080027dc   0x080027dc   0x000000a8   Code   RO         3023    i.HAL_TIM_Base_Start_IT  stm32f4xx_hal_tim.o
+    0x08002884   0x08002884   0x00000002   Code   RO         3052    i.HAL_TIM_IC_CaptureCallback  stm32f4xx_hal_tim.o
+    0x08002886   0x08002886   0x00000196   Code   RO         3066    i.HAL_TIM_IRQHandler  stm32f4xx_hal_tim.o
+    0x08002a1c   0x08002a1c   0x00000002   Code   RO         3069    i.HAL_TIM_OC_DelayElapsedCallback  stm32f4xx_hal_tim.o
+    0x08002a1e   0x08002a1e   0x00000002   Code   RO         3096    i.HAL_TIM_PWM_PulseFinishedCallback  stm32f4xx_hal_tim.o
+    0x08002a20   0x08002a20   0x00000024   Code   RO         1394    i.HAL_TIM_PeriodElapsedCallback  stm32f4xx_it.o
+    0x08002a44   0x08002a44   0x00000002   Code   RO         3109    i.HAL_TIM_TriggerCallback  stm32f4xx_hal_tim.o
+    0x08002a46   0x08002a46   0x00000004   Code   RO         1395    i.HardFault_Handler  stm32f4xx_it.o
+    0x08002a4a   0x08002a4a   0x00000002   PAD
+    0x08002a4c   0x08002a4c   0x00000034   Code   RO         1127    i.Key1Handler       key_bsp.o
+    0x08002a80   0x08002a80   0x00000034   Code   RO         1128    i.Key2Handler       key_bsp.o
+    0x08002ab4   0x08002ab4   0x00000024   Code   RO         1129    i.Key3Handler       key_bsp.o
+    0x08002ad8   0x08002ad8   0x00000158   Code   RO          880    i.KeyLoop           key_mod.o
+    0x08002c30   0x08002c30   0x0000002c   Code   RO          881    i.KeyStateComparison  key_mod.o
+    0x08002c5c   0x08002c5c   0x00000038   Code   RO         1283    i.MX_DMA_Init       dma.o
+    0x08002c94   0x08002c94   0x0000012c   Code   RO         1259    i.MX_GPIO_Init      gpio.o
+    0x08002dc0   0x08002dc0   0x00000044   Code   RO         1309    i.MX_SPI2_Init      spi.o
+    0x08002e04   0x08002e04   0x0000003c   Code   RO         1351    i.MX_TIM14_Init     tim.o
+    0x08002e40   0x08002e40   0x00000084   Code   RO            8    i.MainAuxFunc       oled_ui_menudata.o
+    0x08002ec4   0x08002ec4   0x00000004   Code   RO         1396    i.MemManage_Handler  stm32f4xx_it.o
+    0x08002ec8   0x08002ec8   0x00000038   Code   RO          497    i.MenuItemsMoveDown  oled_ui.o
+    0x08002f00   0x08002f00   0x00000038   Code   RO          498    i.MenuItemsMoveLeft  oled_ui.o
+    0x08002f38   0x08002f38   0x00000038   Code   RO          499    i.MenuItemsMoveRight  oled_ui.o
+    0x08002f70   0x08002f70   0x00000038   Code   RO          500    i.MenuItemsMoveUp   oled_ui.o
+    0x08002fa8   0x08002fa8   0x000000cc   Code   RO          501    i.MoveMenuElements  oled_ui.o
+    0x08003074   0x08003074   0x00000004   Code   RO         1397    i.NMI_Handler       stm32f4xx_it.o
+    0x08003078   0x08003078   0x00000034   Code   RO          910    i.OLED_Brightness   oled_driver.o
+    0x080030ac   0x080030ac   0x00000028   Code   RO          226    i.OLED_Clear        oled.o
+    0x080030d4   0x080030d4   0x000000d8   Code   RO          227    i.OLED_ClearArea    oled.o
+    0x080031ac   0x080031ac   0x00000278   Code   RO          228    i.OLED_DrawArc      oled.o
+    0x08003424   0x08003424   0x00000176   Code   RO          231    i.OLED_DrawLine     oled.o
+    0x0800359a   0x0800359a   0x00000002   PAD
+    0x0800359c   0x0800359c   0x00000054   Code   RO          232    i.OLED_DrawPoint    oled.o
+    0x080035f0   0x080035f0   0x00000154   Code   RO          233    i.OLED_DrawRectangle  oled.o
+    0x08003744   0x08003744   0x0000020e   Code   RO          234    i.OLED_DrawRoundedRectangle  oled.o
+    0x08003952   0x08003952   0x00000002   PAD
+    0x08003954   0x08003954   0x00000930   Code   RO          502    i.OLED_DrawWindow   oled_ui.o
+    0x08004284   0x08004284   0x000000d4   Code   RO          915    i.OLED_Init         oled_driver.o
+    0x08004358   0x08004358   0x000000a0   Code   RO          237    i.OLED_IsInAngle    oled.o
+    0x080043f8   0x080043f8   0x00000244   Code   RO          503    i.OLED_KeyAndEncoderRecord  oled_ui.o
+    0x0800463c   0x0800463c   0x00000032   Code   RO          239    i.OLED_Printf       oled.o
+    0x0800466e   0x0800466e   0x00000046   Code   RO          242    i.OLED_PrintfMixArea  oled.o
+    0x080046b4   0x080046b4   0x000000d8   Code   RO          244    i.OLED_ReverseArea  oled.o
+    0x0800478c   0x0800478c   0x0000000c   Code   RO          916    i.OLED_SetColorMode  oled_driver.o
+    0x08004798   0x08004798   0x00000022   Code   RO          917    i.OLED_SetCursor    oled_driver.o
+    0x080047ba   0x080047ba   0x00000002   PAD
+    0x080047bc   0x080047bc   0x000000a0   Code   RO          246    i.OLED_ShowChar     oled.o
+    0x0800485c   0x0800485c   0x000000c8   Code   RO          247    i.OLED_ShowCharArea  oled.o
+    0x08004924   0x08004924   0x0000021c   Code   RO          249    i.OLED_ShowChineseArea  oled.o
+    0x08004b40   0x08004b40   0x000001f0   Code   RO          252    i.OLED_ShowImage    oled.o
+    0x08004d30   0x08004d30   0x000001ac   Code   RO          253    i.OLED_ShowImageArea  oled.o
+    0x08004edc   0x08004edc   0x00000080   Code   RO          255    i.OLED_ShowMixStringArea  oled.o
+    0x08004f5c   0x08004f5c   0x0000002e   Code   RO          258    i.OLED_ShowString   oled.o
+    0x08004f8a   0x08004f8a   0x00000008   Code   RO          504    i.OLED_UI_Back      oled_ui.o
+    0x08004f92   0x08004f92   0x00000002   PAD
+    0x08004f94   0x08004f94   0x00000094   Code   RO          505    i.OLED_UI_CreateWindow  oled_ui.o
+    0x08005028   0x08005028   0x00000104   Code   RO          506    i.OLED_UI_FadeOut_Masking  oled_ui.o
+    0x0800512c   0x0800512c   0x00000018   Code   RO          507    i.OLED_UI_Init      oled_ui.o
+    0x08005144   0x08005144   0x000003d0   Code   RO          508    i.OLED_UI_InterruptHandler  oled_ui.o
+    0x08005514   0x08005514   0x0000001c   Code   RO          509    i.OLED_UI_MainLoop  oled_ui.o
+    0x08005530   0x08005530   0x00000038   Code   RO          510    i.OLED_UI_ShowFPS   oled_ui.o
+    0x08005568   0x08005568   0x00000028   Code   RO          918    i.OLED_Update       oled_driver.o
+    0x08005590   0x08005590   0x00000030   Code   RO          920    i.OLED_WriteDataArr  oled_driver.o
+    0x080055c0   0x080055c0   0x0000004c   Code   RO          921    i.OLED_Write_CMD    oled_driver.o
+    0x0800560c   0x0800560c   0x0000004c   Code   RO          922    i.OLED_Write_DATA   oled_driver.o
+    0x08005658   0x08005658   0x00000002   Code   RO         1398    i.PendSV_Handler    stm32f4xx_it.o
+    0x0800565a   0x0800565a   0x00000002   PAD
+    0x0800565c   0x0800565c   0x000008aa   Code   RO          511    i.PrintMenuElements  oled_ui.o
+    0x08005f06   0x08005f06   0x00000002   PAD
+    0x08005f08   0x08005f08   0x0000000c   Code   RO          512    i.ResetEnterFlag    oled_ui.o
+    0x08005f14   0x08005f14   0x0000000c   Code   RO          513    i.ResetFadeOutFlag  oled_ui.o
+    0x08005f20   0x08005f20   0x0000014c   Code   RO          514    i.ReverseCoordinate  oled_ui.o
+    0x0800606c   0x0800606c   0x00000020   Code   RO          882    i.RummyFunction     key_mod.o
+    0x0800608c   0x0800608c   0x00000050   Code   RO          515    i.RunCurrentCallBackFunction  oled_ui.o
+    0x080060dc   0x080060dc   0x00000364   Code   RO          516    i.RunFadeOut        oled_ui.o
+    0x08006440   0x08006440   0x00000002   Code   RO         1399    i.SVC_Handler       stm32f4xx_it.o
+    0x08006442   0x08006442   0x00000002   PAD
+    0x08006444   0x08006444   0x0000004c   Code   RO          517    i.SetCursorZero     oled_ui.o
+    0x08006490   0x08006490   0x00000014   Code   RO          518    i.SetEnterFlag      oled_ui.o
+    0x080064a4   0x080064a4   0x00000014   Code   RO          519    i.SetFadeOutFlag    oled_ui.o
+    0x080064b8   0x080064b8   0x00000034   Code   RO          520    i.SetLineSplitZero  oled_ui.o
+    0x080064ec   0x080064ec   0x000002c0   Code   RO          521    i.SetTargetCursor   oled_ui.o
+    0x080067ac   0x080067ac   0x00000044   Code   RO          522    i.SetTargetMenuFrame  oled_ui.o
+    0x080067f0   0x080067f0   0x000000f0   Code   RO          523    i.SetTargetProbWidth  oled_ui.o
+    0x080068e0   0x080068e0   0x0000008c   Code   RO          524    i.SetTargetScrollBarHeight  oled_ui.o
+    0x0800696c   0x0800696c   0x00000174   Code   RO            9    i.SettingAuxFunc    oled_ui_menudata.o
+    0x08006ae0   0x08006ae0   0x00000010   Code   RO           10    i.ShowFloatDataWindow  oled_ui_menudata.o
+    0x08006af0   0x08006af0   0x00000010   Code   RO           11    i.ShowIntDataWindow  oled_ui_menudata.o
+    0x08006b00   0x08006b00   0x00000010   Code   RO           12    i.ShowTextWindow    oled_ui_menudata.o
+    0x08006b10   0x08006b10   0x00000008   Code   RO         1400    i.SysTick_Handler   stm32f4xx_it.o
+    0x08006b18   0x08006b18   0x000000b4   Code   RO         1218    i.SystemClock_Config  main.o
+    0x08006bcc   0x08006bcc   0x00000014   Code   RO         4001    i.SystemInit        system_stm32f4xx.o
+    0x08006be0   0x08006be0   0x00000010   Code   RO         1401    i.TIM8_TRG_COM_TIM14_IRQHandler  stm32f4xx_it.o
+    0x08006bf0   0x08006bf0   0x000000d8   Code   RO         3111    i.TIM_Base_SetConfig  stm32f4xx_hal_tim.o
+    0x08006cc8   0x08006cc8   0x00000040   Code   RO          785    i.TimeCounter       qthezg.o
+    0x08006d08   0x08006d08   0x00000004   Code   RO         1402    i.UsageFault_Handler  stm32f4xx_it.o
+    0x08006d0c   0x08006d0c   0x0000002c   Code   RO         4085    i.__0vsnprintf      mc_w.l(printfa.o)
+    0x08006d38   0x08006d38   0x00000024   Code   RO         4086    i.__0vsprintf       mc_w.l(printfa.o)
+    0x08006d5c   0x08006d5c   0x00000030   Code   RO         4203    i.__ARM_fpclassify  m_wm.l(fpclassify.o)
+    0x08006d8c   0x08006d8c   0x00000010   Code   RO         2636    i.__NVIC_GetPriorityGrouping  stm32f4xx_hal_cortex.o
+    0x08006d9c   0x08006d9c   0x00000028   Code   RO         2637    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x08006dc4   0x08006dc4   0x00000004   PAD
+    0x08006dc8   0x08006dc8   0x000002d8   Code   RO         4131    i.__hardfp_atan     m_wm.l(atan.o)
+    0x080070a0   0x080070a0   0x000001f0   Code   RO         4034    i.__hardfp_atan2    m_wm.l(atan2.o)
+    0x08007290   0x08007290   0x00000118   Code   RO         4046    i.__hardfp_ceil     m_wm.l(ceil.o)
+    0x080073a8   0x080073a8   0x00000014   Code   RO         4052    i.__hardfp_fabs     m_wm.l(fabs.o)
+    0x080073bc   0x080073bc   0x00000074   Code   RO         4062    i.__hardfp_fmin     m_wm.l(fmin.o)
+    0x08007430   0x08007430   0x000000f8   Code   RO         4205    i.__kernel_poly     m_wm.l(poly.o)
+    0x08007528   0x08007528   0x00000014   Code   RO         4146    i.__mathlib_dbl_infnan  m_wm.l(dunder.o)
+    0x0800753c   0x0800753c   0x00000014   Code   RO         4147    i.__mathlib_dbl_infnan2  m_wm.l(dunder.o)
+    0x08007550   0x08007550   0x00000020   Code   RO         4151    i.__mathlib_dbl_underflow  m_wm.l(dunder.o)
+    0x08007570   0x08007570   0x0000000e   Code   RO         4213    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800757e   0x0800757e   0x00000002   Code   RO         4214    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08007580   0x08007580   0x0000000e   Code   RO         4215    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800758e   0x0800758e   0x00000002   PAD
+    0x08007590   0x08007590   0x00000184   Code   RO         4087    i._fp_digits        mc_w.l(printfa.o)
+    0x08007714   0x08007714   0x000006dc   Code   RO         4088    i._printf_core      mc_w.l(printfa.o)
+    0x08007df0   0x08007df0   0x00000024   Code   RO         4089    i._printf_post_padding  mc_w.l(printfa.o)
+    0x08007e14   0x08007e14   0x0000002e   Code   RO         4090    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x08007e42   0x08007e42   0x00000016   Code   RO         4091    i._snputc           mc_w.l(printfa.o)
+    0x08007e58   0x08007e58   0x0000000a   Code   RO         4092    i._sputc            mc_w.l(printfa.o)
+    0x08007e62   0x08007e62   0x00000010   Code   RO         4133    i.atan              m_wm.l(atan.o)
+    0x08007e72   0x08007e72   0x00000018   Code   RO         4054    i.fabs              m_wm.l(fabs.o)
+    0x08007e8a   0x08007e8a   0x00000024   Code   RO         1219    i.main              main.o
+    0x08007eae   0x08007eae   0x00000002   PAD
+    0x08007eb0   0x08007eb0   0x00000014   Code   RO         1075    i.system_bsp_init   system_bsp.o
+    0x08007ec4   0x08007ec4   0x00000084   Code   RO         1076    i.system_bsp_test_loop  system_bsp.o
+    0x08007f48   0x08007f48   0x00000014   Data   RO          526    .constdata          oled_ui.o
+    0x08007f5c   0x08007f5c   0x000061a8   Data   RO         1195    .constdata          oled_fonts.o
+    0x0800e104   0x0800e104   0x00000008   Data   RO         2353    .constdata          stm32f4xx_hal_dma.o
+    0x0800e10c   0x0800e10c   0x00000018   Data   RO         4002    .constdata          system_stm32f4xx.o
+    0x0800e124   0x0800e124   0x00000004   PAD
+    0x0800e128   0x0800e128   0x00000098   Data   RO         4134    .constdata          m_wm.l(atan.o)
+    0x0800e1c0   0x0800e1c0   0x00000008   Data   RO         4159    .constdata          m_wm.l(qnan.o)
+    0x0800e1c8   0x0800e1c8   0x000003b2   Data   RO           14    .conststring        oled_ui_menudata.o
+    0x0800e57a   0x0800e57a   0x00000002   PAD
+    0x0800e57c   0x0800e57c   0x00000020   Data   RO         4211    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800dd4c, Size: 0x000028d8, Max: 0x0001c000, ABSOLUTE, COMPRESSED[0x000002fc])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800e59c, Size: 0x000028e0, Max: 0x0001c000, ABSOLUTE, COMPRESSED[0x000002fc])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   COMPRESSED   0x00001080   Data   RW           15    .data               oled_ui_menudata.o
-    0x20001080   COMPRESSED   0x0000003c   Data   RW          516    .data               oled_ui.o
-    0x200010bc   COMPRESSED   0x00000011   Data   RW          782    .data               qthezg.o
-    0x200010cd   COMPRESSED   0x0000001d   Data   RW          872    .data               key_mod.o
-    0x200010ea   COMPRESSED   0x00000004   Data   RW          916    .data               oled_driver.o
+    0x20001080   COMPRESSED   0x0000003c   Data   RW          527    .data               oled_ui.o
+    0x200010bc   COMPRESSED   0x00000011   Data   RW          793    .data               qthezg.o
+    0x200010cd   COMPRESSED   0x0000001d   Data   RW          883    .data               key_mod.o
+    0x200010ea   COMPRESSED   0x00000004   Data   RW          924    .data               oled_driver.o
     0x200010ee   COMPRESSED   0x00000002   PAD
-    0x200010f0   COMPRESSED   0x00000008   Data   RW         1069    .data               system_bsp.o
-    0x200010f8   COMPRESSED   0x0000000c   Data   RW         1124    .data               key_bsp.o
-    0x20001104   COMPRESSED   0x00000002   Data   RW         1400    .data               stm32f4xx_it.o
-    0x20001106   COMPRESSED   0x00000002   PAD
-    0x20001108   COMPRESSED   0x00000009   Data   RW         2782    .data               stm32f4xx_hal.o
-    0x20001111   COMPRESSED   0x00000003   PAD
-    0x20001114   COMPRESSED   0x00000004   Data   RW         4000    .data               system_stm32f4xx.o
-    0x20001118        -       0x00000090   Zero   RW           13    .bss                oled_ui_menudata.o
-    0x200011a8        -       0x00000198   Zero   RW          514    .bss                oled_ui.o
-    0x20001340        -       0x00000400   Zero   RW          915    .bss                oled_driver.o
-    0x20001740        -       0x00000020   Zero   RW         1068    .bss                system_bsp.o
-    0x20001760        -       0x00000078   Zero   RW         1123    .bss                key_bsp.o
-    0x200017d8        -       0x000000b8   Zero   RW         1307    .bss                spi.o
-    0x20001890        -       0x00000048   Zero   RW         1349    .bss                tim.o
-    0x200018d8        -       0x00001000   Zero   RW         1200    STACK               startup_stm32f407xx.o
+    0x200010f0   COMPRESSED   0x0000000c   Data   RW         1131    .data               key_bsp.o
+    0x200010fc   COMPRESSED   0x00000002   Data   RW         1403    .data               stm32f4xx_it.o
+    0x200010fe   COMPRESSED   0x00000002   PAD
+    0x20001100   COMPRESSED   0x00000009   Data   RW         2785    .data               stm32f4xx_hal.o
+    0x20001109   COMPRESSED   0x00000003   PAD
+    0x2000110c   COMPRESSED   0x00000004   Data   RW         4003    .data               system_stm32f4xx.o
+    0x20001110        -       0x00000090   Zero   RW           13    .bss                oled_ui_menudata.o
+    0x200011a0        -       0x00000198   Zero   RW          525    .bss                oled_ui.o
+    0x20001338        -       0x00000400   Zero   RW          923    .bss                oled_driver.o
+    0x20001738        -       0x0000002c   Zero   RW         1077    .bss                system_bsp.o
+    0x20001764        -       0x00000078   Zero   RW         1130    .bss                key_bsp.o
+    0x200017dc        -       0x000000b8   Zero   RW         1310    .bss                spi.o
+    0x20001894        -       0x00000048   Zero   RW         1352    .bss                tim.o
+    0x200018dc   COMPRESSED   0x00000004   PAD
+    0x200018e0        -       0x00001000   Zero   RW         1207    STACK               startup_stm32f407xx.o
 
 
-    Execution Region RW_IRAM2 (Exec base: 0x2001c000, Load base: 0x0800e048, Size: 0x00000000, Max: 0x00004000, ABSOLUTE)
+    Execution Region RW_IRAM2 (Exec base: 0x2001c000, Load base: 0x0800e898, Size: 0x00000000, Max: 0x00004000, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
@@ -2593,15 +2622,15 @@ Image component sizes
 
         56          4          0          0          0        766   dma.o
        300         16          0          0          0       1067   gpio.o
-       304         60          0         12        120       4805   key_bsp.o
-       420          8          0         29          0       4115   key_mod.o
+       288         66          0         12        120       4825   key_bsp.o
+       420          8          0         29          0       3227   key_mod.o
        222         10          0          0          0       2120   main.o
       4706        110          0          0          0      20060   oled.o
        550         32          0          4       1024       5870   oled_driver.o
          0          0      25000          0          0       2881   oled_fonts.o
-     10162        498         20         60        408      29687   oled_ui.o
-         4          0          0          0          0        971   oled_ui_driver.o
-      1144        188        946       4224        144     699507   oled_ui_menudata.o
+     12290        672         20         60        408      35989   oled_ui.o
+         8          0          0          0          0       1477   oled_ui_driver.o
+      1144        188        946       4224        144     701199   oled_ui_menudata.o
         86          6          0         17          0       4820   qthezg.o
        276         28          0          0        184       1762   spi.o
         36          8        392          0       4096        804   startup_stm32f407xx.o
@@ -2614,15 +2643,15 @@ Image component sizes
        200          0          0          0          0       1187   stm32f4xx_hal_spi.o
        900         76          0          0          0       5895   stm32f4xx_hal_tim.o
          4          0          0          0          0       1569   stm32f4xx_hal_tim_ex.o
-        94         20          0          2          0       6431   stm32f4xx_it.o
-       152         32          0          8         32       3099   system_bsp.o
+       102         20          0          2          0       6471   stm32f4xx_it.o
+       152         32          0          0         44       2563   system_bsp.o
         20          6         24          4          0       1127   system_stm32f4xx.o
        132         20          0          0         72       1572   tim.o
 
     ----------------------------------------------------------------------
-     23650       1300      26428       4376       6080     854764   Object Totals
+     25778       1484      26428       4368       6096     861900   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        24          0          6          7          0          0   (incl. Padding)
+        28          4          6          7          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2694,15 +2723,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     30064       1612      26588       4376       6080     843748   Grand Totals
-     30064       1612      26588        764       6080     843748   ELF Image Totals (compressed)
-     30064       1612      26588        764          0          0   ROM Totals
+     32192       1796      26588       4368       6096     849784   Grand Totals
+     32192       1796      26588        764       6096     849784   ELF Image Totals (compressed)
+     32192       1796      26588        764          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                56652 (  55.32kB)
-    Total RW  Size (RW Data + ZI Data)             10456 (  10.21kB)
-    Total ROM Size (Code + RO Data + RW Data)      57416 (  56.07kB)
+    Total RO  Size (Code + RO Data)                58780 (  57.40kB)
+    Total RW  Size (RW Data + ZI Data)             10464 (  10.22kB)
+    Total ROM Size (Code + RO Data + RW Data)      59544 (  58.15kB)
 
 ==============================================================================
 

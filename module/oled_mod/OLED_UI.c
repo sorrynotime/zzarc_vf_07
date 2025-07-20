@@ -1070,6 +1070,12 @@ MenuID_Type OLED_KeyAndEncoderRecord(void){
 	OLED_UI_Key.Back = Key_GetBackStatus();
 	OLED_UI_Key.Up = Key_GetUpStatus();
 	OLED_UI_Key.Down = Key_GetDownStatus();
+	
+	Key_GetEnterStatus() = 0;
+	Key_GetBackStatus() = 0;
+//	Key_GetUpStatus() = 0;
+//	Key_GetDownStatus() = 0;
+	
 #if IF_START_UP_AND_DOWN_LONG_PRESS
 
 	static int16_t UpPressCounter = 0;
@@ -1096,25 +1102,25 @@ MenuID_Type OLED_KeyAndEncoderRecord(void){
 	    IfUpTapAndHold = false;
 	}
 	//如果上一次和这一次都按下的状态持续
-	    if(OLED_UI_LastKey.Down == 0 && OLED_UI_Key.Down == 0){
-	        DownPressCounter++;
+	if(OLED_UI_LastKey.Down == 0 && OLED_UI_Key.Down == 0){
+		DownPressCounter++;
 
-	        if(DownPressCounter >= (float)PRESS_TIME * 50){
-	            DownPressedCounter ++;
-	            if(DownPressedCounter >= (DownPressCounter >= (PRESS_TIME + CONTINUE_PRESS_TIME) * 50? CONTINUE_PRESS_MOVE_SPEED : PRESS_MOVE_SPEED)){
-	                IfDownTapAndHold = true;
-	                DownPressedCounter = 0;
-	                IfDownTapAndHold = true;
-	            }else{
-	                IfDownTapAndHold = false;
-	            }
-	        }
+		if(DownPressCounter >= (float)PRESS_TIME * 50){
+			DownPressedCounter ++;
+			if(DownPressedCounter >= (DownPressCounter >= (PRESS_TIME + CONTINUE_PRESS_TIME) * 50? CONTINUE_PRESS_MOVE_SPEED : PRESS_MOVE_SPEED)){
+				IfDownTapAndHold = true;
+				DownPressedCounter = 0;
+				IfDownTapAndHold = true;
+			}else{
+				IfDownTapAndHold = false;
+			}
+		}
 
-	    }else{
-	        DownPressCounter = 0;
-	        DownPressedCounter = 0;
-	        IfDownTapAndHold = false;
-	    }
+	}else{
+		DownPressCounter = 0;
+		DownPressedCounter = 0;
+		IfDownTapAndHold = false;
+	}
 
 #endif
 	if(OLED_UI_Key.Up == OLED_UI_Key.Down){

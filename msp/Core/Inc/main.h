@@ -69,6 +69,20 @@ void Error_Handler(void);
 #define OLED_RES_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
+#include "key_bsp.h"
+
+typedef struct {
+	unsigned int system_tick;
+	
+	eKeyState key1_state;
+	eKeyState key2_state;
+	eKeyState key3_state;
+
+	unsigned char oled_up_key;
+	unsigned char oled_down_key;
+	unsigned char oled_enter_key;
+	unsigned char oled_back_key;
+}t_vf07;
 
 /* USER CODE END Private defines */
 
