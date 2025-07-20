@@ -6,7 +6,8 @@
 	],
 	"settings": {
 		"files.associations": {
-			"qthezg.h": "c"
+			"qthezg.h": "c",
+			"key_bsp.h": "c"
 		}
 	}
 }

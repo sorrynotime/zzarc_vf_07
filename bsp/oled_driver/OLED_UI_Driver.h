@@ -4,18 +4,13 @@
 /*【如果您需要移植此项目，则需要更改以下函数的实现方式。】 */
 #include "stm32f4xx_hal.h"                  // Device header
 #include "stm32f4xx.h"
-//#include "misc.h"
+
 
 //获取确认，取消，上，下按键状态的函数
 #define Key_GetEnterStatus()	(1)//(!BTN_stat.isDebouncedPressing)
 #define Key_GetBackStatus()		(1)
 #define Key_GetUpStatus()		(1)
 #define Key_GetDownStatus()		(1)
-
-
-
-//定时器中断初始化函数
-//void Timer_Init(void);
 
 //按键初始化函数
 //void Key_Init(void);

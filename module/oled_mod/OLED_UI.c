@@ -450,9 +450,7 @@ void OLED_UI_Init(MenuPage* Page){
 	//初始化OLED显示屏
 	OLED_Init();
 
-	//Timer_Init();
-	//Key_Init();
-	Encoder_Init();
+//	Encoder_Init();
 
 	//设置当前页面的结构体指针
 	CurrentMenuPage = Page;	//设置当前页面的结构体指针

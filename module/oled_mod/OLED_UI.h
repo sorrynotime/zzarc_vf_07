@@ -31,11 +31,11 @@ extern uint8_t OLED_DisplayBuf[OLED_HEIGHT/8][OLED_WIDTH];
 #define TILES_SCROLLBAR_Y			(5)			//磁贴类菜单项开始点相对于屏幕顶部的Y坐标
 
 /***********关于磁贴类菜单项文字距离屏幕底部的距离的宏***********/
-#define TILES_BOTTOM_DISTANCE						(0)			//磁贴类菜单项文字距离屏幕底部的距离
+#define TILES_BOTTOM_DISTANCE		(0)			//磁贴类菜单项文字距离屏幕底部的距离
 
 /************关于菜单项横向滚动速度的宏**********************/
 //当菜单项长度超过菜单区域宽度时，本ui框架会自动实现菜单项的横向滚动显示，这是菜单项横向滚动步长（每一帧滚动的像素距离）
-#define LINE_SLIP_SPEED			(0.5)			//菜单项横向滚动速度【可以是小数，但是最好是1的整数倍或者1的偶数分之一倍】
+#define LINE_SLIP_SPEED				(0.5)			//菜单项横向滚动速度【可以是小数，但是最好是1的整数倍或者1的偶数分之一倍】
 
 
 

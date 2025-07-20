@@ -3,9 +3,11 @@
 "zzarc_vf_07\oled.o"
 "zzarc_vf_07\oled_ui.o"
 "zzarc_vf_07\qthezg.o"
+"zzarc_vf_07\key_mod.o"
 "zzarc_vf_07\oled_driver.o"
 "zzarc_vf_07\oled_ui_driver.o"
 "zzarc_vf_07\system_bsp.o"
+"zzarc_vf_07\key_bsp.o"
 "zzarc_vf_07\oled_fonts.o"
 "zzarc_vf_07\startup_stm32f407xx.o"
 "zzarc_vf_07\main.o"
@@ -32,7 +34,7 @@
 "zzarc_vf_07\stm32f4xx_hal_tim.o"
 "zzarc_vf_07\stm32f4xx_hal_tim_ex.o"
 "zzarc_vf_07\system_stm32f4xx.o"
---strict --scatter "zzarc_vf_07\zzarc_vf_07.sct"
+--library_type=microlib --strict --scatter "zzarc_vf_07\zzarc_vf_07.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "zzarc_vf_07.map" -o zzarc_vf_07\zzarc_vf_07.axf

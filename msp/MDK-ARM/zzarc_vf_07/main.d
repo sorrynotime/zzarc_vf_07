@@ -1,45 +1,52 @@
-zzarc_vf_07/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
-  ..\Core\Inc\stm32f4xx_hal_conf.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h \
-  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
-  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
-  ..\Drivers\CMSIS\Include\core_cm4.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  ..\Drivers\CMSIS\Include\cmsis_version.h \
-  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
-  ..\Drivers\CMSIS\Include\cmsis_armclang.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
-  ..\Drivers\CMSIS\Include\mpu_armv7.h \
-  ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_exti.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
-  ..\Core\Inc\dma.h ..\Core\Inc\main.h ..\Core\Inc\spi.h \
-  ..\Core\Inc\tim.h ..\Core\Inc\gpio.h ..\..\bsp\system_bsp.h \
-  ..\..\module\nor_flieh\qthezg.h ..\..\module\oled_mod\OLED_UI.h \
-  ..\..\bsp\oled_driver\OLED_UI_Driver.h ..\..\module\oled_mod\OLED.h \
-  ..\..\bsp\oled_driver\OLED_Driver.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdarg.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  ..\..\resource\oled_res\OLED_Fonts.h \
-  ..\..\app\oled_app\OLED_UI_MenuData.h
+zzarc_vf_07\main.o: ../Core/Src/main.c
+zzarc_vf_07\main.o: ../Core/Inc/main.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+zzarc_vf_07\main.o: ../Core/Inc/stm32f4xx_hal_conf.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
+zzarc_vf_07\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+zzarc_vf_07\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
+zzarc_vf_07\main.o: ../Drivers/CMSIS/Include/core_cm4.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+zzarc_vf_07\main.o: ../Drivers/CMSIS/Include/cmsis_version.h
+zzarc_vf_07\main.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+zzarc_vf_07\main.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+zzarc_vf_07\main.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+zzarc_vf_07\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+zzarc_vf_07\main.o: ../Core/Inc/dma.h
+zzarc_vf_07\main.o: ../Core/Inc/spi.h
+zzarc_vf_07\main.o: ../Core/Inc/tim.h
+zzarc_vf_07\main.o: ../Core/Inc/gpio.h
+zzarc_vf_07\main.o: ../../bsp/system_bsp.h
+zzarc_vf_07\main.o: ../../module/nor_flieh/qthezg.h
+zzarc_vf_07\main.o: ../../bsp/key_bsp.h
+zzarc_vf_07\main.o: ../../module/nor_flieh/key_mod.h
+zzarc_vf_07\main.o: ../../module/oled_mod/OLED_UI.h
+zzarc_vf_07\main.o: ../../bsp/oled_driver/OLED_UI_Driver.h
+zzarc_vf_07\main.o: ../../module/oled_mod/OLED.h
+zzarc_vf_07\main.o: ../../bsp/oled_driver/OLED_Driver.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+zzarc_vf_07\main.o: ../../resource/oled_res/OLED_Fonts.h
+zzarc_vf_07\main.o: ../../app/oled_app/OLED_UI_MenuData.h
