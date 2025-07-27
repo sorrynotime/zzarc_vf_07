@@ -27,9 +27,12 @@ zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fla
 zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
 zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h
+zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h
 zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+zzarc_vf_07\oled_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 zzarc_vf_07\oled_driver.o: ..\..\bsp\oled_driver\OLED_driver.h
 zzarc_vf_07\oled_driver.o: ../Core/Inc/main.h
 zzarc_vf_07\oled_driver.o: ../../bsp/key_bsp.h

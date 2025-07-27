@@ -3,34 +3,34 @@
 
 #include "main.h"
 
-/*【如果您需要移植此项目，则需要更改以下函数的实现方式。】 */
+/*锟斤拷锟斤拷锟斤拷锟斤拷锟揭?锟斤拷植锟斤拷锟斤拷目锟斤拷锟斤拷锟斤拷要锟斤拷锟斤拷锟斤拷锟铰猴拷锟斤拷锟斤拷实锟街凤拷式锟斤拷锟斤拷 */
 #include "stm32f4xx_hal.h"                  // Device header
 #include "stm32f4xx.h"
 
 extern t_vf07 zzarc_vf07;
 
-//获取确认，取消，上，下按键状态的函数
+//锟斤拷取确锟较ｏ拷取锟斤拷锟斤拷锟较ｏ拷锟铰帮拷锟斤拷状态锟侥猴拷锟斤拷
 #define Key_GetEnterStatus()	(zzarc_vf07.oled_enter_key)//(!BTN_stat.isDebouncedPressing)
 #define Key_GetBackStatus()		(zzarc_vf07.oled_back_key)
-#define Key_GetUpStatus()		(zzarc_vf07.oled_up_key)
-#define Key_GetDownStatus()		(zzarc_vf07.oled_down_key)
+#define Key_GetUpStatus()		HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7)
+#define Key_GetDownStatus()		HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_8)
 
-//按键初始化函数
+//锟斤拷锟斤拷锟斤拷始锟斤拷锟斤拷锟斤拷
 //void Key_Init(void);
 
-//编码器初始化函数
+//锟斤拷锟斤拷锟斤拷锟斤拷始锟斤拷锟斤拷锟斤拷
 void Encoder_Init(void);
 
-// 编码器使能函数
+// 锟斤拷锟斤拷锟斤拷使锟杰猴拷锟斤拷
 void Encoder_Enable(void);
 
-//编码器失能函数
+//锟斤拷锟斤拷锟斤拷失锟杰猴拷锟斤拷
 void Encoder_Disable(void);
 
-//读取编码器的增量值
+//锟斤拷取锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷值
 int16_t Encoder_Get(void);
 
-//延时函数
+//锟斤拷时锟斤拷锟斤拷
 //void Delay_us(uint32_t xus);
 void Delay_ms(uint32_t xms);
 void Delay_s(uint32_t xs);

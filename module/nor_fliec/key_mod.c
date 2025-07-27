@@ -36,7 +36,7 @@ eKeyState KeyLoop( tUniversalButton * xButton ) {
 	//检测按键是否初始化
 	if( xButton->InitFlg != 0x0a ){
 		//报错
-		return 0;
+		return eKeyNone;
 	}
 
 	SysTickMs = xButton->GetTimeTampMs();

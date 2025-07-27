@@ -7,8 +7,13 @@ t_vf07 zzarc_vf07 = {0};
 
 void system_bsp_init(void)
 {
+
 	BspKeyInstantiation();
 	OLED_UI_Init(&MainMenuPage);
+//	Mount_FatFs();
+//	FatFs_GetDiskInfo();
+//	
+//	FatFs_WriteTXTFile("test.txt",2016,11,15);
 }
 
 void system_bsp_test_loop(void)
@@ -16,7 +21,7 @@ void system_bsp_test_loop(void)
   while (1)
   {
 //	zzarc_vf07.system_tick = HAL_GetTick();
-  
+	
     INTERMITTENT_SERVICE(systick_counter_8ms, HAL_GetTick(), 8)
     {
        zzarc_vf07.key1_state = KeyLoop(&vf07_key1);
@@ -28,6 +33,8 @@ void system_bsp_test_loop(void)
        Key3Handler(zzarc_vf07.key3_state);
 	   
     }
+	
+	
 	
     INTERMITTENT_SERVICE(systick_counter_20ms, HAL_GetTick(), 20)
     {

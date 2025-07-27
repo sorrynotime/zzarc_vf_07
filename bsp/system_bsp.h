@@ -9,6 +9,8 @@
 #include "OLED_UI.h"
 #include "OLED_UI_MenuData.h"
 
+#include "file_operate.h"
+
 extern t_vf07 zzarc_vf07;
 
 void system_bsp_init(void);

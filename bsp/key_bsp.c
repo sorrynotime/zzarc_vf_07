@@ -20,19 +20,15 @@ unsigned char GetKey3Gpio(){
 	return HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_8);
 }
 
-int aaaaa = 0;
-int bbbbb = 0;
-int ccccc = 0;
-
 //°´¼ü´¦Àí
 void Key1Handler( eKeyState xKeyValue){
 	
 	switch( xKeyValue){
 		case eKeyO:{
-			zzarc_vf07.oled_back_key = 1;
+			zzarc_vf07.oled_enter_key = 1;
 		}break;
 		case eKeyOO:{
-			aaaaa--;
+			zzarc_vf07.oled_back_key = 1;
 		}break;
 		case eKeyOX:{
 			
@@ -47,10 +43,10 @@ void Key2Handler( eKeyState xKeyValue){
 	
 	switch( xKeyValue){
 		case eKeyO:{
-			zzarc_vf07.oled_enter_key = 1;
+			zzarc_vf07.oled_down_key = 1;
 		}break;
 		case eKeyOO:{
-			bbbbb--;
+			
 		}break;
 		case eKeyOX:{
 			
@@ -68,7 +64,7 @@ void Key3Handler( eKeyState xKeyValue){
 			zzarc_vf07.oled_up_key = 1;
 		}break;
 		case eKeyOO:{
-//			zzarc_vf07.oled_down_key = 1;
+
 		}break;
 		case eKeyOX:{
 			

@@ -30,9 +30,12 @@ zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_e
 zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
 zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h
+zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h
 zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+zzarc_vf_07\key_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 zzarc_vf_07\key_bsp.o: ../Core/Inc/gpio.h
 zzarc_vf_07\key_bsp.o: ..\..\bsp\system_bsp.h
 zzarc_vf_07\key_bsp.o: ../../module/nor_flieh/qthezg.h
@@ -47,3 +50,13 @@ zzarc_vf_07\key_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 zzarc_vf_07\key_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 zzarc_vf_07\key_bsp.o: ../../resource/oled_res/OLED_Fonts.h
 zzarc_vf_07\key_bsp.o: ../../app/oled_app/OLED_UI_MenuData.h
+zzarc_vf_07\key_bsp.o: ../../bsp/file_operate/file_operate.h
+zzarc_vf_07\key_bsp.o: ../FATFS/App/FatFs.h
+zzarc_vf_07\key_bsp.o: ../Middlewares/Third_Party/FatFs/src/ff.h
+zzarc_vf_07\key_bsp.o: ../Middlewares/Third_Party/FatFs/src/integer.h
+zzarc_vf_07\key_bsp.o: ../FATFS/Target/ffconf.h
+zzarc_vf_07\key_bsp.o: ../FATFS/Target/bsp_driver_sd.h
+zzarc_vf_07\key_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+zzarc_vf_07\key_bsp.o: ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h
+zzarc_vf_07\key_bsp.o: ../Middlewares/Third_Party/FatFs/src/diskio.h
+zzarc_vf_07\key_bsp.o: ../FATFS/Target/sd_diskio.h
