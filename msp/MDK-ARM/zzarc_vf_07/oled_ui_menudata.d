@@ -41,9 +41,9 @@ zzarc_vf_07\oled_ui_menudata.o: ../../bsp/key_bsp.h
 zzarc_vf_07\oled_ui_menudata.o: ../../module/nor_flieh/key_mod.h
 zzarc_vf_07\oled_ui_menudata.o: ../../module/oled_mod/OLED.h
 zzarc_vf_07\oled_ui_menudata.o: ../../bsp/oled_driver/OLED_Driver.h
-zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+zzarc_vf_07\oled_ui_menudata.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 zzarc_vf_07\oled_ui_menudata.o: ../../resource/oled_res/OLED_Fonts.h

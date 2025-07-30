@@ -57,11 +57,11 @@ zzarc_vf_07\main.o: ../../module/oled_mod/OLED_UI.h
 zzarc_vf_07\main.o: ../../bsp/oled_driver/OLED_UI_Driver.h
 zzarc_vf_07\main.o: ../../module/oled_mod/OLED.h
 zzarc_vf_07\main.o: ../../bsp/oled_driver/OLED_Driver.h
-zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 zzarc_vf_07\main.o: ../../resource/oled_res/OLED_Fonts.h
 zzarc_vf_07\main.o: ../../app/oled_app/OLED_UI_MenuData.h
 zzarc_vf_07\main.o: ../../bsp/file_operate/file_operate.h

@@ -27,11 +27,29 @@ Project File Date:  07/23/2025
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'zzarc_vf_07'
-compiling key_mod.c...
+compiling OLED_driver.c...
+compiling stm32f4xx_it.c...
+compiling key_bsp.c...
+compiling system_bsp.c...
+compiling OLED.c...
+compiling main.c...
+compiling OLED_UI_MenuData.c...
+compiling OLED_UI.c...
+..\..\module\oled_mod\OLED_UI.c(270): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		*CurrentNum += 0.02*CurrentMenuPage->General_MovingSpeed * (*ErrorNum);
+..\..\module\oled_mod\OLED_UI.c(306): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		*DerivativeNum = (*ErrorNum - *LastErrorNum) / 0.1;
+..\..\module\oled_mod\OLED_UI.c(648): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		    	CurrentWindow->_LineSlip-=LINE_SLIP_SPEED;
+..\..\module\oled_mod\OLED_UI.c(957): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  						page->General_MenuItems[i]._LineSlip -= LINE_SLIP_SPEED;
+..\..\module\oled_mod\OLED_UI.c(1017): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		        page->General_MenuItems[page->_ActiveMenuID]._LineSlip -= LINE_SLIP_SPEED;
+..\..\module\oled_mod\OLED_UI.c: 5 warnings, 0 errors
 linking...
 Program Size: Code=41364 RO-data=26608 RW-data=4372 ZI-data=6596  
 FromELF: creating hex file...
-"zzarc_vf_07\zzarc_vf_07.axf" - 0 Error(s), 0 Warning(s).
+"zzarc_vf_07\zzarc_vf_07.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -55,7 +73,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>
