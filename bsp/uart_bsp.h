@@ -15,6 +15,11 @@ typedef struct
         uint8_t dma_is_en;         // 串口是否使用DMA
         uint16_t uart_rx_len_max;
         uint16_t uart_tx_len_max;
+
+        uint8_t *tx_buffer; // 发送缓冲区
+        uint8_t *rx_buffer; // 接收缓冲区
+
+        uint8_t *received_data; // 拼接后的数据
     } config;
 
     struct
@@ -22,12 +27,11 @@ typedef struct
         void (*uart_analysis_fun)(uint8_t *data, uint8_t *status, uint8_t length); // 串口数据分析函数
     } ops;
 
+    // 过程量
+    // 发送缓冲区管理
     uint16_t tx_buff_wr;
     uint16_t tx_buff_rd;
-    uint8_t *tx_buffer;
-    uint8_t *rx_buffer;
 
-    uint8_t *received_currently_data;
     uint8_t received_data_ok;
     uint16_t received_data_length;
 

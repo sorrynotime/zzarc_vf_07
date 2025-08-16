@@ -26,7 +26,6 @@ unsigned char GetKey3Gpio()
 // °´¼ü´¦Àí
 void Key1Handler(eKeyState xKeyValue)
 {
-
     switch (xKeyValue)
     {
     case eKeyO:

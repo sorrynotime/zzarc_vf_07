@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file    dma.c
-  * @brief   This file provides code for the configuration
-  *          of all the requested memory to memory DMA transfers.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    dma.c
+ * @brief   This file provides code for the configuration
+ *          of all the requested memory to memory DMA transfers.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -34,58 +34,56 @@
 /* USER CODE END 1 */
 
 /**
-  * Enable DMA controller clock
-  */
+ * Enable DMA controller clock
+ */
 void MX_DMA_Init(void)
 {
 
-  /* DMA controller clock enable */
-  __HAL_RCC_DMA1_CLK_ENABLE();
-  __HAL_RCC_DMA2_CLK_ENABLE();
+    /* DMA controller clock enable */
+    __HAL_RCC_DMA1_CLK_ENABLE();
+    __HAL_RCC_DMA2_CLK_ENABLE();
 
-  /* DMA interrupt init */
-  /* DMA1_Stream4_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream4_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream4_IRQn);
-  /* DMA2_Stream2_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
-  /* DMA2_Stream3_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
-  /* DMA2_Stream7_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream7_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(DMA2_Stream7_IRQn);
-
+    /* DMA interrupt init */
+    /* DMA1_Stream4_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(DMA1_Stream4_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(DMA1_Stream4_IRQn);
+    /* DMA2_Stream2_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
+    /* DMA2_Stream3_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
+    /* DMA2_Stream7_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(DMA2_Stream7_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(DMA2_Stream7_IRQn);
 }
 
 /* USER CODE BEGIN 2 */
-void ZG_DMA_SetConfig(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength)
-{
-  /* Clear DBM bit */
-  hdma->Instance->CR &= (uint32_t)(~DMA_SxCR_DBM);
+// void ZG_DMA_SetConfig(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength)
+// {
+//   /* Clear DBM bit */
+//   hdma->Instance->CR &= (uint32_t)(~DMA_SxCR_DBM);
 
-  /* Configure DMA Stream data length */
-  hdma->Instance->NDTR = DataLength;
+//   /* Configure DMA Stream data length */
+//   hdma->Instance->NDTR = DataLength;
 
-  /* Memory to Peripheral */
-  if((hdma->Init.Direction) == DMA_MEMORY_TO_PERIPH)
-  {
-    /* Configure DMA Stream destination address */
-    hdma->Instance->PAR = DstAddress;
+//   /* Memory to Peripheral */
+//   if((hdma->Init.Direction) == DMA_MEMORY_TO_PERIPH)
+//   {
+//     /* Configure DMA Stream destination address */
+//     hdma->Instance->PAR = DstAddress;
 
-    /* Configure DMA Stream source address */
-    hdma->Instance->M0AR = SrcAddress;
-  }
-  /* Peripheral to Memory */
-  else
-  {
-    /* Configure DMA Stream source address */
-    hdma->Instance->PAR = SrcAddress;
+//     /* Configure DMA Stream source address */
+//     hdma->Instance->M0AR = SrcAddress;
+//   }
+//   /* Peripheral to Memory */
+//   else
+//   {
+//     /* Configure DMA Stream source address */
+//     hdma->Instance->PAR = SrcAddress;
 
-    /* Configure DMA Stream destination address */
-    hdma->Instance->M0AR = DstAddress;
-  }
-}
+//     /* Configure DMA Stream destination address */
+//     hdma->Instance->M0AR = DstAddress;
+//   }
+// }
 /* USER CODE END 2 */
-
