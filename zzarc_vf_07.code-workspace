@@ -6,8 +6,15 @@
 	],
 	"settings": {
 		"files.associations": {
+			"*.scf": "s",
+			".gitignore": "bat",
+			"*.json": "json",
+			"*.txt": "bibtex",
+			"*.sct": "arm",
 			"qthezg.h": "c",
-			"key_bsp.h": "c"
+			"key_bsp.h": "c",
+			"system_bsp.h": "c",
+			"main.h": "c"
 		}
 	}
 }

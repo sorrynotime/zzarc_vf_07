@@ -18,6 +18,7 @@ JModbusLog.txt
 msp/MDK-ARM/output/
 msp/MDK-ARM/DebugConfig/
 msp/MDK-ARM/RTE/
+msp/MDK-ARM/zzarc_vf_07/
 release/
 release.md
 

@@ -12,10 +12,11 @@ void system_bsp_init(void)
     OLED_UI_Init(&MainMenuPage);
     //	Mount_FatFs();
     //	FatFs_GetDiskInfo();
-    //
+
     //	FatFs_WriteTXTFile("test.txt",2016,11,15);
 }
 
+//uint8_t test_arr[20] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 void system_bsp_test_loop(void)
 {
     while (1)
@@ -36,6 +37,7 @@ void system_bsp_test_loop(void)
         INTERMITTENT_SERVICE(systick_counter_20ms, HAL_GetTick(), 20)
         {
             OLED_UI_MainLoop();
+//            uart_transmit(&a_uart1_debug, test_arr, 20);
         }
     }
 }

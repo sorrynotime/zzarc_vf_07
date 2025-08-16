@@ -64,4 +64,7 @@ zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 zzarc_vf_07\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 zzarc_vf_07\main.o: ../../resource/oled_res/OLED_Fonts.h
 zzarc_vf_07\main.o: ../../app/oled_app/OLED_UI_MenuData.h
+zzarc_vf_07\main.o: ../../bsp/uart_bsp.h
+zzarc_vf_07\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h
+zzarc_vf_07\main.o: ../../bsp/system_bsp.h
 zzarc_vf_07\main.o: ../../bsp/file_operate/file_operate.h

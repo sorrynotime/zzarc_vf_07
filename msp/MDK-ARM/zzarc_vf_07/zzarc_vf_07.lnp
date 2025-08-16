@@ -9,6 +9,7 @@
 "zzarc_vf_07\system_bsp.o"
 "zzarc_vf_07\key_bsp.o"
 "zzarc_vf_07\file_operate.o"
+"zzarc_vf_07\uart_bsp.o"
 "zzarc_vf_07\oled_fonts.o"
 "zzarc_vf_07\startup_stm32f407xx.o"
 "zzarc_vf_07\main.o"

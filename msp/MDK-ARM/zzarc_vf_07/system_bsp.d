@@ -49,13 +49,7 @@ zzarc_vf_07\system_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 zzarc_vf_07\system_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 zzarc_vf_07\system_bsp.o: ../../resource/oled_res/OLED_Fonts.h
 zzarc_vf_07\system_bsp.o: ../../app/oled_app/OLED_UI_MenuData.h
-zzarc_vf_07\system_bsp.o: ../../bsp/file_operate/file_operate.h
-zzarc_vf_07\system_bsp.o: ../FATFS/App/FatFs.h
-zzarc_vf_07\system_bsp.o: ../Middlewares/Third_Party/FatFs/src/ff.h
-zzarc_vf_07\system_bsp.o: ../Middlewares/Third_Party/FatFs/src/integer.h
-zzarc_vf_07\system_bsp.o: ../FATFS/Target/ffconf.h
-zzarc_vf_07\system_bsp.o: ../FATFS/Target/bsp_driver_sd.h
-zzarc_vf_07\system_bsp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-zzarc_vf_07\system_bsp.o: ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h
-zzarc_vf_07\system_bsp.o: ../Middlewares/Third_Party/FatFs/src/diskio.h
-zzarc_vf_07\system_bsp.o: ../FATFS/Target/sd_diskio.h
+zzarc_vf_07\system_bsp.o: ..\..\bsp\uart_bsp.h
+zzarc_vf_07\system_bsp.o: ../Core/Inc/usart.h
+zzarc_vf_07\system_bsp.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h
+zzarc_vf_07\system_bsp.o: ..\..\bsp\system_bsp.h

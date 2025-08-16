@@ -23,6 +23,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "OLED_UI.h"
+
+#include "uart_bsp.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -224,7 +227,12 @@ void DMA1_Stream4_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
     /* USER CODE BEGIN USART1_IRQn 0 */
-
+    if (__HAL_UART_GET_FLAG(&huart1, UART_FLAG_IDLE))
+    {
+        __HAL_UART_CLEAR_IDLEFLAG(&huart1);
+        // 处理接收到的数据
+        uart_receive_data(&a_uart1_debug);
+    }
     /* USER CODE END USART1_IRQn 0 */
     HAL_UART_IRQHandler(&huart1);
     /* USER CODE BEGIN USART1_IRQn 1 */
@@ -289,11 +297,19 @@ void DMA2_Stream7_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
-uint16_t TIM14_Cnt1 = 0;
+// 串口接收回调函数
+// 这个回调函数要配合hal库自身的IT/DMA接收函数使用
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART1) // USART1
+    {
+    }
+}
 
+uint16_t TIM14_Cnt1 = 0;
+// tim14中断回调函数
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    /* Prevent unused argument(s) compilation warning */
     UNUSED(htim);
 
     // 判断是定时器14发生的中断

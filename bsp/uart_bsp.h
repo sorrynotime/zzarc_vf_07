@@ -1,24 +1,20 @@
 #ifndef __UART_BSP__
 #define __UART_BSP__
 
-#include "at32f421_wk_config.h"
-#include "wk_system.h"
+#include "main.h"
+#include "stm32f4xx_hal_uart.h"
+#include "stm32f4xx_hal_usart.h"
+#include "system_bsp.h"
+#include "usart.h"
 
-// typedef void *(*xUartAnalysis_t)(uint8_t *, uint8_t *, uint8_t);
-
-// void Uart1_Transmit(volatile unsigned char *str, unsigned char length);
-// void UsartReceiveData(void);
-
-// extern uint8_t Uart1_DRx_Buff[];
-
-// void UartAnalysisFunInit(xUartAnalysis_t pFun);
-
-typedef __packed struct
+typedef struct
 {
     struct
     {
-        USART_HandleTypeDef *huart; // 串口句柄
-        uint8_t dma_is_en;          // 串口是否使用DMA
+        UART_HandleTypeDef *huart; // 串口句柄
+        uint8_t dma_is_en;         // 串口是否使用DMA
+        uint16_t uart_rx_len_max;
+        uint16_t uart_tx_len_max;
     } config;
 
     struct
@@ -28,13 +24,18 @@ typedef __packed struct
 
     uint16_t tx_buff_wr;
     uint16_t tx_buff_rd;
-    uint8_t tx_buffer[200];
-    uint8_t rx_buffer[200];
+    uint8_t *tx_buffer;
+    uint8_t *rx_buffer;
 
-    uint8_t received_currently_data[100];
+    uint8_t *received_currently_data;
     uint8_t received_data_ok;
-    uint8_t received_data_length;
+    uint16_t received_data_length;
 
 } t_uart_raw;
+
+void uart_transmit(t_uart_raw *xuart, volatile uint8_t *str, uint8_t length);
+void uart_receive_data(t_uart_raw *xuart);
+
+extern t_uart_raw a_uart1_debug;
 
 #endif

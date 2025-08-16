@@ -444,6 +444,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\bsp\file_operate\file_operate.c</FilePath>
             </File>
+            <File>
+              <FileName>uart_bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\bsp\uart_bsp.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

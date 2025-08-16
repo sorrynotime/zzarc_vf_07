@@ -22,6 +22,8 @@
 
 /* USER CODE BEGIN 0 */
 
+
+//uint8_t uart_log_dma_rbuf[UART1_RX_LEN_MAX];
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -53,7 +55,8 @@ void MX_USART1_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART1_Init 2 */
-
+  //开启空闲中断 使用dma+空闲中断接收数据
+	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);
   /* USER CODE END USART1_Init 2 */
 
 }
